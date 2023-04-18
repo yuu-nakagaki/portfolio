@@ -1,0 +1,20 @@
+// settingフォルダの変数を読み込みます
+
+@use "../setting" as *;
+
+
+
+  // display: flex;を利用した上下左右中央寄せ
+  @mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // img画像設定
+  @mixin img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }

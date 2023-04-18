@@ -1,0 +1,13 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    // color: $text-black-color;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+    font-weight: 500;
+  }
