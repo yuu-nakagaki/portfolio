@@ -1,3 +1,52 @@
 //各ファイルは必ず登録済みの変数を最初に読み込みます
 //as *で読み込みファイル名を省略することができます
 @use "../global" as *;
+
+#allworks {
+
+    counter-reset: mycounter;
+
+
+    //サムネイルの要素（pic？）に下の疑似要素でナンバリング
+
+    // &::before {
+    //     content: counter(mycounter, decimal-leading-zero);
+    //     counter-increment: mycounter;
+    //     font-family: $inter;
+    //     font-size: 90px;
+    //     font-weight: bold;
+    //     left: 315px;
+    //     position: relative;
+    //     top: 50px;
+    //   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+}
