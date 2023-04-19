@@ -1,3 +1,12 @@
 // settingフォルダの変数を読み込みます
 
 @use "../setting" as *;
+
+@keyframes marquee {
+    0% {
+        translate: 0;
+    }
+    100% {
+        translate: calc(-100% - 14px);
+    }
+}

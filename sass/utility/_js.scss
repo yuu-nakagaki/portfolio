@@ -1,3 +1,31 @@
 //各ファイルは必ず登録済みの変数を最初に読み込みます
 //as *で読み込みファイル名を省略することができます
 @use "../global" as *;
+
+#top {
+
+    .rotate-top {
+        transform: rotate(45deg);
+    }
+
+    .hide-middle {
+        opacity: 0;
+    }
+
+    .rotate-bottom {
+        transform: rotate(-45deg);
+    }
+
+    .gnav-active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .gnav__nav-active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+
+
+}
