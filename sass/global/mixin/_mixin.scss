@@ -2,6 +2,24 @@
 
 @use "../setting" as *;
 
+@mixin ttlstyle($color: $black) {
+  font-family: $roboto;
+  font-size: 20px;
+  margin-bottom: 4px;
+  color: $color;
+}
+
+@mixin ttl-jpstyle($color: $black) {
+  font-size: 16px;
+  margin-bottom: 50px;
+  color: $color;
+}
+
+// @mixin mb($mbottom: 80px) {
+//   margin-bottom: $mbottom;
+// }
+
+//バーガーボタン
 @mixin btn($translate: 0) {
   width: 40%;
   height: 1px;
@@ -24,4 +42,19 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+// メディアクエリ
+// ---タブレット
+@mixin tab($min-width: 768px) {
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
+}
+
+// ---PC
+@mixin pc($min-width: 1024px) {
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
 }

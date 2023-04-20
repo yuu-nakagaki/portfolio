@@ -6,7 +6,18 @@
     0% {
         translate: 0;
     }
+
     100% {
         translate: calc(-100% - 14px);
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
     }
 }

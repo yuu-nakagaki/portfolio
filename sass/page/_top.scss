@@ -5,11 +5,11 @@
 #top {
 
     .mv {
-        position: relative;
-        z-index: -1;
         width: 100%;
         height: 100vh;
         padding-top: 140px;
+        position: relative;
+        z-index: -1;
         pointer-events: none;
 
         &__wrap {
@@ -39,10 +39,10 @@
             transition: opacity 1s ease-out;
         }
 
-
     }
 
     .mvcover {
+        padding-top: 100px;
         height: 100vh;
         position: relative;
         z-index: 1;
@@ -77,7 +77,17 @@
                 }
             }
 
-
+            &::after {
+                content: "";
+                display: block;
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                top: 50%;
+                left: -49.5px;
+                background: url(../../images/top/loading-icon-sp.png) center center / cover;
+                animation: rotation 6s linear infinite;
+            }
 
         }
 
@@ -92,18 +102,259 @@
         }
     }
 
+    .works {
+        padding: 80px 20px;
+        width: 100%;
+        background: $black;
+        color: $white;
+
+        &__scroll-wrapper {}
+
+        &__scroll-list {
+            list-style-type: none;
+        }
+
+        &__scroll-head {}
+
+        &__ttl {
+            @include ttlstyle($white);
+        }
+
+        &__ttl-jp {
+            @include ttl-jpstyle($white);
+        }
+
+        &__txt {
+            margin-bottom: 60px;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        &__btn {
+            margin-bottom: 60px;
+            background: $white;
+            text-align: center;
+            position: relative;
+        }
+
+        &__link {
+            display: block;
+            padding: 17px;
+            // width: 100%;
+            color: $black;
+            font-family: $roboto;
+            text-decoration: none;
+        }
+
+        &__scroll-item {
+            position: relative;
+            margin-bottom: 180px;
+        }
+
+        &__scroll-item:last-child {
+            margin-bottom: 120px;
+        }
+
+        &__scroll-pic {}
+
+        &__scroll-link {
+            display: block;
+        }
+
+        &__scroll-img {
+            @include img;
+        }
+
+        &__scroll-txtbox {
+            padding-left: 20px;
+            position: absolute;
+            bottom: -80%;
+            left: 0;
+            border-left: 1px solid $white;
+
+        }
+
+        &__scroll-num {
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+
+        &__scroll-dl {
+
+            & dt {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+
+            & dt:first-child+dd {
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+
+            & dd:last-child {
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1.5;
+            }
+
+        }
+
+    }
+
+    .looptxt {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        &__marquee {
+            margin-bottom: 24px;
+            display: flex;
+            white-space: nowrap;
+            gap: 14px;
+            font-size: 18px;
+        }
+
+        &__marquee-inner {
+            animation: marquee 20s linear infinite;
+            display: flex;
+            align-items: center;
+        }
+
+        &__marquee-img01 {
+            margin: 0 10px;
+            display: inline-block;
+            width: 100px;
+            height: 32px;
+            background: url(../../images/top/img10-sp.jpg) center center / cover;
+        }
+
+        &__marquee-img02 {
+            @extend .looptxt__marquee-img01;
+            background: url(../../images/top/img11-sp.jpg) center center / cover;
+        }
+
+        &__marquee-img03 {
+            @extend .looptxt__marquee-img01;
+            background: url(../../images/top/img12-sp.jpg) center center / cover;
+        }
+
+        &__marquee-img04 {
+            @extend .looptxt__marquee-img01;
+            background: url(../../images/top/img13-sp.jpg) center center / cover;
+        }
+
+        &__marquee-img05 {
+            @extend .looptxt__marquee-img01;
+            background: url(../../images/top/img14-sp.jpg) center center / cover;
+        }
+
+        &__marquee-img06 {
+            @extend .looptxt__marquee-img01;
+            background: url(../../images/top/img15-sp.jpg) center center / cover;
+        }
+
+        &__marquee-img07 {
+            @extend .looptxt__marquee-img01;
+            background: url(../../images/top/img16-sp.jpg) center center / cover;
+        }
+
+        &__marquee-graycolor {
+            color: $gray;
+        }
+
+    }
+
+    .skill {
+        @extend .works;
+
+        &__ttl {
+            @include ttlstyle($white);
+        }
+
+        &__ttl-jp {
+            @include ttl-jpstyle($white);
+        }
+
+        &__txt {
+            @extend .works__txt;
+            position: relative;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                position: absolute;
+                bottom: -60px;
+                background: $white;
+            }
+        }
+
+        &__skillbox {
+            // display: flex;
+            // gap: 200px;
+        }
+
+        &__filter {
+            width: 90%;
+            padding: 60px 0;
+            margin: 0 auto;
+            text-align: right;
+            display: flex;
+            justify-content: space-between;
+
+            & li {
+                cursor: pointer;
+                list-style-type: none;
+                // margin-bottom: 40px;
+                margin-right: 5px;
+                font-size: 14px;
+                font-weight: 600;
+            }
+
+            & .is-active {
+                border-bottom: 2px solid $white;
+                font-size: 18px;
+                transition: 0.4s;
+            }
 
 
+        }
+
+        &__category {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            // gap: 40px;
+
+            & li {
+                list-style-type: none;
+                margin-bottom: 20px;
+                display: none;
+                font-family: $roboto;
+                font-size: 12px;
+                text-align: center;
+
+                &:before {
+                    content: "";
+                    width: 30%;
+                    // height: 64px;
+                    display: block;
+                    background: #55a74d;
+                }
+
+            }
+
+            & li.is-show {
+                display: block;
+            }
+        }
 
 
-
-
-
-
-
-
-
-
+    }
 
 
 
