@@ -11,10 +11,14 @@
     left: 0;
     z-index: 2;
     font-family: $roboto;
-
+    
+    &__wrap {
+        
+    }
 
     &__ttlbox {
         display: flex;
+        transition: 0.3s;
     }
 
     &__ttl {

@@ -4,6 +4,11 @@
 
 #top {
 
+    .is-hide { 
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
     .rotate-top {
         transform: rotate(45deg);
     }

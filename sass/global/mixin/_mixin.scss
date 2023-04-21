@@ -2,9 +2,16 @@
 
 @use "../setting" as *;
 
+@mixin secstyle($color: $white, $bgcolor: $black) {
+  padding: 80px 20px;
+  width: 100%;
+  background: $bgcolor;
+  color: $color;
+}
+
 @mixin ttlstyle($color: $black) {
   font-family: $roboto;
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 4px;
   color: $color;
 }

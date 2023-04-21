@@ -14,6 +14,10 @@
 
         &__wrap {
             position: fixed;
+            padding: 0 20px;
+            @include tab {
+                padding: 0 80px;
+            }
         }
 
         &__ttl {
@@ -21,6 +25,11 @@
             font-family: $roboto;
             font-size: 40px;
             font-weight: 900;
+
+            @include tab {
+                font-size: 80px;
+
+            }
 
             & span {
                 font-family: $EBGaramond;
@@ -32,6 +41,10 @@
             font-size: 16px;
             font-weight: 700;
             line-height: 2.5;
+
+            @include tab {
+                font-size: 30px;
+            }
         }
 
         &__txt.fade-out {
@@ -42,7 +55,7 @@
     }
 
     .mvcover {
-        padding-top: 100px;
+        padding: 100px 20px 0;
         height: 100vh;
         position: relative;
         z-index: 1;
@@ -54,6 +67,10 @@
             position: absolute;
             top: -160px;
             left: 50%;
+
+            @include tab {
+                top: -20%;
+            }
 
             & span {
                 display: inline-block;
@@ -67,8 +84,8 @@
                 &::before {
                     content: "";
                     position: absolute;
-                    bottom: 0;
-                    left: -4px;
+                    bottom: -1px;
+                    left: -4.5px;
                     width: 0;
                     height: 0;
                     border-top: 10px solid $black;
@@ -95,6 +112,10 @@
             font-size: 14px;
             font-weight: 700;
             line-height: 2;
+
+            @include tab {
+                font-size: 22px;
+            }
         }
 
         &__txt {
@@ -103,10 +124,7 @@
     }
 
     .works {
-        padding: 80px 20px;
-        width: 100%;
-        background: $black;
-        color: $white;
+        @include secstyle;
 
         &__scroll-wrapper {}
 
@@ -135,12 +153,37 @@
             background: $white;
             text-align: center;
             position: relative;
+
+
+            & span {
+                display: inline-block;
+                vertical-align: middle;
+                line-height: 1;
+                position: absolute;
+                top: 50%;
+                right: 30px;
+                width: 60px;
+                height: 1px;
+                background: $black;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    height: 0;
+                    width: 0;
+                    position: absolute;
+                    right: 0;
+                    top: -4px;
+                    border-right: 8px solid transparent;
+                    border-bottom: 4px solid $black; 
+                }
+            }
+
         }
 
         &__link {
             display: block;
             padding: 17px;
-            // width: 100%;
             color: $black;
             font-family: $roboto;
             text-decoration: none;
@@ -171,7 +214,6 @@
             bottom: -80%;
             left: 0;
             border-left: 1px solid $white;
-
         }
 
         &__scroll-num {
@@ -217,7 +259,7 @@
         }
 
         &__marquee-inner {
-            animation: marquee 20s linear infinite;
+            animation: marquee 25s linear infinite;
             display: flex;
             align-items: center;
         }
@@ -267,7 +309,7 @@
     }
 
     .skill {
-        @extend .works;
+        @include secstyle;
 
         &__ttl {
             @include ttlstyle($white);
@@ -280,26 +322,19 @@
         &__txt {
             @extend .works__txt;
             position: relative;
+            padding-bottom: 60px;
+            border-bottom: 1px solid $white;
 
-            &::after {
-                content: "";
-                display: block;
-                width: 100%;
-                height: 1px;
-                position: absolute;
-                bottom: -60px;
-                background: $white;
-            }
         }
 
         &__skillbox {
-            // display: flex;
+            // display: flex; //PC版だけ
             // gap: 200px;
         }
 
         &__filter {
             width: 90%;
-            padding: 60px 0;
+            padding-bottom: 60px;
             margin: 0 auto;
             text-align: right;
             display: flex;
@@ -308,10 +343,13 @@
             & li {
                 cursor: pointer;
                 list-style-type: none;
-                // margin-bottom: 40px;
                 margin-right: 5px;
                 font-size: 14px;
                 font-weight: 600;
+
+                &:last-child {
+                    margin-right: 0;
+                }
             }
 
             & .is-active {
@@ -320,7 +358,6 @@
                 transition: 0.4s;
             }
 
-
         }
 
         &__category {
@@ -328,7 +365,9 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            // gap: 40px;
+            align-items: center;
+            align-content: space-between;
+            gap: 30px;
 
             & li {
                 list-style-type: none;
@@ -337,28 +376,143 @@
                 font-family: $roboto;
                 font-size: 12px;
                 text-align: center;
-
-                &:before {
-                    content: "";
-                    width: 30%;
-                    // height: 64px;
-                    display: block;
-                    background: #55a74d;
-                }
-
             }
 
             & li.is-show {
                 display: block;
+                width: 72px;
+                height: 72px;
+            }
+
+            &::after {
+                content: "";
+                width: 72px; //最下行位置調節用
             }
         }
 
+        &__name {
+            margin-top: 4px;
+        }
+
+        &__img {
+            @include img;
+        }
 
     }
 
+    .profile {
+        @include secstyle($black, $white);
+
+        &__ttl {
+            @include ttlstyle;
+        }
+
+        &__ttl-jp {
+            @include ttl-jpstyle;
+            margin-bottom: 80px;
+        }
+
+        &__wrap {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        &__name {
+            font-size: 24px;
+            font-family: $roboto;
+            margin-bottom: 12px;
+        }
+
+        &__name-jp {
+            font-size: 15px;
+            margin-bottom: 60px;
+        }
+
+        &__txt {
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        &__pic {
+            width: 200px;
+            height: 280px;
+            margin: 0 0 0 auto;
+            margin-bottom: 60px;
+            position: relative;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                top: -17%;
+                left: -49.5px;
+                background: url(../../images/top/loading-icon-sp.png) center center / cover;
+                animation: rotation 10s linear infinite;
+            }
+        }
+
+        &__img {
+            @include img;
+        }
+    }
+
+    .message {
+        height: 100vh;
+        background: $gray;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__txt {
+            font-family: $roboto;
+            font-size: 40px;
+            margin-bottom: 20px;
+
+            & span {
+                font-family: $EBGaramond;
+                color: white;
+            }
+        }
+
+        &__ttl {
+            font-size: 20px;
+        }
+    }
+
+    .contact {
+        @include secstyle;
+
+        &__ttl {
+            @include ttlstyle($white);
+            text-align: center;
+        }
+
+        &__ttl-jp {
+            @include ttl-jpstyle($white);
+            text-align: center;
+        }
+
+        &__txt {
+            font-size: 14px;
+            line-height: 2;
+            text-align: center;
+            padding-bottom: 60px;
+            margin-bottom: 60px;
+            border-bottom: 1px solid $white;
+        }
+
+        &__item {
+            text-align-last: left;
+
+
+        }
 
 
 
 
+    }
 
 }
