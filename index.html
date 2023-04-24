@@ -451,45 +451,34 @@
         <p class="contact__ttl-jp">ご連絡先</p>
         <p class="contact__txt">もし興味をお持ちいただけましたら、詳しくお話をする機会をいただけますと幸いです。</p>
 
-        <div class="contact__form">
-          <form action="#" method="post">
-            <table class="contact__table">
-              <tr class="contact__tablerow">
-                <th class="contact__item">お名前*</th>
-                <td class="contact__body">
-                  <input type="text" name="yourname" class="contact__input" placeholder="（例）山田　太郎" required>
-                </td>
-              </tr>
-              <tr>
-                <th class="contact__item">会社名</th>
-                <td class="contact__body">
-                  <input type="text" name="companyname" class="contact__input" placeholder="（例）株式会社　〇〇〇">
-                </td>
-              </tr>
-              <tr>
-                <th class="contact__item">電話番号</th>
-                <td class="contact__body">
-                  <input type="text" name="tel" class="contact__input" placeholder="（例）000-0000-0000">
-                </td>
-              </tr>
-              <tr>
-                <th class="contact__item">メールアドレス*</th>
-                <td class="contact__body">
-                  <input type="email" name="email" class="contact__input" placeholder="（例）xxxxx@example.jp" required>
-                </td>
-              </tr>
-              <tr>
-                <th class="contact__item">メッセージ*</th>
-                <td class="contact__body">
-                  <textarea name="メッセージ" class="contact__textarea" cols="30" rows="10" placeholder="メッセージを入力してください。"
-                    required></textarea>
-                </td>
-              </tr>
-            </table>
-
-            <input type="submit" value="send">
-          </form>
-        </div>
+        <form id="form" class="form"
+          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeRUQozhEWYF1ZHa4wERU4XgURniT6xkhsc_RQNQedlC5q_QQ/formResponse"
+          method="post" target="hidden_iframe" onsubmit="submitted=true;">
+          <div class="form__box">
+            <label for="name" class="form__label">お名前*<span>YOUR NAME</span></label>
+            <input id="name" type="text" name="" class="form__input" required placeholder="（例）山田　太郎">
+          </div>
+          <div class="form__box">
+            <label for="name" class="form__label">会社名<span>COMPANY NAME</span></label>
+            <input id="name" type="text" name="" class="form__input" placeholder="（例）株式会社　〇〇〇">
+          </div>
+          <div class="form__box">
+            <label for="name" class="form__label">電話番号<span>PHONE NUMBER</span></label>
+            <input id="name" type="text" name="" class="form__input" placeholder="（例）000-0000-0000">
+          </div>
+          <div class="form__box">
+            <label for="email" class="form__label">メールアドレス*<span>E-MAIL ADDRESS</span></label>
+            <input id="email" type="email" name="" class="form__input" required placeholder="（例）xxxxx@example.jp">
+          </div>
+          <div class="form__box">
+            <label for="message" class="form__label">メッセージ*<span>MESSAGE</span></label>
+            <textarea name="" class="form__message" id="message" required placeholder="メッセージを入力してください。"></textarea>
+          </div>
+          <div class="form__box">
+            <p class="form__sendtxt">送信</p>
+            <input type="submit" class="form__submit" value="SEND"><span></span>
+          </div>
+        </form>
       </section>
     </main>
 
@@ -506,7 +495,9 @@
   </div>
 
 
-
+  <script>var submitted = false;</script>
+  <iframe id="hidden_iframe" name="hidden_iframe" style="display:none;"
+    onload="if(submitted)  {window.location='thanks.html';}"></iframe>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>

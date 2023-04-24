@@ -484,6 +484,7 @@
 
     .contact {
         @include secstyle;
+        max-width: 500px;
 
         &__ttl {
             @include ttlstyle($white);
@@ -506,13 +507,102 @@
 
         &__item {
             text-align-last: left;
-
-
         }
 
+    }
 
+    .form {
+        
+        &__box {
+            padding-left: 20px;
+            margin: 0 0 0 auto;
+            margin-bottom: 24px;
+            position: relative;
+            border-left: 2px solid $white;
 
+            &:last-child {
+                margin-bottom: 0;
+                text-align: right;
 
+                & span {
+                    display: inline-block;
+                    vertical-align: middle;
+                    line-height: 1;
+                    position: absolute;
+                    top: 50%;
+                    right: 20px;
+                    width: 40px;
+                    height: 1px;
+                    background: $black;
+    
+                    &::after {
+                        content: "";
+                        display: block;
+                        height: 0;
+                        width: 0;
+                        position: absolute;
+                        right: 0;
+                        top: -4px;
+                        border-right: 8px solid transparent;
+                        border-bottom: 4px solid $black; 
+                    }
+                }
+            }
+        }
+        
+        &__label {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 16px;
+
+            & span {
+                font-family: $roboto;
+                font-size: 12px;
+                font-weight: 400;
+                letter-spacing: 0.2em;
+            }
+        }
+        
+        &__input {
+            width: 100%;
+            padding: 20px 10px;
+            background: $inputarea;
+            border: none;
+            font-size: 16px;
+            letter-spacing: 0.2em;
+        }
+    
+        &__message {
+            width: 100%;
+            height: 300px;
+            padding: 20px 10px;
+            background: $inputarea;
+            border: none;
+            font-size: 16px;
+            letter-spacing: 0.2em;
+        }
+    
+        &__submit {
+            width: 200px;
+            padding: 17px 10px;
+            background: $white;
+            color: $black;
+            border: none;
+            font-size: 16px;
+            font-family: $roboto;
+            letter-spacing: 0.2em;
+            cursor: pointer;
+            -webkit-appearance: none;
+            transition: 0.3s;
+
+            &:hover {
+                background: $gray;
+            }
+        }
+
+        &__sendtxt {
+            font-size: 16px;
+        }
     }
 
 }
