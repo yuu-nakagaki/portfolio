@@ -3,11 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="robots" content="noindex , nofollow">
-  <meta name="viewport" content="width=device-width">
-  <title>YUU NAKAGAKI PORTFOLIO SITE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords" content="フロントエンドエンジニア, Webデザイナー, portfolio, ポートフォリオ, コーディング, ウェブ, 制作, デザイン">
   <meta name="description" content="フロントエンドエンジニア志望です。ご興味を持っていただけましたらお気軽にお声掛けください。">
+  <title>YUU NAKAGAKI PORTFOLIO SITE</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Roboto:wght@400;500;700&display=swap"
@@ -61,19 +60,23 @@
 
         <div class="mvcover__txtbox">
           <p class="mvcover__txt">
-            未知の問題に相対した時、あるいは新しく何かを生み出そうとする時、<br>
+            未知の問題に相対した時、<br>
+            あるいは新しく何かを生み出そうとする時、<br>
             必ず自分の頭で考える。
           </p>
           <p class="mvcover__txt">
-            どこに違和感を感じ、何を理解しておらず、どうすれば打開できるか、<br>
+            どこに違和感を感じ、何を理解しておらず、<br>
+            どうすれば打開できるか、<br>
             ひとつずつ着実に、順序を追って考えてみる。
           </p>
           <p class="mvcover__txt">
             もし考えても考えても答えが出ないときは、<br>
-            いったん寝かせてみたら、ふとした時にいい案が浮かぶことも。
+            いったん寝かせてみたら、<br>
+            ふとした時にいい案が浮かぶことも。
           </p>
           <p class="mvcover__txt">
-            そういうことを繰り返しながら、絶えず成長し続ける。<br>
+            そういうことを繰り返しながら、<br>
+            絶えず成長し続ける。<br>
             考えることが、私の武器です。
           </p>
         </div>
@@ -417,6 +420,8 @@
               <img src="images/top/skill/icon-powerpoint.png" alt="PowerPointアイコン" class="skill__img">
               <p class="skill__name">PowerPoint</p>
             </li>
+            <li data-category="others" class="is-show"></li>
+            <li data-category="empty" class="is-show"></li>
           </ul>
         </div>
       </section>
@@ -449,7 +454,8 @@
       <section id="contact" class="contact">
         <h2 class="contact__ttl">CONTACT</h2>
         <p class="contact__ttl-jp">ご連絡先</p>
-        <p class="contact__txt">もし興味をお持ちいただけましたら、詳しくお話をする機会をいただけますと幸いです。</p>
+        <p class="contact__txt">もし興味をお持ちいただけましたら、<br>
+          詳しくお話をする機会をいただけますと幸いです。</p>
 
         <form id="form" class="form"
           action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeRUQozhEWYF1ZHa4wERU4XgURniT6xkhsc_RQNQedlC5q_QQ/formResponse"
@@ -475,7 +481,7 @@
             <textarea name="" class="form__message" id="message" required placeholder="メッセージを入力してください。"></textarea>
           </div>
           <div class="form__box">
-            <p class="form__sendtxt">送信</p>
+            <label class="form__label">送信</label>
             <input type="submit" class="form__submit" value="SEND"><span></span>
           </div>
         </form>

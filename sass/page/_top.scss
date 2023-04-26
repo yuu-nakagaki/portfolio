@@ -15,6 +15,7 @@
         &__wrap {
             position: fixed;
             padding: 0 20px;
+
             @include tab {
                 padding: 0 80px;
             }
@@ -28,7 +29,10 @@
 
             @include tab {
                 font-size: 80px;
+            }
 
+            @include pc {
+                font-size: 180px;
             }
 
             & span {
@@ -44,6 +48,10 @@
 
             @include tab {
                 font-size: 30px;
+            }
+
+            @include pc {
+                font-size: 34px;
             }
         }
 
@@ -62,6 +70,15 @@
         background: rgba(255, 255, 255, 0.3);
         backdrop-filter: blur(6.5px);
         border-radius: 10px;
+
+        @include tab {
+            padding: 100px 80px 0;
+        }
+
+        @include pc {
+            height: 100%;
+            padding: 200px 320px;
+        }
 
         &__scrollarrow {
             position: absolute;
@@ -115,37 +132,83 @@
 
             @include tab {
                 font-size: 22px;
+                font-weight: 900;
+                letter-spacing: 0.2em;
+            }
+
+            @include pc {
+                font-size: 34px;
             }
         }
 
         &__txt {
             margin-bottom: 40px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 
     .works {
         @include secstyle;
 
-        &__scroll-wrapper {}
+        @include tab {
+            padding: 80px 80px;
+        }
+
+        @include pc {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        &__scroll-wrapper {
+
+            @include pc {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+            }
+        }
 
         &__scroll-list {
             list-style-type: none;
+
+            @include pc {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                display: flex;
+                gap: 0 200px;
+            }
         }
 
         &__scroll-head {}
 
         &__ttl {
             @include ttlstyle($white);
+
+            @include tab {
+                margin-bottom: 10px;
+            }
         }
 
         &__ttl-jp {
             @include ttl-jpstyle($white);
+            margin-bottom: 60px;
         }
 
         &__txt {
             margin-bottom: 60px;
             font-size: 14px;
             line-height: 2;
+
+            @include tab {
+                margin-bottom: 80px;
+                font-size: 18px;
+            }
         }
 
         &__btn {
@@ -154,6 +217,9 @@
             text-align: center;
             position: relative;
 
+            @include tab {
+                margin-bottom: 80px;
+            }
 
             & span {
                 display: inline-block;
@@ -166,6 +232,11 @@
                 height: 1px;
                 background: $black;
 
+                @include tab {
+                    width: 60px;
+                    right: 64px;
+                }
+
                 &::after {
                     content: "";
                     display: block;
@@ -175,7 +246,7 @@
                     right: 0;
                     top: -4px;
                     border-right: 8px solid transparent;
-                    border-bottom: 4px solid $black; 
+                    border-bottom: 4px solid $black;
                 }
             }
 
@@ -187,18 +258,37 @@
             color: $black;
             font-family: $roboto;
             text-decoration: none;
+
+            @include tab {
+                padding: 37px;
+            }
         }
 
         &__scroll-item {
             position: relative;
             margin-bottom: 180px;
+
+            @include tab {
+                margin-bottom: 240px;
+            }
+
+            @include pc {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-shrink: 0; //画像がつぶれてwidthが0になるのを防ぐ
+                font-size: 32px;
+            }
         }
 
         &__scroll-item:last-child {
             margin-bottom: 120px;
-        }
 
-        &__scroll-pic {}
+            @include tab {
+                margin-bottom: 180px;
+            }
+
+        }
 
         &__scroll-link {
             display: block;
@@ -214,26 +304,47 @@
             bottom: -80%;
             left: 0;
             border-left: 1px solid $white;
+
+            @include tab {
+                padding-left: 40px;
+                bottom: -45%;
+                border-left: 2px solid $white;
+            }
         }
 
         &__scroll-num {
             font-size: 40px;
             margin-bottom: 40px;
+
+            @include tab {
+                font-size: 80px;
+                margin-bottom: 80px;
+            }
         }
 
         &__scroll-dl {
 
-            & dt {
+            dt {
                 font-size: 20px;
                 margin-bottom: 30px;
+
+                @include tab {
+                    font-size: 24px;
+                }
+
             }
 
-            & dt:first-child+dd {
+            dt:first-child+dd {
                 font-size: 16px;
                 margin-bottom: 5px;
+
+                @include tab {
+                    font-size: 18px;
+                    margin-bottom: 10px;
+                }
             }
 
-            & dd:last-child {
+            dd:last-child {
                 font-size: 14px;
                 font-weight: 500;
                 line-height: 1.5;
@@ -256,6 +367,10 @@
             white-space: nowrap;
             gap: 14px;
             font-size: 18px;
+
+            @include tab {
+                font-size: 18px;
+            }
         }
 
         &__marquee-inner {
@@ -311,8 +426,16 @@
     .skill {
         @include secstyle;
 
+        @include tab {
+            padding: 80px 80px;
+        }
+
         &__ttl {
             @include ttlstyle($white);
+
+            @include tab {
+                margin-bottom: 10px;
+            }
         }
 
         &__ttl-jp {
@@ -341,14 +464,18 @@
             justify-content: space-between;
 
             & li {
+                margin-right: 5px;
                 cursor: pointer;
                 list-style-type: none;
-                margin-right: 5px;
                 font-size: 14px;
                 font-weight: 600;
 
                 &:last-child {
                     margin-right: 0;
+                }
+
+                @include tab {
+                    font-size: 20px;
                 }
             }
 
@@ -356,6 +483,10 @@
                 border-bottom: 2px solid $white;
                 font-size: 18px;
                 transition: 0.4s;
+
+                @include tab {
+                    font-size: 30px;
+                }
             }
 
         }
@@ -382,11 +513,20 @@
                 display: block;
                 width: 72px;
                 height: 72px;
+
+                @include tab {
+                    width: 80px;
+                    height: 80px;
+                }
             }
 
             &::after {
                 content: "";
                 width: 72px; //最下行位置調節用
+
+                @include tab {
+                    width: 80px; //最下行位置調節用
+                }
             }
         }
 
@@ -403,8 +543,16 @@
     .profile {
         @include secstyle($black, $white);
 
+        @include tab {
+            padding: 80px 80px;
+        }
+
         &__ttl {
             @include ttlstyle;
+
+            @include tab {
+                margin-bottom: 10px;
+            }
         }
 
         &__ttl-jp {
@@ -415,17 +563,33 @@
         &__wrap {
             display: flex;
             flex-direction: column-reverse;
+
+            @include tab {
+                flex-direction: row;
+            }
+        }
+
+        &__txtbox {
+            width: 300px;
         }
 
         &__name {
             font-size: 24px;
             font-family: $roboto;
             margin-bottom: 12px;
+
+            @include tab {
+                font-size: 32px;
+            }
         }
 
         &__name-jp {
             font-size: 15px;
             margin-bottom: 60px;
+
+            @include tab {
+                font-size: 20px;
+            }
         }
 
         &__txt {
@@ -451,6 +615,11 @@
                 background: url(../../images/top/loading-icon-sp.png) center center / cover;
                 animation: rotation 10s linear infinite;
             }
+
+            @include tab {
+                margin-bottom: 0;
+                align-self: flex-end
+            }
         }
 
         &__img {
@@ -475,10 +644,18 @@
                 font-family: $EBGaramond;
                 color: white;
             }
+
+            @include tab {
+                font-size: 80px;
+            }
         }
 
         &__ttl {
             font-size: 20px;
+
+            @include tab {
+                font-size: 30px;
+            }
         }
     }
 
@@ -486,9 +663,18 @@
         @include secstyle;
         max-width: 500px;
 
+        @include tab {
+            padding: 80px 80px;
+            max-width: 800px;
+        }
+
         &__ttl {
             @include ttlstyle($white);
             text-align: center;
+
+            @include tab {
+                margin-bottom: 10px;
+            }
         }
 
         &__ttl-jp {
@@ -503,6 +689,12 @@
             padding-bottom: 60px;
             margin-bottom: 60px;
             border-bottom: 1px solid $white;
+
+            @include tab {
+                padding-bottom: 80px;
+                margin-bottom: 80px;
+                font-size: 18px;
+            }
         }
 
         &__item {
@@ -512,7 +704,7 @@
     }
 
     .form {
-        
+
         &__box {
             padding-left: 20px;
             margin: 0 0 0 auto;
@@ -524,17 +716,27 @@
                 margin-bottom: 0;
                 text-align: right;
 
+                @include tab {
+                    margin-top: 50px;
+                }
+
                 & span {
                     display: inline-block;
                     vertical-align: middle;
                     line-height: 1;
                     position: absolute;
-                    top: 50%;
+                    top: 68%;
                     right: 20px;
                     width: 40px;
                     height: 1px;
                     background: $black;
-    
+
+                    @include tab {
+                        top: 50%;
+                        right: 30px;
+                        width: 60px;
+                    }
+
                     &::after {
                         content: "";
                         display: block;
@@ -544,12 +746,19 @@
                         right: 0;
                         top: -4px;
                         border-right: 8px solid transparent;
-                        border-bottom: 4px solid $black; 
+                        border-bottom: 4px solid $black;
                     }
                 }
+
             }
+
+            @include tab {
+                display: flex;
+                justify-content: space-between;
+            }
+
         }
-        
+
         &__label {
             display: flex;
             justify-content: space-between;
@@ -560,9 +769,20 @@
                 font-size: 12px;
                 font-weight: 400;
                 letter-spacing: 0.2em;
+
+                @include tab {
+                    display: block;
+                    margin-top: 5px;
+                }
             }
+
+            @include tab {
+                display: block;
+                padding-bottom: 0;
+            }
+
         }
-        
+
         &__input {
             width: 100%;
             padding: 20px 10px;
@@ -570,18 +790,26 @@
             border: none;
             font-size: 16px;
             letter-spacing: 0.2em;
+
+            @include tab {
+                width: 70%;
+            }
         }
-    
+
         &__message {
             width: 100%;
             height: 300px;
-            padding: 20px 10px;
+            padding: 20px;
             background: $inputarea;
             border: none;
             font-size: 16px;
             letter-spacing: 0.2em;
+
+            @include tab {
+                width: 70%;
+            }
         }
-    
+
         &__submit {
             width: 200px;
             padding: 17px 10px;
@@ -597,6 +825,11 @@
 
             &:hover {
                 background: $gray;
+            }
+
+            @include tab {
+                width: 300px;
+                padding: 37px 10px;
             }
         }
 

@@ -15,8 +15,17 @@
     background: $black;
     cursor: pointer;
 
+    @include pc {
+        width: 100px;
+        height: 100px;
+    }
+
     &__top {
         @include btn(-6px);
+
+        @include pc {
+            @include btn(-10px);
+        }
     }
 
     &__middle {
@@ -25,6 +34,10 @@
 
     &__bottom {
         @include btn(6px);
+
+        @include pc {
+            @include btn(10px);
+        }
     }
 }
 
@@ -41,11 +54,19 @@
     transition: all 0.4s;
     pointer-events: none;
 
+    @include tab {
+        padding: 0 80px;
+    }
+
     &__nav {
         padding-top: 50px;
         font-family: $roboto;
         transform: translateY(-50px);
         transition: all 0.5s;
+
+        @include tab {
+            padding-top: 130px;
+        }
     }
 
     &__list {

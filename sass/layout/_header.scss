@@ -11,19 +11,30 @@
     left: 0;
     z-index: 2;
     font-family: $roboto;
+
+    @include pc {
+        padding: 29px 40px;
+    }
     
     &__wrap {
-        
+        @include pc {
+
+        }
     }
 
     &__ttlbox {
         display: flex;
+        align-items: center;
         transition: 0.3s;
     }
 
     &__ttl {
         font-size: 24px;
         font-weight: 700;
+
+        @include pc {
+            font-size: 32px;
+        }
 
         & span {
             color: $gray;
@@ -36,6 +47,11 @@
         display: flex;
         align-items: center;
 
+        @include pc {
+            font-size: 20px;
+            margin-left: 27px;
+        }
+
         &::before {
             content: "";
             margin-right: 15px;
@@ -43,6 +59,11 @@
             width: 1px;
             height: 21px;
             background: $gray;
+
+            @include pc {
+                margin-right: 27px;
+                height: 42px;
+            }
         }
     }
 }
