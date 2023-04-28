@@ -35,11 +35,24 @@
         @include pc {
             font-size: 32px;
         }
+    }
 
-        & span {
-            color: $gray;
+    &__pic {
+        width: 28px;
+        height: 28px;
+        margin-bottom: 2px;
+
+        @include pc {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 4px;
         }
     }
+
+    &__img {
+        @include img;
+    }
+
 
     &__txt {
         font-size: 12px;

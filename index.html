@@ -4,9 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
   <meta name="keywords" content="フロントエンドエンジニア, Webデザイナー, portfolio, ポートフォリオ, コーディング, ウェブ, 制作, デザイン">
   <meta name="description" content="フロントエンドエンジニア志望です。ご興味を持っていただけましたらお気軽にお声掛けください。">
+  <meta name="robots" content="noindex, nofollow">
   <title>YUU NAKAGAKI PORTFOLIO SITE</title>
+  <link rel="icon" href="images/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Roboto:wght@400;500;700&display=swap"
@@ -20,7 +23,8 @@
       <div class="header__wrap">
 
         <div id="header__ttlbox" class="header__ttlbox">
-          <h1 class="header__ttl"><span>U</span> NAKAGAKI</h1>
+          <p class="header__pic"><img class="header__img" src="images/top/u.png" alt="Uロゴ"></p>
+          <h1 class="header__ttl">NAKAGAKI</h1>
           <p class="header__txt">PORTFOLIO SITE</p>
         </div>
 
@@ -30,9 +34,11 @@
           <span id="btn__bottom" class="btn__bottom"></span>
         </div>
 
-
         <nav id="gnav" class="gnav">
-          <p class="gnav__ttl"><span>U</span> NAKAGAKI</p>
+          <div class="gnav__ttlbox">
+            <p class="gnav__pic"><img class="gnav__img" src="images/top/u.png" alt="Uロゴ"></p>
+            <p class="gnav__ttl">NAKAGAKI</p>
+          </div>
           <ul id="gnav__nav" class="gnav__nav">
             <li class="gnav__list"><a href="#" class="gnav__link">TOP<br><span>トップ</span></a></li>
             <li class="gnav__list"><a href="#works" class="gnav__link">WORKS<br><span>制作実績</span></a></li>
@@ -86,12 +92,14 @@
         <div id="works__scroll-wrapper" class="works__scroll-wrapper">
           <ul id="works__scroll-list" class="works__scroll-list">
             <li class="works__scroll-head">
-              <h2 class="works__ttl">WORKS</h2>
-              <p class="works__ttl-jp">制作実績</p>
-              <p class="works__txt">サイトに訪ねてくる人が、何を求めているのか。<br>
-                サイトを作りたい企業や人が、何を伝えたいのか。<br>
-                関係者の視点をそれぞれ意識し、考え抜いた上で、<br>
-                作品を設計することを心がけています。</p>
+              <div>
+                <h2 class="works__ttl">WORKS</h2>
+                <p class="works__ttl-jp">制作実績</p>
+                <p class="works__txt">サイトに訪ねてくる人が、何を求めているのか。<br>
+                  サイトを作りたい企業や人が、何を伝えたいのか。<br>
+                  関係者の視点をそれぞれ意識し、考え抜いた上で、<br>
+                  作品を設計することを心がけています。</p>
+              </div>
               <p class="works__btn"><a href="allworks/index.html" class="works__link">VIEW ALL WORKS<span></span></a>
               </p>
             </li>
@@ -339,10 +347,14 @@
       </div>
 
       <section id="skill" class="skill">
-        <h2 class="skill__ttl">SKILL</h2>
-        <p class="skill__ttl-jp">スキル・使用ソフト一覧</p>
-        <p class="skill__txt">新しい知識や技術を積極的に取り入れ、自分にできることの範囲を広げていくことに達成感を感じます。インプットとアウトプットを繰り返し、着実に技術を積み上げていきたいと思っています。
-        </p>
+        <div class="skill__box">
+          <div class="skill__ttlbox">
+            <h2 class="skill__ttl">SKILL</h2>
+            <p class="skill__ttl-jp">スキル・使用ソフト一覧</p>
+          </div>
+          <p class="skill__txt">新しい知識や技術を積極的に取り入れ、自分にできることの範囲を広げていくことに達成感を感じます。インプットとアウトプットを繰り返し、着実に技術を積み上げていきたいと思っています。
+          </p>
+        </div>
         <div class="skill__skillbox">
           <ul class="skill__filter">
             <li data-filter="all" class="is-active">ALL</li>
@@ -452,11 +464,12 @@
       </section>
 
       <section id="contact" class="contact">
-        <h2 class="contact__ttl">CONTACT</h2>
-        <p class="contact__ttl-jp">ご連絡先</p>
-        <p class="contact__txt">もし興味をお持ちいただけましたら、<br>
-          詳しくお話をする機会をいただけますと幸いです。</p>
-
+        <div class="contact__ttlbox">
+          <h2 class="contact__ttl">CONTACT</h2>
+          <p class="contact__ttl-jp">ご連絡先</p>
+          <p class="contact__txt">もし興味をお持ちいただけましたら、<br>
+            詳しくお話をする機会をいただけますと幸いです。</p>
+        </div>
         <form id="form" class="form"
           action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeRUQozhEWYF1ZHa4wERU4XgURniT6xkhsc_RQNQedlC5q_QQ/formResponse"
           method="post" target="hidden_iframe" onsubmit="submitted=true;">
@@ -465,12 +478,12 @@
             <input id="name" type="text" name="" class="form__input" required placeholder="（例）山田　太郎">
           </div>
           <div class="form__box">
-            <label for="name" class="form__label">会社名<span>COMPANY NAME</span></label>
-            <input id="name" type="text" name="" class="form__input" placeholder="（例）株式会社　〇〇〇">
+            <label for="companyname" class="form__label">会社名<span>COMPANY NAME</span></label>
+            <input id="companyname" type="text" name="" class="form__input" placeholder="（例）株式会社　〇〇〇">
           </div>
           <div class="form__box">
-            <label for="name" class="form__label">電話番号<span>PHONE NUMBER</span></label>
-            <input id="name" type="text" name="" class="form__input" placeholder="（例）000-0000-0000">
+            <label for="telephone" class="form__label">電話番号<span>PHONE NUMBER</span></label>
+            <input id="telephone" type="text" name="" class="form__input" placeholder="（例）000-0000-0000">
           </div>
           <div class="form__box">
             <label for="email" class="form__label">メールアドレス*<span>E-MAIL ADDRESS</span></label>

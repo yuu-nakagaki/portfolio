@@ -58,8 +58,77 @@
         padding: 0 80px;
     }
 
+    @include pc {
+        padding: 0 240px;
+        display: flex;
+        align-items: center;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50px;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: $translucent-white;
+
+        @include pc {
+            width: 1px;
+            height: 100%;
+            top: 0;
+            left: 320px;
+        }
+    }
+
+    &__ttlbox {
+        padding: 15px 0;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include pc {
+            top: 50%;
+            left: 40px;
+            transform: translateX(0);
+        }
+    }
+
+    &__pic {
+        width: 28px;
+        height: 28px;
+        margin-bottom: 2px;
+
+        @include pc {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 4px;
+        }
+    }
+
+    &__img {
+        @include img;
+    }
+
+    &__ttl {
+        text-align: center;
+        font-size: 24px;
+        color: $white;
+
+        @include pc {
+            font-size: 32px;
+            top: 50%;
+            left: 40px;
+            transform: translateX(0%);
+        }
+    }
+
     &__nav {
-        padding-top: 50px;
+        padding-top: 90px;
         font-family: $roboto;
         transform: translateY(-50px);
         transition: all 0.5s;
@@ -67,6 +136,13 @@
         @include tab {
             padding-top: 130px;
         }
+
+        @include pc {
+            padding-top: 0;
+            padding-left: 160px;
+            // border-left: 1px solid $white;
+        }
+
     }
 
     &__list {
@@ -74,6 +150,10 @@
         list-style-type: none;
         font-size: 34px;
         font-weight: 700;
+
+        @include pc {
+            font-size: 68px;
+        }
     }
 
     &__link {

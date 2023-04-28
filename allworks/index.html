@@ -4,10 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
   <meta name="keywords" content="フロントエンドエンジニア, Webデザイナー, portfolio, ポートフォリオ, コーディング, ウェブ, 制作, デザイン">
   <meta name="description" content="フロントエンドエンジニア志望です。ご興味を持っていただけましたらお気軽にお声掛けください。">
-  <meta name="robots" content="noindex , nofollow">
+  <meta name="robots" content="noindex, nofollow">
   <title>YUU NAKAGAKI PORTFOLIO SITE</title>
+  <link rel="icon" href="images/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Roboto:wght@400;500;700&display=swap"
@@ -18,40 +20,56 @@
 <body id="allworks">
   <div class="wrapper">
     <header class="header">
-      <h1 class="header__ttl">U NAKAGAKI</h1>
-      <p class="header__txt">PORTFOLIO SITE</p>
-      <div id="btn" class="btn">
-        <span class="btn__top"></span>
-        <span class="btn__middle"></span>
-        <span class="btn__bottom"></span>
-      </div>
-      <nav class="gnav">
-        <ul class="gnav__nav">
-          <li class="gnav__list"><a href="../index.html" class="gnav__link">TOP</a></li>
-          <li class="gnav__list"><a href="../index.html#works" class="gnav__link">WORKS</a></li>
-          <li class="gnav__list"><a href="../index.html#skill" class="gnav__link">SKILL</a></li>
-          <li class="gnav__list"><a href="../index.html#profile" class="gnav__link">PROFILE</a></li>
-          <li class="gnav__list"><a href="../index.html#contact" class="gnav__link">CONTACT</a></li>
-        </ul>
-      </nav>
+      <div class="header__wrap">
 
+        <div id="header__ttlbox" class="header__ttlbox">
+          <p class="header__pic"><img class="header__img" src="../images/top/u.png" alt="Uロゴ"></p>
+          <h1 class="header__ttl">NAKAGAKI</h1>
+          <p class="header__txt">PORTFOLIO SITE</p>
+        </div>
+
+        <div id="btn" class="btn">
+          <span id="btn__top" class="btn__top"></span>
+          <span id="btn__middle" class="btn__middle"></span>
+          <span id="btn__bottom" class="btn__bottom"></span>
+        </div>
+
+        <nav id="gnav" class="gnav">
+          <div class="gnav__ttlbox">
+            <p class="gnav__pic"><img class="gnav__img" src="images/top/u.png" alt="Uロゴ"></p>
+            <p class="gnav__ttl">NAKAGAKI</p>
+          </div>
+          <ul id="gnav__nav" class="gnav__nav">
+            <li class="gnav__list"><a href="#" class="gnav__link">TOP<br><span>トップ</span></a></li>
+            <li class="gnav__list"><a href="#works" class="gnav__link">WORKS<br><span>制作実績</span></a></li>
+            <li class="gnav__list"><a href="#skill" class="gnav__link">SKILL<br><span>スキル・使用ソフト一覧</span></a></li>
+            <li class="gnav__list"><a href="#profile" class="gnav__link">PROFILE<br><span>プロフィール</span></a></li>
+            <li class="gnav__list"><a href="#contact" class="gnav__link">CONTACT<br><span>ご連絡先</span></a></li>
+          </ul>
+        </nav>
+
+      </div>
     </header>
     <main class="main">
       <section class="catalog">
         <h2 class="catalog__ttl">ALL WORKS</h2>
-        <p class="catalog__ttl--jp">制作実績一覧</p>
+        <p class="catalog__ttl-jp">制作実績一覧</p>
         <div class="catalog__container">
-          <a href="../works-01/index.html" class="catalog__boxlink">
-            <div class="catalog__box">
-              <p class="catalog__pic"><img src="../images/" alt="ネイルカラーを施したモデル男性" class="catalog__img"></p>
-              <p class="catalog__name">mens nail ARMOR</p>
-              <p class="catalog__type">プロダクトサイト</p>
-              <p class="catalog__txt">男性向けネイル用品を取り扱うショップのウェブサイト制作</p>
-            </div>
+          <a href="works-01/index.html" class="catalog__link">
+            <picture class="catalog__pic">
+              <source media="(min-width: 1024px)" srcset="../images/allworks/img01-pc.jpg">
+              <source media="(min-width: 768px)" srcset="../images/allworks/img01-pc.jpg">
+              <img src="../images/allworks/img01-sp.jpg" alt="ネイルカラーを施したモデル男性" class="catalog__img">
+            </picture>
           </a>
-
-
-
+          <div class="catalog__txtbox">
+            <p class="catalog__num">01</p>
+            <dl class="catalog__dl">
+              <dt>mens nail ARMOR</dt>
+              <dd>プロダクトサイト</dd>
+              <dd>男性向けネイル用品を取り扱うショップのウェブサイト制作</dd>
+            </dl>
+          </div>
 
         </div>
 

@@ -16,7 +16,6 @@ window.addEventListener('scroll', function(){
 });
 
 
-
 //ハンバーガーメニュー
 
 const hamBtn = document.querySelector('#btn');
@@ -65,8 +64,28 @@ gsap.to(".mv__wrap", {
         end: 'bottom 80%',
         opacity: 0,
         scrub: true,
-        markers: true
+        // markers: true
     }
+});
+
+
+//横スクロール（GSAP）
+const listWrapperEl = document.querySelector('#works__scroll-wrapper');
+const listEl = document.querySelector('#works__scroll-list');
+
+gsap.to(listEl, {
+    x: () => -(listEl.clientWidth - listWrapperEl.clientWidth),
+    ease: 'none',
+    scrollTrigger: {
+        trigger: '#works',
+        start: 'top top',
+        end: () => `+=${listEl.clientWidth - listWrapperEl.clientWidth}`,
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        markers: true,
+    },
 });
 
 

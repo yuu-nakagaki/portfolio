@@ -6,6 +6,18 @@
 
     counter-reset: mycounter;
 
+    .catalog {
+        padding: 120px 0;
+        text-align: center;
+
+        &__ttl {
+            @include ttlstyle;
+        }
+
+        &__ttl-jp {
+            @include ttl-jpstyle;
+        }
+    }
 
     //サムネイルの要素（pic？）に下の疑似要素でナンバリング
 
