@@ -4,61 +4,123 @@
 
 #allworks {
 
-    counter-reset: mycounter;
-
     .catalog {
-        padding: 120px 0;
-        text-align: center;
+        padding-top: 120px;
+
+        @include pc {
+            margin: 0 160px;
+        }
 
         &__ttl {
             @include ttlstyle;
+            text-align: center;
         }
 
         &__ttl-jp {
             @include ttl-jpstyle;
+            text-align: center;
+        }
+
+        &__container {
+
+            @include pc {
+                max-width: 1440px;
+                margin: 0 auto 120px;
+                display: flex;
+                justify-content: space-between;
+                gap: 40px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+        }
+
+        &__box {
+            margin-bottom: 60px;
+
+            @include pc {
+                margin-bottom: 0px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &__link {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        &__pic {
+            display: block;
+            margin: 0 auto;
+            width: 64%;
+
+            @include tab {
+                width: 58.5%;
+            }
+
+            @include pc {
+                width: 100%;
+            }
+        }
+
+        &__img {
+            @include img;
+        }
+
+        &__txtbox {
+            display: block;
+            margin: 0 auto;
+            width: 64%;
+
+            @include tab {
+                width: 58.5%;
+            }
+
+            @include pc {
+                padding-left: 40px;
+                width: 100%;
+            }
+        }
+
+        &__num {
+            font-size: 40px;
+            margin-bottom: 20px;
+            position: relative;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: -40px;
+                display: block;
+                width: 24px;
+                height: 2px;
+                background: $black;
+            }
+        }
+
+        &__dl {
+
+            dt {
+                font-size: 16px;
+                margin-bottom: 16px;
+
+                @include tab {
+                    font-size: 20px;
+                }
+            }
+
+            dd {
+                font-size: 14px;
+            }
         }
     }
 
-    //サムネイルの要素（pic？）に下の疑似要素でナンバリング
-
-    // &::before {
-    //     content: counter(mycounter, decimal-leading-zero);
-    //     counter-increment: mycounter;
-    //     font-family: $inter;
-    //     font-size: 90px;
-    //     font-weight: bold;
-    //     left: 315px;
-    //     position: relative;
-    //     top: 50px;
-    //   }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 }

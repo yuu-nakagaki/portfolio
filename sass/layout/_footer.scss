@@ -56,9 +56,103 @@
                 height: 120px;
                 top: -25%;
                 left: -60px;
-                background: url(../../images/top/totop-icon-pc.png) center center / cover;
+                background: url(../images/top/totop-icon-pc.png) center center / cover;
             }
         }
+    }
+
+    &__box {
+        position: absolute;
+        bottom: -80px;
+        width: 100%;
+
+        @include pc {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__prev {
+        display: inline-block;
+        position: relative;
+        transform-origin: left bottom;
+        transform: rotate(-90deg) translateY(50px);
+
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+            position: absolute;
+            top: 14px;
+            left: 40px;
+            width: 1px;
+            height: 24px;
+            background: $white;
+
+            @include tab {
+                height: 60px;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                height: 0;
+                width: 0;
+                position: absolute;
+                left: 0;
+                top: -4px;
+                border-right: 4px solid transparent;
+                border-bottom: 8px solid $white;
+            }
+        }
+    }
+
+    &__next {
+        display: inline-block;
+        position: relative;
+        transform-origin: right top;
+        transform: rotate(90deg) translateY(-121px);
+
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+            position: absolute;
+            bottom: 14px;
+            left: 40px;
+            width: 1px;
+            height: 24px;
+            background: $white;
+
+            @include tab {
+                height: 60px;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                height: 0;
+                width: 0;
+                position: absolute;
+                right: 0;
+                top: -4px;
+                border-left: 4px solid transparent;
+                border-bottom: 8px solid $white;
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: 17px;
+        width: 220px;
+        background: $black;
+        color: $white;
+        text-decoration: none;
+        text-align: center;
+        font-family: $roboto;
+        font-weight: 400;
     }
 
     &__copy {

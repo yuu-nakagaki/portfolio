@@ -129,7 +129,7 @@
                 position: absolute;
                 top: 50%;
                 left: -49.5px;
-                background: url(../../images/top/loading-icon-sp.png) center center / cover;
+                background: url(../images/top/loading-icon-sp.png) center center / cover;
                 animation: rotation 6s linear infinite;
 
                 @include pc {
@@ -137,7 +137,7 @@
                     height: 120px;
                     top: 75%;
                     left: -60px;
-                    background: url(../../images/top/loading-icon-pc01.png) center center / cover;
+                    background: url(../images/top/loading-icon-pc01.png) center center / cover;
                 }
             }
 
@@ -292,6 +292,11 @@
             color: $black;
             font-family: $roboto;
             text-decoration: none;
+            transition: 0.3s;
+
+            &:hover {
+                background: $gray;
+            }
 
             @include tab {
                 padding: 37px;
@@ -461,32 +466,32 @@
 
         &__marquee-img02 {
             @extend .looptxt__marquee-img01;
-            background: url(../../images/top/img11-sp.jpg) center center / cover;
+            background: url(../images/top/img11-sp.jpg) center center / cover;
         }
 
         &__marquee-img03 {
             @extend .looptxt__marquee-img01;
-            background: url(../../images/top/img12-sp.jpg) center center / cover;
+            background: url(../images/top/img12-sp.jpg) center center / cover;
         }
 
         &__marquee-img04 {
             @extend .looptxt__marquee-img01;
-            background: url(../../images/top/img13-sp.jpg) center center / cover;
+            background: url(../images/top/img13-sp.jpg) center center / cover;
         }
 
         &__marquee-img05 {
             @extend .looptxt__marquee-img01;
-            background: url(../../images/top/img14-sp.jpg) center center / cover;
+            background: url(../images/top/img14-sp.jpg) center center / cover;
         }
 
         &__marquee-img06 {
             @extend .looptxt__marquee-img01;
-            background: url(../../images/top/img15-sp.jpg) center center / cover;
+            background: url(../images/top/img15-sp.jpg) center center / cover;
         }
 
         &__marquee-img07 {
             @extend .looptxt__marquee-img01;
-            background: url(../../images/top/img16-sp.jpg) center center / cover;
+            background: url(../images/top/img16-sp.jpg) center center / cover;
         }
 
         &__marquee-graycolor {
@@ -734,7 +739,7 @@
                 position: absolute;
                 top: -17%;
                 left: -49.5px;
-                background: url(../../images/top/loading-icon-sp.png) center center / cover;
+                background: url(../images/top/loading-icon-sp.png) center center / cover;
                 animation: rotation 10s linear infinite;
 
                 @include pc {
@@ -742,7 +747,7 @@
                     height: 250px;
                     top: -20%;
                     left: -25%;
-                    background: url(../../images/top/loading-icon-pc02.png) center center / cover;
+                    background: url(../images/top/loading-icon-pc02.png) center center / cover;
                 }
             }
 

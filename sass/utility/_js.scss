@@ -2,45 +2,42 @@
 //as *で読み込みファイル名を省略することができます
 @use "../global" as *;
 
-#top {
 
-    .is-hide { 
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-
-    .rotate-top {
-        transform: rotate(45deg);
-    }
-
-    .hide-middle {
-        opacity: 0;
-    }
-
-    .rotate-bottom {
-        transform: rotate(-45deg);
-    }
-
-    .gnav-active {
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    .gnav__nav-active {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
+.is-hide {
+    opacity: 0;
+    transform: translateY(-50px);
 }
 
-body {
-
-    &.menu-open {
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        overflow: hidden;
-    }
-
+.rotate-top {
+    transform: rotate(45deg);
 }
+
+.hide-middle {
+    opacity: 0;
+}
+
+.rotate-bottom {
+    transform: rotate(-45deg);
+}
+
+.gnav-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.gnav__nav-active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+// body {
+
+//     &.menu-open {
+//         height: 100%;
+//         position: fixed;
+//         top: 0;
+//         left: 0;
+//         overflow: hidden;
+//     }
+
+// }
