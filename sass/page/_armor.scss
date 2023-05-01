@@ -29,11 +29,11 @@
         &__bg {
             width: 100%;
             height: 450px;
-            background: url(../../images/armor/img01-sp.jpg) center center / cover;
+            background: url(../images/armor/img01-sp.jpg) center center / cover;
 
             @include tab {
                 height: 720px;
-                background: url(../../images/armor/img01-tab.jpg) center center / cover;
+                background: url(../images/armor/img01-tab.jpg) center center / cover;
             }
 
             @include pc {
@@ -42,7 +42,7 @@
                 right: 0;
                 width: 1600px;
                 height: 900px;
-                background: url(../../images/armor/img01-pc.jpg) center center / cover;
+                background: url(../images/armor/img01-pc.jpg) center center / cover;
             }
         }
 

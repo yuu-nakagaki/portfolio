@@ -1,0 +1,383 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+
+.mv {
+    width: 100%;
+    background-image: url(../images/mv.jpg);
+    background-size: 120%;
+    background-position: center 55%;
+    height: 200vh;
+
+    &:before {
+        content: "";
+        display: block;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    }
+
+    &__ttl {
+        position: absolute;
+        top: 400px;
+        left: 160px;
+        color: #fff;
+        font-family: $EN;
+        font-size: 48px;
+        letter-spacing: 0.1em;
+
+        &::after {
+            content: "爪先に自信を纏う";
+            display: block;
+            margin-top: 24px;
+            font-size: 12px;
+        }
+    }
+
+}
+
+.concept,
+.product,
+.news,
+.info {
+    &__ttl {
+        font-size: 24px;
+        font-family: $EN;
+        letter-spacing: 0.1em;
+        margin-bottom: 8px;
+    }
+
+    &__sub {
+        font-style: 12px;
+        font-family: $JP;
+        letter-spacing: 0.2em;
+        margin-bottom: 64px;
+    }
+
+}
+
+.concept {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1240px;
+    text-align: center;
+    color: #fff;
+
+    &__txt {
+        margin-bottom: 80px;
+        letter-spacing: 0.1em;
+        line-height: 2;
+    }
+
+    &__btn {
+        display: flex;
+        background-color: #000;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: #fff;
+
+            & a {
+                color: #000;
+            }
+
+            & span {
+                border-top: solid 1px #000;
+                border-right: solid 1px #000;
+            }
+        }
+
+        & a {
+            display: block;
+            width: 240px;
+            padding: 20px;
+            position: relative;
+            font-family: $EN;
+            text-decoration: none;
+            text-align: left;
+            letter-spacing: 0.1em;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        & span {
+            display: block;
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            top: 50%;
+            right: 14px;
+            border-top: solid 1px #fff;
+            border-right: solid 1px #fff;
+            transform: translateY(-50%) rotate(45deg);
+            transition: 0.3s;
+        }
+    }
+
+}
+
+.product {
+    background-color: #000;
+    color: #fff;
+    padding: 160px 0;
+
+    &__ttl,
+    &__sub {
+        margin-left: 160px;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 1600px;
+        margin: 0 auto;
+    }
+
+    &__box {
+        width: 480px;
+        margin-bottom: 80px;
+    }
+
+    &__link {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    &__pic {
+        height: 400px;
+        margin-bottom: 32px;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__name {
+        font-style: 16px;
+        margin-bottom: 12px;
+    }
+
+    &__subname {
+        margin-bottom: 32px;
+    }
+
+    &__price {
+        font-size: 12px;
+    }
+
+    &__btn {
+        width: 240px;
+        margin: 0 auto;
+        display: flex;
+        background-color: #fff;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: #aaa;
+
+            & a {
+                color: #000;
+            }
+        }
+
+        & a {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            position: relative;
+            font-family: $EN;
+            text-decoration: none;
+            text-align: left;
+            letter-spacing: 0.1em;
+            color: #000;
+            transition: 0.3s;
+        }
+
+        & span {
+            display: block;
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            top: 50%;
+            right: 14px;
+            border-top: solid 1px #000;
+            border-right: solid 1px #000;
+            transform: translateY(-50%) rotate(45deg);
+            transition: 0.3s;
+        }
+    }
+}
+
+.news {
+    width: 1280px;
+    margin: 160px auto;
+
+    &__container {
+        display: block;
+
+    }
+
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        width: 100%;
+        margin-bottom: 80px;
+    }
+
+    &__subbox {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+
+    }
+
+    &__pic {
+        width: 400px;
+        height: 320px;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
+
+    &__txt {
+        font-size: 21px;
+        margin-bottom: 24px;
+    }
+
+    &__date {
+        margin-bottom: 64px;
+    }
+
+    &__more {
+        transition: 0.3s;
+
+        &:hover {
+
+            & a {
+                color: #aaa;
+            }
+
+            & span {
+                border-top: solid 1px #aaa;
+                border-right: solid 1px #aaa;
+            }
+        }
+
+        & a {
+            display: inline-block;
+            padding: 10px;
+            position: relative;
+            left: -10px;
+            font-family: $EN;
+            text-align: left;
+            letter-spacing: 0.1em;
+            color: #000;
+            transition: 0.3s;
+        }
+
+        & span {
+            display: block;
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            border-top: solid 1px #000;
+            border-right: solid 1px #000;
+            transform: translateY(-50%) rotate(45deg);
+            transition: 0.3s;
+        }
+    }
+
+    &__btn {
+        width: 240px;
+        margin: 0 auto;
+        display: flex;
+        background-color: #000;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: #aaa;
+
+            & a {
+                color: #000;
+            }
+
+            & span {
+                border-top: solid 1px #000;
+                border-right: solid 1px #000;
+            }
+        }
+
+        & a {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            position: relative;
+            font-family: $EN;
+            text-decoration: none;
+            text-align: left;
+            letter-spacing: 0.1em;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        & span {
+            display: block;
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            top: 50%;
+            right: 14px;
+            border-top: solid 1px #fff;
+            border-right: solid 1px #fff;
+            transform: translateY(-50%) rotate(45deg);
+            transition: 0.3s;
+        }
+    }
+
+}
+
+.info {
+    display: flex;
+    justify-content: end;
+
+    &__box {
+        width: 100%;
+        padding-top: 80px;
+        padding-left: 320px;
+        background-color: #000;
+        color: #fff;
+    }
+
+    &__adress,
+    &__time {
+        margin-bottom: 12px;
+    }
+
+    &__pic {
+        width: 1000px;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+    }
+}
