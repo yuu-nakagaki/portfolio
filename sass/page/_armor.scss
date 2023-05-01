@@ -1,0 +1,359 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#armor {
+
+    .mv {
+        padding-top: 120px;
+        position: relative;
+
+        @include tab {
+            padding-top: 160px;
+        }
+
+        &__ttl {
+            @include ttlstyle;
+            margin-bottom: 80px;
+            text-align: center;
+
+            @include tab {
+                margin-bottom: 120px;
+            }
+
+            @include pc {
+                font-size: 24px;
+            }
+        }
+
+        &__bg {
+            width: 100%;
+            height: 450px;
+            background: url(../../images/armor/img01-sp.jpg) center center / cover;
+
+            @include tab {
+                height: 720px;
+                background: url(../../images/armor/img01-tab.jpg) center center / cover;
+            }
+
+            @include pc {
+                position: absolute;
+                top: 360px;
+                right: 0;
+                width: 1600px;
+                height: 900px;
+                background: url(../../images/armor/img01-pc.jpg) center center / cover;
+            }
+        }
+
+        &__txtbox {
+            position: absolute;
+            bottom: 40px;
+            left: 20px;
+            color: $white;
+
+            @include tab {
+                left: 80px;
+            }
+
+            @include pc {
+                bottom: -100vh;
+                left: auto;
+                right: 160px;
+            }
+        }
+
+        &__num {
+            font-family: $EBGaramond;
+            font-size: 30px;
+            margin-bottom: 10px;
+
+            @include pc {
+                font-size: 60px;
+            }
+        }
+    }
+
+    .caption {
+        @include secstyle;
+
+        @include tab {
+            padding: 80px;
+        }
+
+        @include pc {
+            padding: 400px 160px 160px;
+            margin-top: 800px;
+        }
+
+        &__box {
+
+            @include tab {
+                border-left: 1px solid $white;
+                padding-left: 80px;
+            }
+
+            @include pc {
+                padding-left: 160px;
+            }
+        }
+
+        &__txtbox {
+            padding-left: 20px;
+            border-left: 1px solid $white;
+
+            @include tab {
+                border-left: none;
+                padding-left: 0;
+                min-width: 60%;
+            }
+
+            @include pc {
+                width: 60%;
+            }
+        }
+
+        &__ttl {
+            @include ttlstyle($white);
+            margin-bottom: 16px;
+            position: relative;
+
+            @include tab {
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: -40px;
+                    display: block;
+                    width: 24px;
+                    height: 2px;
+                    background: $white;
+                }
+            }
+
+            @include pc {
+                font-size: 36px;
+            }
+
+        }
+
+        &__category {
+            margin-bottom: 50px;
+
+            @include tab {
+                margin-bottom: 60px;
+            }
+
+            @include pc {
+                font-size: 20px;
+            }
+        }
+
+        &__dl {
+
+            @include tab {
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 60px;
+            }
+
+            dt {
+                font-size: 16px;
+                margin-bottom: 14px;
+
+                @include tab {
+                    width: 40%;
+                    margin-bottom: 40px;
+                }
+
+                @include pc {
+                    width: 40%;
+                    font-size: 16px;
+                }
+            }
+
+            dd {
+                font-weight: 400;
+                margin-bottom: 40px;
+
+                @include tab {
+                    font-size: 16px;
+                    width: 60%;
+                }
+
+                @include pc {
+                    width: 60%;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        &__btn {
+            position: relative;
+            text-align: center;
+
+            & span {
+                display: inline-block;
+                vertical-align: middle;
+                line-height: 1;
+                position: absolute;
+                top: 50%;
+                right: 30px;
+                width: 60px;
+                height: 1px;
+                background: $black;
+
+                @include tab {
+                    width: 60px;
+                    right: 64px;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    height: 0;
+                    width: 0;
+                    position: absolute;
+                    right: 0;
+                    top: -4px;
+                    border-right: 8px solid transparent;
+                    border-bottom: 4px solid $black;
+                }
+            }
+        }
+
+        &__link {
+            display: block;
+            padding: 17px;
+            background: $white;
+            color: $black;
+            font-family: $roboto;
+            font-weight: 400;
+            text-decoration: none;
+            transition: 0.3s;
+
+            &:hover {
+                background: $gray;
+            }
+
+            @include tab {
+                width: 40%;
+                min-width: 300px;
+                margin: 0 0 0 auto;
+                padding: 37px;
+            }
+
+            @include pc {
+                width: 50%;
+                max-width: 520px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .description {
+        padding: 80px 20px;
+
+        @include tab {
+            padding: 80px;
+        }
+
+        @include pc {
+            padding: 160px 160px 0;
+            display: flex;
+        }
+
+        &__box--01 {
+            margin-bottom: 80px;
+
+            @include pc {
+                width: 55%;
+            }
+        }
+
+        &__box--02 {
+
+            @include pc {
+                width: 45%;
+                padding-left: 80px;
+                border-left: 1px solid $black;
+            }
+        }
+
+        &__pic--01 {
+            display: block;
+            margin: 0 auto;
+            width: 90%;
+
+            @include pc {
+                width: 80%;
+                max-width: 640px;
+            }
+        }
+
+        &__img--01 {
+            @include img;
+            margin-bottom: 60px;
+        }
+
+        &__pic--02 {
+            display: block;
+            margin: 0 auto;
+            width: 80%;
+
+            @include tab {
+                width: 62.5%;
+                max-width: 480px;
+            }
+        }
+
+        &__img--02 {
+            @include img;
+        }
+
+        &__picbox {
+            @include pc {
+                display: flex;
+            }
+        }
+
+        &__txt {
+            font-size: 14px;
+            line-height: 2;
+
+            @include tab {
+                font-size: 16px;
+            }
+
+            @include pc {
+                font-size: 14px;
+                margin: 0 40px;
+            }
+        }
+
+        &__dl {
+
+            dt {
+                font-size: 18px;
+                margin-bottom: 30px;
+
+                @include tab {
+                    font-size: 20px;
+                }
+            }
+
+            dd {
+                margin-bottom: 60px;
+                line-height: 2;
+
+                @include tab {
+                    margin-bottom: 80px;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

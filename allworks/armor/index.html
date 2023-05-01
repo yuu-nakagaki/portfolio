@@ -18,7 +18,7 @@
     <link href="../../css/style.css" rel="stylesheet" media="all">
 </head>
 
-<body id="works-01">
+<body id="armor">
     <div class="wrapper">
         <header class="header">
             <div class="header__wrap">
@@ -41,13 +41,18 @@
                         <p class="gnav__ttl">NAKAGAKI</p>
                     </div>
                     <ul id="gnav__nav" class="gnav__nav">
-                        <li class="gnav__list"><a href="#" class="gnav__link">TOP<br><span>トップ</span></a></li>
-                        <li class="gnav__list"><a href="#works" class="gnav__link">WORKS<br><span>制作実績</span></a></li>
-                        <li class="gnav__list"><a href="#skill" class="gnav__link">SKILL<br><span>スキル・使用ソフト一覧</span></a>
+                        <li class="gnav__list"><a href="../../index.html" class="gnav__link">TOP<br><span>トップ</span></a>
                         </li>
-                        <li class="gnav__list"><a href="#profile" class="gnav__link">PROFILE<br><span>プロフィール</span></a>
+                        <li class="gnav__list"><a href="../../index.html#works"
+                                class="gnav__link">WORKS<br><span>制作実績</span></a></li>
+                        <li class="gnav__list"><a href="../../index.html#skill"
+                                class="gnav__link">SKILL<br><span>スキル・使用ソフト一覧</span></a>
                         </li>
-                        <li class="gnav__list"><a href="#contact" class="gnav__link">CONTACT<br><span>ご連絡先</span></a>
+                        <li class="gnav__list"><a href="../../index.html#profile"
+                                class="gnav__link">PROFILE<br><span>プロフィール</span></a>
+                        </li>
+                        <li class="gnav__list"><a href="../../index.html#contact"
+                                class="gnav__link">CONTACT<br><span>ご連絡先</span></a>
                         </li>
                     </ul>
                 </nav>
@@ -65,40 +70,46 @@
                 </div>
             </div>
             <section id="caption" class="caption">
-                <h2 class="caption__ttl">mens nail ARMOR</h2>
-                <p class="caption__category">プロダクトサイト</p>
-                <dl class="caption__dl">
-                    <dt>担当範囲</dt>
-                    <dd>デザイン、コーディング</dd>
-                    <dt>使用言語・ソフト</dt>
-                    <dd>HTML(LS)、CSS3、Adobe XD、Photoshop</dd>
-                    <dt>対応機種</dt>
-                    <dd>パソコン</dd>
-                    <dt>制作期間</dt>
-                    <dd>デザイン6時間、コーディング6時間</dd>
-                </dl>
-                <p class="caption__btn">
-                    <a href="../../allworks/armor/site/index.html" class="caption__link">
-                        WEB SITE<span></span></a>
-                </p>
+                <div class="caption__box">
+                    <div class="caption__txtbox">
+                        <h2 class="caption__ttl">mens nail ARMOR</h2>
+                        <p class="caption__category">プロダクトサイト</p>
+                        <dl class="caption__dl">
+                            <dt>担当範囲</dt>
+                            <dd>デザイン、コーディング</dd>
+                            <dt>使用言語・ソフト</dt>
+                            <dd>HTML(LS)、CSS3、Adobe XD、Photoshop</dd>
+                            <dt>対応機種</dt>
+                            <dd>パソコン</dd>
+                            <dt>制作期間</dt>
+                            <dd>デザイン6時間、コーディング6時間</dd>
+                        </dl>
+                    </div>
+                    <p class="caption__btn">
+                        <a href="../../allworks/armor/site/index.html" class="caption__link">
+                            WEB SITE<span></span></a>
+                    </p>
+                </div>
             </section>
 
             <div class="description">
-                <div class="description__box">
+                <div class="description__box--01">
                     <p class="description__pic--01">
-                        <img src="../../images/armor/img02.png" alt="画面嵌め込みイメージ" class="description__img">
+                        <img src="../../images/armor/img02.png" alt="画面嵌め込みイメージ" class="description__img--01">
                     </p>
-                    <picture class="description__pic--02">
-                        <img src="../../images/armor/img03.jpg" alt="サイト全体図" class="description__img">
-                    </picture>
-                    <p class="description__txt">メインビジュアルの力強さを印象付けるため、<br>
-                        約2スクロール分の画面高を使って<br>
-                        大胆に写真を配置しています。<br>
-                        ページスクロールを促すため、<br>
-                        下方向への目線誘導を意識した構図としました。
-                    </p>
+                    <div class="description__picbox">
+                        <picture class="description__pic--02">
+                            <img src="../../images/armor/img03.jpg" alt="サイト全体図" class="description__img--02">
+                        </picture>
+                        <p class="description__txt">メインビジュアルの力強さを印象付けるため、<br>
+                            約2スクロール分の画面高を使って<br>
+                            大胆に写真を配置しています。<br>
+                            ページスクロールを促すため、<br>
+                            下方向への目線誘導を意識した構図としました。
+                        </p>
+                    </div>
                 </div>
-                <div class="description__box">
+                <div class="description__box--02">
                     <dl class="description__dl">
                         <dt>サイト概要</dt>
                         <dd>男性向けネイル用品を取り扱うショップのウェブサイト制作</dd>
@@ -137,7 +148,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
-    <script src="js/function.js"></script>
+    <script src="../../js/function.js"></script>
 </body>
 
 </html>

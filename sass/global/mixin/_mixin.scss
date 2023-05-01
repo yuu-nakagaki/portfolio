@@ -62,3 +62,9 @@
     @content;
   }
 }
+
+@mixin macpc($min-width: 1280px) {
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
+}
