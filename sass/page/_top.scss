@@ -306,10 +306,10 @@
 
         &__scroll-item {
             position: relative;
-            margin-bottom: 180px;
+            margin-bottom: 55%;
 
             @include tab {
-                margin-bottom: 240px;
+                margin-bottom: 50%;
             }
 
             @include pc {
@@ -343,15 +343,15 @@
         }
 
         &__scroll-txtbox {
+            width: 100%;
             padding-left: 20px;
             position: absolute;
-            bottom: -80%;
+            top: 70%;
             left: 0;
             border-left: 1px solid $white;
 
             @include tab {
                 padding-left: 40px;
-                bottom: -45%;
                 border-left: 2px solid $white;
             }
 
