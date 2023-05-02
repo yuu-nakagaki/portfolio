@@ -27,7 +27,16 @@
 
 .gnav__nav-active {
     transform: translateY(0);
+    padding-top: 80px;
     opacity: 1;
+
+    @include tab {
+        padding-top: 130px;
+    }
+
+    @include pc {
+        padding-top: 80px;
+    }
 }
 
 // body {

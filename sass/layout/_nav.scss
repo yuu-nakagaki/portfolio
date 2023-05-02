@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     z-index: 999;
@@ -43,7 +43,7 @@
 
 .gnav {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     padding: 0 40px;
     background: $black;
     position: fixed;
@@ -53,6 +53,9 @@
     opacity: 0;
     transition: all 0.4s;
     pointer-events: none;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
     @include tab {
         padding: 0 80px;
@@ -61,7 +64,6 @@
     @include pc {
         padding: 0 240px;
         display: flex;
-        align-items: center;
     }
 
     &::before {
@@ -128,7 +130,7 @@
     }
 
     &__nav {
-        padding-top: 90px;
+        padding-top: 80px;
         font-family: $roboto;
         transform: translateY(-50px);
         transition: all 0.5s;
@@ -140,30 +142,68 @@
         @include pc {
             padding-top: 0;
             padding-left: 160px;
-            // border-left: 1px solid $white;
         }
 
     }
 
-    &__list {
-        margin-bottom: 40px;
+    &__list--01 {
+        margin-bottom: 32px;
         list-style-type: none;
         font-size: 34px;
         font-weight: 700;
 
+        @include tab {
+            margin-bottom: 48px;
+        }
+
         @include pc {
-            font-size: 68px;
+            font-size: 56px;
+        }
+    }
+
+    &__list--02 {
+        @extend .gnav__list--01;
+        margin-left: 50px;
+        font-size: 20px;
+        position: relative;
+
+        @include pc {
+            margin-left: 100px;
+            font-size: 40px;
+        }
+
+        &::before {
+            content: "";
+            width: 40px;
+            height: 1px;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: -40px;
+            background: $white;
+
+            @include pc {
+                width: 80px;
+                left: -90px;
+            }
         }
     }
 
     &__link {
         display: block;
-        width: 200px;
+        width: 60%;
         padding: 10px;
         text-decoration: none;
         color: $white;
         position: relative;
 
+        @include tab {
+            width: 40%;
+        }
+
+        @include pc {
+            width: 100%;
+        }
 
         & span {
             position: absolute;
@@ -172,4 +212,9 @@
             font-family: $JP;
         }
     }
+
+}
+
+.gnav::-webkit-scrollbar {
+    display: none;
 }
