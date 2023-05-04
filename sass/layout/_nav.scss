@@ -119,6 +119,7 @@
     &__ttl {
         text-align: center;
         font-size: 24px;
+        font-family: $roboto;
         color: $white;
 
         @include pc {

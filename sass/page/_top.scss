@@ -183,7 +183,7 @@
             padding: 80px;
         }
 
-        @include pc {
+        @include pc-large {
             padding: 0 160px;
             height: 100vh;
             display: flex;
@@ -194,7 +194,7 @@
 
         &__scroll-wrapper {
 
-            @include pc {
+            @include pc-large {
                 position: relative;
                 width: 100%;
                 height: 100vh;
@@ -203,8 +203,8 @@
 
         &__scroll-list {
             list-style-type: none;
-            
-            @include pc {
+
+            @include pc-large {
                 height: calc(80%);
                 position: absolute;
                 top: 50%;
@@ -216,7 +216,7 @@
 
         &__scroll-head {
 
-            @include pc {
+            @include pc-large {
                 width: 520px;
                 display: flex;
                 flex-direction: column;
@@ -258,7 +258,7 @@
                 margin-bottom: 80px;
             }
 
-            @include pc {
+            @include pc-large {
                 margin-bottom: 0;
             }
 
@@ -319,7 +319,7 @@
                 margin-bottom: 50%;
             }
 
-            @include pc {
+            @include pc-large {
 
                 @include flex-center;
                 margin: auto;
@@ -337,7 +337,7 @@
                 margin-bottom: 180px;
             }
 
-            @include pc {
+            @include pc-large {
                 margin: auto;
             }
 
@@ -350,13 +350,23 @@
 
         &__scroll-pic {
 
-            @include pc {
+            @include pc-large {
                 height: 100%;
             }
         }
 
         &__scroll-img {
             @include img;
+            transition: 0.3s;
+
+            @include pc-large {
+                filter: saturate(0%);
+                
+                &:hover {
+                    filter: saturate(100%);
+                }
+            }
+
         }
 
         &__scroll-txtbox {
@@ -372,11 +382,11 @@
                 border-left: 2px solid $white;
             }
 
-            @include pc {
+            @include pc-large {
                 position: static;
                 width: 40%;
                 padding-left: 80px;
-                bottom: 0;
+                top: 0;
                 border-left: 0;
             }
         }
@@ -391,7 +401,7 @@
                 margin-bottom: 80px;
             }
 
-            @include pc {
+            @include pc-large {
                 position: relative;
 
                 &::before {
@@ -572,6 +582,7 @@
             width: 90%;
             padding-bottom: 60px;
             margin: 0 auto;
+            font-family: $roboto;
             text-align: right;
             display: flex;
             justify-content: space-between;

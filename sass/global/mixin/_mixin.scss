@@ -68,3 +68,9 @@
     @content;
   }
 }
+
+@mixin pc-large($min-width: 1360px) {
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
+}

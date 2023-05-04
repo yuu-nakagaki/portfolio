@@ -24,15 +24,10 @@
         &__container {
 
             @include pc {
-                max-width: 1440px;
-                margin: 0 auto 120px;
                 display: flex;
+                flex-wrap: wrap;
                 justify-content: space-between;
-                gap: 40px;
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
+                gap: 5%;
             }
 
         }
@@ -45,9 +40,19 @@
             }
 
             @include pc {
-                margin-bottom: 0px;
+                width: 30%;
+                margin-bottom: 8%;
+
+                &:nth-of-type(n+7) {
+                    margin-bottom: 0;
+                }
             }
 
+        }
+
+        &__pic {
+            display: block;
+            width: 100%;
         }
 
         &__link {
@@ -55,11 +60,7 @@
             width: 64%;
             margin: 0 auto;
             margin-bottom: 20px;
-        }
-
-        &__pic {
-            display: block;
-            width: 100%;
+            overflow: hidden;
 
             @include tab {
                 width: 58.5%;
@@ -72,6 +73,11 @@
 
         &__img {
             @include img;
+            transition: 0.3s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
         }
 
         &__txtbox {
