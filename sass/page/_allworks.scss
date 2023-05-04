@@ -40,24 +40,26 @@
         &__box {
             margin-bottom: 60px;
 
+            &:last-child {
+                margin-bottom: 0;
+            }
+
             @include pc {
                 margin-bottom: 0px;
             }
 
-            &:last-child {
-                margin-bottom: 0;
-            }
         }
 
         &__link {
             display: block;
+            width: 64%;
+            margin: 0 auto;
             margin-bottom: 20px;
         }
 
         &__pic {
             display: block;
-            margin: 0 auto;
-            width: 64%;
+            width: 100%;
 
             @include tab {
                 width: 58.5%;
