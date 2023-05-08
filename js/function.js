@@ -1,19 +1,66 @@
 
-//スクロールでヘッダータイトルが消える
-let beforePos = 0;
-let winScrollTop = 0;
+//ヘッダー文字色をセクションによって変える
 
-window.addEventListener('scroll', function(){
-    winScrollTop = this.scrollY;
-    if (winScrollTop >= beforePos){
-        if(winScrollTop >= 300) {
-            this.document.getElementById('header__ttlbox').classList.add('is-hide');
+window.addEventListener('load', function () {
+    // ヘッダー要素を取得
+    const header = document.querySelector('#header__ttlbox');
+
+    // 監視するセクションの要素を取得
+    const targetSections = document.querySelectorAll('.h-change');
+
+    // 各セクションの位置と高さを配列に格納する
+    const sectionInfoList = Array.from(targetSections).map(section => {
+        const sectionPosition = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        return {
+            position: sectionPosition,
+            height: sectionHeight
+        };
+    });
+
+    // スクロールされたら実行されるコールバック関数
+    const handleScroll = () => {
+        // スクロール位置を取得
+        const scrollPosition = window.pageYOffset;
+
+        // 現在のスクロール位置がどのセクションに該当するかを判定する
+        let activeSectionIndex = -1;
+        sectionInfoList.forEach((sectionInfo, index) => {
+            const { position, height } = sectionInfo;
+            if (scrollPosition >= position && scrollPosition < position + height) {
+                activeSectionIndex = index;
+            }
+        });
+
+        // activeSectionIndex の値に応じて、ヘッダーの文字色を変更する
+        if (activeSectionIndex !== -1) {
+            header.classList.add('changeWhite');
+        } else {
+            header.classList.remove('changeWhite');
         }
-    } else {
-        this.document.getElementById('header__ttlbox').classList.remove('is-hide');
-    }
-    beforePos = winScrollTop;
+
+    };
+
+    // スクロールされたら handleScroll を実行するように設定する
+    window.addEventListener('scroll', handleScroll);
 });
+
+
+//スクロールでヘッダータイトルが消える
+// let beforePos = 0;
+// let winScrollTop = 0;
+
+// window.addEventListener('scroll', function () {
+//     winScrollTop = this.scrollY;
+//     if (winScrollTop >= beforePos) {
+//         if (winScrollTop >= 300) {
+//             this.document.getElementById('header__ttlbox').classList.add('is-hide');
+//         }
+//     } else {
+//         this.document.getElementById('header__ttlbox').classList.remove('is-hide');
+//     }
+//     beforePos = winScrollTop;
+// });
 
 
 //ハンバーガーメニュー

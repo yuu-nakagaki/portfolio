@@ -82,7 +82,7 @@
         display: flex;
         width: 100%;
 
-        @include pc {
+        @include macpc {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -96,7 +96,7 @@
         transform-origin: left top;
         transform: rotate(-90deg);
 
-        @include pc {
+        @include macpc {
             transform: none;
         }
 
@@ -116,7 +116,7 @@
                 height: 30px;
             }
 
-            @include pc {
+            @include macpc {
                 left: 60px;
                 height: 1px;
                 width: 60px;
@@ -133,7 +133,7 @@
                 border-right: 4px solid transparent;
                 border-bottom: 8px solid $white;
 
-                @include pc {
+                @include macpc {
                     border-left: 8px solid transparent;
                     border-bottom: 4px solid $white;
                 }
@@ -148,7 +148,7 @@
         transform-origin: right top;
         transform: rotate(90deg);
 
-        @include pc {
+        @include macpc {
             transform: none;
         }
 
@@ -168,7 +168,7 @@
                 height: 30px;
             }
 
-            @include pc {
+            @include macpc {
                 left: auto;
                 right: 60px;
                 height: 1px;
@@ -186,7 +186,7 @@
                 border-left: 4px solid transparent;
                 border-bottom: 8px solid $white;
 
-                @include pc {
+                @include macpc {
                     border-right: 8px solid transparent;
                     border-bottom: 4px solid $white;
                 }

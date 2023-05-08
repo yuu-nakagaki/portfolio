@@ -3,6 +3,12 @@
 @use "../global" as *;
 
 
+.changeWhite {
+    color: $white;
+    background: #f00;
+    transition: all 0.1s;
+}
+
 .is-hide {
     opacity: 0;
     transform: translateY(-50px);
@@ -39,14 +45,12 @@
     }
 }
 
-// body {
 
-//     &.menu-open {
-//         height: 100%;
-//         position: fixed;
-//         top: 0;
-//         left: 0;
-//         overflow: hidden;
-//     }
 
+// .menu-open {
+//     height: 100%;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     overflow: hidden;
 // }

@@ -82,6 +82,11 @@
         }
 
         @include pc {
+            padding: 400px 80px 80px;
+            margin-top: 800px;
+        }
+
+        @include macpc {
             padding: 400px 160px 160px;
             margin-top: 800px;
         }
@@ -109,7 +114,11 @@
             }
 
             @include pc {
-                width: 60%;
+                width: 100%;
+            }
+
+            @include macpc {
+                width: 65%;
             }
         }
 
@@ -162,13 +171,17 @@
                 margin-bottom: 14px;
 
                 @include tab {
-                    width: 40%;
+                    width: 35%;
                     margin-bottom: 40px;
                 }
 
                 @include pc {
                     width: 40%;
                     font-size: 16px;
+                }
+
+                @include macpc {
+                    width: 35%;
                 }
             }
 
@@ -177,13 +190,17 @@
                 margin-bottom: 40px;
 
                 @include tab {
+                    width: 65%;
                     font-size: 16px;
-                    width: 60%;
                 }
 
                 @include pc {
                     width: 60%;
                     font-size: 18px;
+                }
+
+                @include macpc {
+                    width: 65%;
                 }
             }
         }
@@ -259,6 +276,11 @@
         }
 
         @include pc {
+            padding: 80px 80px 0;
+            display: flex;
+        }
+
+        @include macpc {
             padding: 160px 160px 0;
             display: flex;
         }
@@ -304,6 +326,10 @@
             @include tab {
                 width: 62.5%;
                 max-width: 480px;
+            }
+
+            @include pc {
+                width: 80%;
             }
         }
 

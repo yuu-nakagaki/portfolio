@@ -25,6 +25,10 @@
             }
 
             @include pc {
+                padding: 0 0 0 160px;
+            }
+
+            @include macpc {
                 padding: 0 0 0 320px;
             }
         }
@@ -34,12 +38,17 @@
             font-family: $roboto;
             font-size: 40px;
             font-weight: 900;
+            line-height: 1;
 
             @include tab {
                 font-size: 80px;
             }
 
             @include pc {
+                font-size: 100px;
+            }
+
+            @include macpc {
                 font-size: 180px;
             }
 
@@ -80,11 +89,15 @@
         border-radius: 10px;
 
         @include tab {
+            height: 100%;
             padding: 100px 80px 0;
         }
 
         @include pc {
-            height: 100%;
+            padding: 200px 160px;
+        }
+        
+        @include macpc {
             padding: 200px 320px;
         }
 
@@ -100,6 +113,10 @@
             @include pc {
                 top: -30%;
                 left: auto;
+                right: 160px;
+            }
+
+            @include macpc {
                 right: 320px;
             }
 
@@ -157,12 +174,18 @@
             line-height: 2;
 
             @include tab {
+                margin-bottom: 80px;
                 font-size: 22px;
                 font-weight: 900;
                 letter-spacing: 0.2em;
             }
 
             @include pc {
+                margin-bottom: 0;
+                font-size: 28px;
+            }
+            
+            @include macpc {
                 font-size: 34px;
             }
         }
@@ -181,6 +204,10 @@
 
         @include tab {
             padding: 80px;
+        }
+
+        @include pc {
+            padding: 160px;
         }
 
         @include pc-large {
@@ -589,7 +616,7 @@
 
             @include pc {
                 margin: 0;
-                width: 130px;
+                width: 100px;
                 display: block;
                 text-align: left;
             }
@@ -605,6 +632,17 @@
                     margin-right: 0;
                 }
 
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: -4px;
+                    width: 0%;
+                    height: 2px;
+                    background: $white;
+                    transition: all 0.4s;
+                }
+
                 @include tab {
                     font-size: 20px;
                 }
@@ -616,12 +654,20 @@
             }
 
             & .is-active {
-                border-bottom: 2px solid $white;
-                font-size: 18px;
+                transform-origin: center bottom;
+                transform: scale(1.28);
                 transition: 0.4s;
 
+                &::after {
+                    width: 100%;
+                }
+
                 @include tab {
-                    font-size: 30px;
+                    transform: scale(1.5);
+                }
+
+                @include pc {
+                    transform-origin: left center;
                 }
             }
 
@@ -818,7 +864,8 @@
                 font-size: 80px;
             }
 
-            @include pc {
+            @include macpc {
+                padding: 0 160px;
                 font-size: 180px;
             }
 
@@ -1012,6 +1059,7 @@
             background: $inputarea;
             border: none;
             font-size: 16px;
+            font-family: $JP;
             letter-spacing: 0.2em;
 
             @include tab {
@@ -1026,6 +1074,7 @@
             background: $inputarea;
             border: none;
             font-size: 16px;
+            font-family: $JP;
             letter-spacing: 0.2em;
 
             @include tab {

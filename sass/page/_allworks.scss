@@ -7,6 +7,10 @@
     .catalog {
         padding-top: 120px;
 
+        @include tab {
+            margin: 0 80px;
+        }
+
         @include pc {
             margin: 0 160px;
         }
@@ -23,7 +27,7 @@
 
         &__container {
 
-            @include pc {
+            @include tab {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
@@ -39,6 +43,10 @@
                 margin-bottom: 0;
             }
 
+            @include tab {
+                width: 45%;
+            }
+
             @include pc {
                 width: 30%;
                 margin-bottom: 8%;
@@ -47,7 +55,6 @@
                     margin-bottom: 0;
                 }
             }
-
         }
 
         &__pic {
@@ -63,12 +70,9 @@
             overflow: hidden;
 
             @include tab {
-                width: 58.5%;
-            }
-
-            @include pc {
                 width: 100%;
             }
+
         }
 
         &__img {
