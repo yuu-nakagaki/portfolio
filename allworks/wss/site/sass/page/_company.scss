@@ -1,0 +1,229 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#company {
+  .company {
+    &__container {
+      padding-left: 320px;
+      padding-top: 206px;
+      position: relative;
+      z-index: 1;
+    }
+
+    &__box {
+      padding-right: 152px;
+      padding-top: 21px;
+    }
+
+
+    &__subttl {
+      align-items: center;
+      background: $text-black-color;
+      color: $accent-color;
+      display: flex;
+      font-size: 15px;
+      height: 38px;
+      justify-content: center;
+      margin-bottom: 48px;
+      width: 100px;
+    }
+
+    &__ttl {
+      font-family: $inter;
+      font-size: 90px;
+      font-weight: bold;
+      margin-bottom: 293px;
+    }
+
+    &__pic {
+      height: 600px;
+      position: absolute;
+      right: 0;
+      top: 206px;
+      width: 583px;
+    }
+
+    &__img {
+      border-radius: 50px 0 0 50px;
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+
+
+  .profile {
+    &__container--01 {
+      align-items: flex-start;
+      background: $pale-yellow-color;
+      display: flex;
+      margin: 0 0 0 auto;
+      padding-top: 100px;
+      position: relative;
+      width: 1495px;
+    }
+
+    &__icon {
+      margin-left: 167px;
+      position: absolute;
+      top: 224px;
+      z-index: 1;
+    }
+
+    &__img {
+      display: block;
+      height: 50px;
+      object-fit: cover;
+      width: 360px;
+    }
+
+    &__container--02 {
+      background: $text-white-color;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 206px 0 0 auto;
+      padding: 118px 0 0 265px;
+      width: 1316px;
+    }
+
+    &__box {
+      align-items: center;
+      display: flex;
+      margin-bottom: 46px;
+      width: 1000px;
+    }
+
+    &__box:nth-child(4) {
+      margin-bottom: 70px;
+    }
+
+    &__contents {
+      font-size: 27px;
+      font-weight: 800;
+      line-height: 46px;
+      margin-right: 121px;
+      width: 135px;
+    }
+
+    &__detail,
+    &__detail-line {
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 46px;
+    }
+
+    &__detail-line {
+      text-decoration: underline;
+    }
+
+    &__btn {
+      margin-bottom: 136px;
+      margin-left: 218px;
+      width: 223px;
+    }
+
+    &__link {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      text-decoration: none;
+
+      &:hover {
+        .profile__circle::before {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+
+        .profile__arrow {
+          transform: translate(50px, -50%);
+        }
+
+        .profile__arrow::before {
+          background: $text-white-color;
+        }
+      }
+    }
+
+
+    &__btn-txt {
+      color: $text-black-color;
+      font-size: 15.75px;
+      font-weight: bold;
+    }
+
+
+    &__btn-icon {
+      position: relative;
+    }
+
+    &__circle {
+      border: 9px solid $accent-color;
+      border-radius: 50%;
+      height: 63px;
+      position: relative;
+      width: 63px;
+
+      &::before {
+        background: $accent-color;
+        border: 9px solid $accent-color;
+        border-radius: 50%;
+        content: "";
+        height: 100%;
+        left: 50%;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(.5);
+        transition: .5s cubic-bezier(.455, .03, .515, .955);
+        width: 100%;
+      }
+    }
+
+    &__arrow {
+      background: $accent-color;
+      height: 2px;
+      left: -19px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: .5s cubic-bezier(.455, .03, .515, .955);
+      width: 47px;
+
+      &::before {
+        background: $accent-color;
+        content: "";
+        height: 2px;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: .5s cubic-bezier(.455, .03, .515, .955);
+        width: 32px;
+      }
+
+      &::after {
+        border-left: 2px solid $accent-color;
+        border-top: 2px solid $accent-color;
+        content: "";
+        height: 6px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%) rotate(135deg);
+        width: 6px;
+      }
+    }
+  }
+
+  .company__map {
+    margin-bottom: 49px;
+  }
+
+  .company__frame {
+    width: 100%;
+  }
+}

@@ -1,0 +1,4 @@
+//globalフォルダ内のファイルをひとつにまとめます
+//globalフォルダ内のファイルはその他の各ファイルで呼び出し可能な@forwardで読み込みます
+@forward "font";
+@forward "color";

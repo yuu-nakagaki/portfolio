@@ -2,66 +2,62 @@
 //ヘッダー文字色をセクションによって変える
 
 window.addEventListener('load', function () {
-    // ヘッダー要素を取得
+    
     const header = document.querySelector('#header__ttlbox');
+    const worksSection = document.querySelector('#works');
+    const looptxtSection = document.querySelector('#looptxt');
+    const skillSection = document.querySelector('#skill');
+    const profileSection = document.querySelector('#profile');
+    const contactSection = document.querySelector('#contact');
+    const footerSection = document.querySelector('#footer');
 
-    // 監視するセクションの要素を取得
-    const targetSections = document.querySelectorAll('.h-change');
-
-    // 各セクションの位置と高さを配列に格納する
-    const sectionInfoList = Array.from(targetSections).map(section => {
-        const sectionPosition = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        return {
-            position: sectionPosition,
-            height: sectionHeight
-        };
-    });
+    const worksPosition = worksSection.getBoundingClientRect().top + window.pageYOffset;
+    const looptxtPosition = looptxtSection.getBoundingClientRect().top + window.pageYOffset;
+    const skillPosition = skillSection.getBoundingClientRect().top + window.pageYOffset;
+    const profilePosition = profileSection.getBoundingClientRect().top + window.pageYOffset;
+    const contactPosition = contactSection.getBoundingClientRect().top + window.pageYOffset;
+    const footerPosition = footerSection.getBoundingClientRect().top + window.pageYOffset;
 
     // スクロールされたら実行されるコールバック関数
     const handleScroll = () => {
         // スクロール位置を取得
         const scrollPosition = window.pageYOffset;
 
-        // 現在のスクロール位置がどのセクションに該当するかを判定する
-        let activeSectionIndex = -1;
-        sectionInfoList.forEach((sectionInfo, index) => {
-            const { position, height } = sectionInfo;
-            if (scrollPosition >= position && scrollPosition < position + height) {
-                activeSectionIndex = index;
-            }
-        });
-
-        // activeSectionIndex の値に応じて、ヘッダーの文字色を変更する
-        if (activeSectionIndex !== -1) {
+        if (scrollPosition >= worksPosition && scrollPosition < looptxtPosition) {
+            header.classList.add('changeWhite');
+        } else if (scrollPosition >= looptxtPosition && scrollPosition < skillPosition) {
+            header.classList.remove('changeWhite');
+        } else if (scrollPosition >= skillPosition && scrollPosition < profilePosition) {
+            header.classList.add('changeWhite');
+        } else if (scrollPosition >= profilePosition && scrollPosition < contactPosition) {
+            header.classList.remove('changeWhite');
+        } else if (scrollPosition >= contactPosition && scrollPosition < footerPosition) {
             header.classList.add('changeWhite');
         } else {
             header.classList.remove('changeWhite');
         }
-
     };
 
     // スクロールされたら handleScroll を実行するように設定する
     window.addEventListener('scroll', handleScroll);
+
 });
 
-
 //スクロールでヘッダータイトルが消える
-// let beforePos = 0;
-// let winScrollTop = 0;
+let beforePosition = 0;
+let winScrollTop = 0;
 
-// window.addEventListener('scroll', function () {
-//     winScrollTop = this.scrollY;
-//     if (winScrollTop >= beforePos) {
-//         if (winScrollTop >= 300) {
-//             this.document.getElementById('header__ttlbox').classList.add('is-hide');
-//         }
-//     } else {
-//         this.document.getElementById('header__ttlbox').classList.remove('is-hide');
-//     }
-//     beforePos = winScrollTop;
-// });
-
+window.addEventListener('scroll', function () {
+    winScrollTop = this.scrollY;
+    if (winScrollTop >= beforePosition) {
+        if (winScrollTop >= 300) {
+            this.document.getElementById('header__ttlbox').classList.add('is-hide');
+        }
+    } else {
+        this.document.getElementById('header__ttlbox').classList.remove('is-hide');
+    }
+    beforePosition = winScrollTop;
+});
 
 //ハンバーガーメニュー
 
@@ -82,9 +78,6 @@ hamBtn.addEventListener('click', function () {
     btnBottom.classList.toggle('rotate-bottom');
     gnav.classList.toggle('gnav-active');
     gnavNav.classList.toggle('gnav__nav-active');
-    // document.body.classList.toggle('menu-open'); //開く前の表示位置保持とセットなので後回し いったん解除
-
-
 });
 
 gnav.addEventListener('click', function () {
@@ -93,11 +86,8 @@ gnav.addEventListener('click', function () {
     btnBottom.classList.remove('rotate-bottom');
     gnav.classList.remove('gnav-active');
     gnavNav.classList.remove('gnav__nav-active');
-    // document.body.classList.remove('menu-open');
-
     window.scrollTo(0, scrollPos);
 });
-
 
 //FVぼかしエフェクト
 const text = document.querySelector('.mvcover');
@@ -115,6 +105,16 @@ gsap.to(".mv__wrap", {
     }
 });
 
+//徐々に出現するテキスト
+gsap.utils.toArray('.mvcover__txt').forEach((target) => {
+    gsap.to(target, {
+        backgroundPosition: '0% 0%', duration: 3.5, scrollTrigger: {
+            trigger: target,
+            start: 'bottom bottom',
+            toggleActions: 'play none none reverse'
+        }
+    })
+})
 
 //横スクロール（GSAP）
 const listWrapperEl = document.querySelector('#works__scroll-wrapper');
@@ -131,10 +131,9 @@ gsap.to(listEl, {
         pin: true,
         anticipatePin: 1,
         invalidateOnRefresh: true,
-        markers: true,
+        // markers: true,
     },
 });
-
 
 //SKILL部フィルター
 const filterButtons = document.querySelectorAll('[data-filter]');
@@ -178,3 +177,16 @@ function categoryFilter() {
 
     });
 }
+
+//message部、背景色がスクロールすると画面いっぱいまで広がってくる
+
+gsap.to(".message__bg", 1, {
+    ease: 'power2.easeOut',
+    scale: 20,
+    scrollTrigger: {
+        trigger: '.message',
+        start: 'top 60%',
+        end: 'top 60%',
+        opacity: 0,
+    }
+});

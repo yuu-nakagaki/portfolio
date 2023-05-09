@@ -1,0 +1,633 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#employment {
+
+  /* ----------------------------------------
+   * fv
+   * ---------------------------------------- */
+  .fv {
+    background: $gray-color;
+    position: relative;
+
+    &::after {
+      background: url(../images/employment/fv_bg.jpg) center center / cover;
+      border-radius: 50px 0 0 50px;
+      bottom: -223px;
+      content: "";
+      height: 750px;
+      position: absolute;
+      right: 0;
+      width: 1600px;
+      z-index: 11;
+    }
+
+    &__bg-circle {
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
+      width: 100%;
+      z-index: 10;
+
+      &::before {
+        border: 130px solid $accent-color;
+        border-radius: 50%;
+        box-sizing: border-box;
+        content: "";
+        height: 964px;
+        left: -174px;
+        position: absolute;
+        top: -165px;
+        width: 964px;
+      }
+    }
+
+    &__container {
+      margin: 0 auto;
+      padding: 168px 0 631px 320px;
+      position: relative;
+      width: 1600px;
+      z-index: 11;
+    }
+
+    &__sub-ttl {
+      background: $text-black-color;
+      color: $accent-color;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-bottom: 13px;
+      padding: 7px 13px 7px;
+      width: fit-content;
+    }
+
+    &__box {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__ttl {
+      font-family: $inter;
+      font-size: 90px;
+      font-weight: 800;
+      line-height: 100px;
+    }
+
+    &__txt-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__description {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 46px;
+    }
+
+    &__txt {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 46px;
+      width: 610px;
+    }
+  }
+
+  /* ----------------------------------------
+   * support
+   * ---------------------------------------- */
+  .support {
+    overflow: hidden;
+    padding: 305px 0 157px;
+
+    &__container {
+      background: $gray-color;
+      padding: 160px 0 386px;
+    }
+
+    &__ttl {
+      background: $text-black-color;
+      color: $accent-color;
+      font-size: 63px;
+      font-weight: 700;
+      line-height: 90px;
+      margin: 0 auto 207px;
+      padding: 0 34px;
+      width: fit-content;
+    }
+
+    &__ul {
+      counter-reset: list-num;
+      display: flex;
+      flex-direction: column;
+      gap: 386px;
+      margin: 0 auto;
+      width: 1280px;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: space-between;
+
+      &:nth-of-type(2n) {
+        flex-direction: row-reverse;
+
+        .support__pic::after {
+          right: 0;
+          top: 0;
+          transform: rotate(-45deg);
+          transform-origin: right top;
+        }
+      }
+
+      &:nth-of-type(2n + 1) {
+        .support__pic::after {
+          left: 0;
+          top: 0;
+          transform: rotate(45deg);
+          transform-origin: left top;
+        }
+      }
+    }
+
+    &__pic {
+      height: 540px;
+      position: relative;
+      width: 540px;
+      z-index: 2;
+
+      &::after {
+        background: $text-white-color;
+        content: "";
+        height: 1800px;
+        position: absolute;
+        width: 765px;
+        z-index: -1;
+      }
+    }
+
+    &__img {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    &__box {
+      background: $accent-color;
+      height: 540px;
+      padding: 88px 52px 0;
+      position: relative;
+      width: 630px;
+      z-index: 2;
+
+      &::before {
+        content: "0" counter(list-num);
+        counter-increment: list-num;
+        font-family: $inter;
+        font-size: 100px;
+        font-weight: 800;
+        line-height: 48px;
+        position: absolute;
+        right: 115px;
+        top: -35px;
+      }
+
+      &::after {
+        content: "/04";
+        font-family: $inter;
+        font-size: 60px;
+        font-weight: 800;
+        line-height: 48px;
+        position: absolute;
+        right: 0;
+        top: -28px;
+      }
+    }
+
+    &__sub-ttl {
+      font-size: 27px;
+      font-weight: 700;
+      line-height: 48px;
+      margin-bottom: 56px;
+    }
+
+    &__txt {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 46px;
+    }
+  }
+
+  /* ----------------------------------------
+   * performance
+   * ---------------------------------------- */
+  .performance {
+    padding-bottom: 182px;
+
+    &__container {
+      margin: 0 auto;
+      width: 1600px;
+    }
+
+    &__ttl {
+      background: $text-black-color;
+      color: $accent-color;
+      font-size: 63px;
+      font-weight: 700;
+      line-height: 90px;
+      margin-bottom: 134px;
+      padding: 0 34px;
+      width: fit-content;
+    }
+
+    &__company-link-wrap {
+      background: $gray-color;
+      padding: 96px 160px;
+    }
+
+    &__company-ul {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 64px;
+    }
+
+    &__company-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      list-style-type: none;
+      width: calc(100% / 3);
+
+      &:nth-of-type(4),
+      &:nth-of-type(5),
+      &:nth-of-type(9),
+      &:nth-of-type(10) {
+        width: calc(100% / 2);
+      }
+    }
+
+    &__company-link {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-decoration: none;
+      transition: .2s ease-out;
+      width: 100%;
+
+      &:hover {
+        opacity: .7;
+      }
+    }
+
+    &__company-pic {
+      width: 40%;
+    }
+
+    &__company-logo {
+      display: block;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    &__company-name {
+      color: $text-black-color;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+  }
+
+  /* ----------------------------------------
+   * occupation
+   * ---------------------------------------- */
+  .occupation {
+    padding-bottom: 286px;
+
+    &__ttl {
+      background: $text-black-color;
+      color: $accent-color;
+      font-size: 63px;
+      font-weight: 700;
+      line-height: 90px;
+      margin: 0 auto 200px;
+      padding: 0 34px;
+      width: fit-content;
+    }
+
+    &__ul {
+      display: flex;
+      flex-direction: column;
+      gap: 422px;
+    }
+
+    &__list {
+      height: 622px;
+      list-style-type: none;
+      position: relative;
+
+      &::before {
+        background: $main-color;
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+      }
+
+      &:nth-of-type(2n) {
+        .occupation__inner {
+          flex-direction: row-reverse;
+        }
+
+        .occupation__skill-ul {
+          align-self: flex-start;
+          margin: 0 0 45px 37px;
+        }
+
+        .occupation__txt {
+          margin-left: 160px;
+          margin-right: 0;
+        }
+      }
+    }
+
+    &__inner {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: space-between;
+      margin: 0 auto;
+      width: 1600px;
+    }
+
+    &__name {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 48px;
+    }
+
+    &__pic {
+      height: 622px;
+      position: relative;
+      width: 350px;
+
+      &::before {
+        background: $text-white-color;
+        border-radius: 50%;
+        content: "";
+        height: 350px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 350px;
+        z-index: -1;
+      }
+
+      &::after {
+        animation: rotate 50s linear infinite;
+        content: "";
+        height: 822px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 822px;
+        z-index: -1;
+      }
+
+      &.director::after {
+        background: url(../images/employment/occupation_bg_director.png) center center / cover;
+      }
+
+      &.designer::after {
+        background: url(../images/employment/occupation_bg_designer.png) center center / cover;
+      }
+
+      &.engineer::after {
+        background: url(../images/employment/occupation_bg_engineer.png) center center / cover;
+      }
+
+      &.coder::after {
+        background: url(../images/employment/occupation_bg_coder.png) center center / cover;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+    }
+
+    &__img {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    &__box {
+      align-items: flex-end;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-end;
+    }
+
+    &__skill-ul {
+      display: flex;
+      flex-direction: column;
+      margin: 0 37px 45px 0;
+      position: relative;
+      width: 260px;
+
+      &::before {
+        content: "必要スキル";
+        font-size: 18px;
+        font-weight: 700;
+        left: 0;
+        line-height: 29px;
+        position: absolute;
+        top: 0;
+        transform: translateY(-105%);
+      }
+    }
+
+    &__skill-list {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 29px;
+      list-style-type: none;
+      padding: 5px 10px;
+
+      &:nth-of-type(2n + 1) {
+        background: $accent-color;
+      }
+
+      &:nth-of-type(2n) {
+        background: $text-white-color;
+      }
+    }
+
+    &__txt {
+      background: $text-white-color;
+      border-radius: 30px 30px 0 0;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 46px;
+      margin-right: 160px;
+      padding: 45px 55px;
+      width: 638px;
+    }
+  }
+
+  /* ----------------------------------------
+   * guide
+   * ---------------------------------------- */
+  .guide {
+    background: $accent-color;
+    margin-bottom: 160px;
+    padding: 80px 0;
+    position: relative;
+
+    &__bg {
+      background: url(../images/employment/guide_bg.png) center center / cover;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 896px;
+    }
+
+    &__container {
+      margin: 0 auto;
+      width: 1280px;
+    }
+
+    &__ttl {
+      font-family: $inter;
+      font-size: 63px;
+      font-weight: 800;
+      line-height: 80px;
+      margin-bottom: 42px;
+    }
+
+    &__btn {
+      margin-left: 50px;
+      width: 185px;
+    }
+
+    &__link {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      text-decoration: none;
+
+      &:hover {
+        .guide__circle::before {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+
+        .guide__arrow {
+          transform: translate(50px, -50%);
+        }
+
+        .guide__arrow::before {
+          background: $text-white-color;
+        }
+      }
+    }
+
+    &__btn-sub {
+      background: $text-black-color;
+      color: $main-color;
+      font-size: 12px;
+      font-weight: 700;
+      left: 0;
+      line-height: 19px;
+      padding: 2px;
+      position: absolute;
+      top: -8px;
+      transform: rotate(-5deg);
+    }
+
+    &__btn-txt {
+      color: $text-black-color;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 19px;
+    }
+
+    &__btn-icon {
+      position: relative;
+    }
+
+    &__circle {
+      border: 9px solid $main-color;
+      border-radius: 50%;
+      height: 63px;
+      position: relative;
+      width: 63px;
+
+      &::before {
+        background: $main-color;
+        border: 9px solid $main-color;
+        border-radius: 50%;
+        content: "";
+        height: 100%;
+        left: 50%;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(.5);
+        transition: .5s cubic-bezier(.455, .03, .515, .955);
+        width: 100%;
+      }
+    }
+
+    &__arrow {
+      background: $main-color;
+      height: 2px;
+      left: -19px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: .5s cubic-bezier(.455, .03, .515, .955);
+      width: 47px;
+
+      &::before {
+        background: $main-color;
+        content: "";
+        height: 2px;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: .5s cubic-bezier(.455, .03, .515, .955);
+        width: 32px;
+      }
+
+      &::after {
+        border-left: 2px solid $main-color;
+        border-top: 2px solid $main-color;
+        content: "";
+        height: 6px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%) rotate(135deg);
+        width: 6px;
+      }
+    }
+  }
+}

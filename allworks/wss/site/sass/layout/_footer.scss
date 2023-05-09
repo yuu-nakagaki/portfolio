@@ -1,0 +1,131 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+.footer {
+  padding: 0 20px;
+
+  &__inner {
+    background: $text-black-color;
+    border-radius: 50px 50px 0 0;
+    padding: 132px 140px 0;
+  }
+
+  &__slide-link {
+    background-color: $text-black-color;
+    border-bottom: 1px solid $text-white-color;
+    border-top: 1px solid $text-white-color;
+    display: flex;
+    margin-bottom: 71px;
+    overflow: hidden;
+    text-decoration: none;
+    width: 100%;
+
+    & p {
+      color: $accent-color;
+      font-family: $inter;
+      font-size: 111px;
+      font-weight: 700;
+      line-height: 134px;
+      padding: 36px 23px 30px;
+    }
+  }
+
+  &__slide-txt--01 {
+    animation: slide-01 30s linear infinite;
+  }
+
+  &__slide-txt--02 {
+    animation: slide-02 30s linear infinite;
+  }
+
+  &__slide-txt--03 {
+    animation: slide-03 30s linear infinite;
+  }
+
+  &__slide-txt--04 {
+    animation: slide-04 30s linear infinite;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 74px;
+  }
+
+
+
+  &__ttl {
+    margin-bottom: 72px;
+    width: 168px;
+  }
+
+  &__logo-link {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__logo-img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__ul {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+  }
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__link {
+    color: $text-white-color;
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    position: relative;
+    text-decoration: none;
+    width: fit-content;
+
+    &.external {
+      padding-right: 26px;
+
+      &::after {
+        background: url(../images/common/icon_new-window.png) center center / cover;
+        content: "";
+        height: 16px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 16px;
+      }
+    }
+  }
+
+  &__sns-icon {
+    display: block;
+    height: 40px;
+    object-fit: cover;
+    width: 40px;
+  }
+
+  &__copy {
+    border-top: 1px solid $text-white-color;
+    padding: 40px 0 47px;
+    text-align: center;
+  }
+
+  &__small {
+    color: $text-white-color;
+    font-family: $inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+  }
+}

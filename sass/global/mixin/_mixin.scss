@@ -49,6 +49,14 @@
 }
 
 // メディアクエリ
+
+//---スマホとタブレットの中間
+@mixin sp-large($min-width: 500px) {
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
+}
+
 // ---タブレット
 @mixin tab($min-width: 768px) {
   @media screen and (min-width: $min-width) {

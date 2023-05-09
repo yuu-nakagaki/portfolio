@@ -1,0 +1,389 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#personal {
+  font-weight: bold;
+
+  .mv__container {
+    margin-left: 320px;
+    overflow: hidden;
+    padding-top: 227px;
+    position: relative;
+
+    &::before {
+      border: 130px solid $accent-color;
+      border-radius: 50%;
+      box-sizing: border-box;
+      content: "";
+      height: 720px;
+      position: absolute;
+      right: -290px;
+      top: -285px;
+      width: 720px;
+      z-index: 3;
+    }
+  }
+
+  .mv__subttl {
+    align-items: center;
+    background: #000;
+    color: $accent-color;
+    display: flex;
+    font-size: 15px;
+    height: 38px;
+    justify-content: center;
+    margin-bottom: 50px;
+    width: 200px;
+  }
+
+  .mv__ttl {
+    font-family: $inter;
+    font-size: 90px;
+    font-weight: bold;
+    margin-bottom: 138px;
+  }
+
+  .personal__container {
+    align-items: flex-start;
+    background: $pale-blue-color;
+    display: flex;
+    margin: 0 0 0 auto;
+    position: relative;
+    width: 1495px;
+  }
+
+  .personal__box {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    margin: 304px 0 0 auto;
+    padding: 86px 220px 0 220px;
+    width: 1315px;
+  }
+
+  .nextone__icon {
+    left: 166px;
+    position: absolute;
+    top: 224px;
+  }
+
+
+
+  .nextone__img {
+    display: block;
+    height: 50px;
+    object-fit: cover;
+    width: 360px;
+  }
+
+  .praivacy {
+    &__ttl {
+      align-items: center;
+      background: $gray-color;
+      display: flex;
+      font-size: 27px;
+      height: 63px;
+      justify-content: flex-start;
+      margin-bottom: 77px;
+      padding-left: 27px;
+      width: 876px;
+    }
+
+    &__interttl {
+      font-family: $inter;
+      font-weight: bold;
+    }
+
+    &__txt {
+      font-size: 18px;
+      line-height: 46px;
+      margin-bottom: 75px;
+      width: 876px;
+    }
+  }
+
+  .policy-01 {
+    &__ttl {
+      align-items: center;
+      background: $gray-color;
+      display: flex;
+      font-size: 27px;
+      height: 63px;
+      justify-content: flex-start;
+      margin-bottom: 85px;
+      padding-left: 27px;
+      width: 876px;
+    }
+
+
+    &__interttl {
+      font-family: $inter;
+      font-weight: bold;
+    }
+
+    &__subttl {
+      font-size: 23px;
+      line-height: 46px;
+      margin-bottom: 67px;
+    }
+
+    &__txt {
+      font-size: 18px;
+      line-height: 46px;
+      margin-bottom: 67px;
+      width: 876px;
+    }
+
+    &__box--01 {
+      display: flex;
+      font-size: 18px;
+      line-height: 46px;
+    }
+
+    &__box--02 {
+      display: flex;
+      font-size: 18px;
+      line-height: 46px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .policy-02 {
+    margin-bottom: 103px;
+
+    &__ttl {
+      align-items: center;
+      background: $gray-color;
+      display: flex;
+      font-size: 27px;
+      height: 63px;
+      justify-content: flex-start;
+      margin-bottom: 82px;
+      padding-left: 27px;
+      width: 876px;
+    }
+
+    &__interttl {
+      font-family: $inter;
+      font-weight: bold;
+    }
+
+    &__txt--01 {
+      font-size: 18px;
+      line-height: 46px;
+      margin-bottom: 40px;
+      width: 876px;
+    }
+
+    &__subttl--01 {
+      font-size: 23px;
+      line-height: 30px;
+      margin-bottom: 26px;
+    }
+
+
+    &__txt--02 {
+      font-size: 18px;
+      line-height: 46px;
+      margin-bottom: 50px;
+      width: 876px;
+    }
+
+    &__subttl--02 {
+      font-size: 23px;
+      line-height: 46px;
+      margin-bottom: 55px;
+    }
+
+    &__txt-ttl {
+      font-size: 20px;
+    }
+
+    &__txt--03 {
+      font-size: 18px;
+      line-height: 46px;
+      margin-bottom: 73px;
+    }
+
+    &__txt--04 {
+      font-size: 18px;
+      line-height: 46px;
+    }
+  }
+
+  .policy-03 {
+    &__ttl {
+      align-items: center;
+      background: $gray-color;
+      display: flex;
+      font-size: 27px;
+      height: 63px;
+      justify-content: flex-start;
+      margin-bottom: 91px;
+      padding-left: 27px;
+      width: 876px;
+    }
+
+    &__interttl {
+      font-family: $inter;
+      font-weight: bold;
+    }
+
+    &__txt {
+      font-size: 18px;
+      line-height: 46px;
+      margin-bottom: 55px;
+    }
+  }
+
+  .policy-04 {
+    &__ttl {
+      align-items: center;
+      background: $gray-color;
+      display: flex;
+      font-size: 27px;
+      height: 63px;
+      justify-content: flex-start;
+      margin-bottom: 91px;
+      padding-left: 27px;
+      width: 876px;
+    }
+
+    &__interttl {
+      font-family: $inter;
+      font-weight: bold;
+    }
+
+    &__txt {
+      font-size: 18px;
+      line-height: 46px;
+      margin-bottom: 55px;
+      width: 876px;
+    }
+
+    &__ul--01 {
+      font-size: 18px;
+      line-height: 46px;
+      margin-bottom: 66px;
+      padding-left: 20px;
+    }
+
+    &__subttl {
+      font-size: 23px;
+      line-height: 46px;
+      margin-bottom: 60px;
+    }
+
+    &__txt {
+      font-size: 18px;
+      line-height: 46px;
+    }
+
+    &-order {
+      font-size: 18px;
+      line-height: 46px;
+
+      &__list {
+        list-style-position: inside;
+        margin-bottom: 60px;
+      }
+
+      &__list:nth-child(6) {
+        margin-bottom: 90px;
+      }
+    }
+
+    .policy-04-col-1__txt {
+      padding-left: 10px;
+    }
+  }
+
+
+  .inner-policy-04-order {
+    padding-left: 27px;
+  }
+
+
+  .inner-policy-04-order-list {
+    list-style-type: none;
+    padding-left: 1em;
+    text-indent: -1em;
+
+    &::before {
+      content: "・";
+    }
+  }
+
+
+
+  .info {
+    &__ttl {
+      align-items: center;
+      background: $gray-color;
+      display: flex;
+      font-size: 27px;
+      height: 63px;
+      justify-content: flex-start;
+      margin-bottom: 103px;
+      padding-left: 27px;
+      width: 876px;
+    }
+
+    &__interttl {
+      font-family: $inter;
+      font-weight: bold;
+    }
+
+    &__dl {
+      font-size: 18px;
+      line-height: 46px;
+      margin-bottom: 92px;
+    }
+
+    &__dd {
+      margin-bottom: 70px;
+    }
+  }
+
+  .offer {
+    &__ttl {
+      align-items: center;
+      background: $gray-color;
+      display: flex;
+      font-size: 27px;
+      height: 63px;
+      justify-content: flex-start;
+      margin-bottom: 92px;
+      padding-left: 27px;
+      width: 876px;
+    }
+
+    &__interttl {
+      font-family: $inter;
+      font-weight: bold;
+    }
+
+    &__subttl {
+      font-size: 23px;
+      line-height: 46px;
+      margin-bottom: 59px;
+    }
+
+    &__txt {
+      font-size: 18px;
+      line-height: 46px;
+      margin-bottom: 70px;
+    }
+
+    &__dl {
+      font-size: 18px;
+      line-height: 46px;
+      margin-bottom: 112px;
+    }
+
+    &__box {
+      margin-bottom: 70px;
+    }
+  }
+}

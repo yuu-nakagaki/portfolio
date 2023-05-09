@@ -1,0 +1,778 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#about {
+
+  /* ----------------------------------------
+   * fv
+   * ---------------------------------------- */
+  .fv {
+    background: $gray-color;
+    position: relative;
+
+    &::after {
+      background: url(../images/about/fv_bg.jpg) center center / cover;
+      border-radius: 50px 0 0 50px;
+      bottom: -117px;
+      content: "";
+      height: 720px;
+      position: absolute;
+      right: 0;
+      width: 1600px;
+      z-index: 11;
+    }
+
+    &__bg-circle {
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
+      width: 100%;
+      z-index: 10;
+
+      &::before {
+        border: 130px solid $accent-color;
+        border-radius: 50%;
+        box-sizing: border-box;
+        content: "";
+        height: 964px;
+        left: -174px;
+        position: absolute;
+        top: -165px;
+        width: 964px;
+      }
+    }
+
+    &__container {
+      padding: 168px 232px 672px 360px;
+      position: relative;
+      z-index: 11;
+    }
+
+    &__sub-ttl {
+      background: $text-black-color;
+      color: $accent-color;
+      display: inline-block;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 29px;
+      margin: 0 0 11px 10px;
+      padding: 3px 13px 1px;
+    }
+
+    &__box {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__ttl {
+      font-family: $inter;
+      font-size: 90px;
+      font-weight: 800;
+      line-height: 109px;
+    }
+
+    &__txt {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 46px;
+      margin-top: 12px;
+      width: 690px;
+    }
+  }
+
+  /* ----------------------------------------
+   * points
+   * ---------------------------------------- */
+  .points {
+    padding: 256px 320px 195px;
+
+    &__ttl {
+      font-family: $inter;
+      font-size: 63px;
+      font-weight: 800;
+      line-height: 76px;
+    }
+
+    &__sub-ttl {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-bottom: 143px;
+      padding-left: 6px;
+    }
+
+    &__ul {
+      display: flex;
+      flex-direction: column;
+      gap: 143px;
+      padding-left: 160px;
+    }
+
+    &__list {
+      list-style-type: none;
+      position: relative;
+
+      &:nth-of-type(1),
+      &:nth-of-type(2) {
+        margin-left: 50px;
+      }
+
+      &:nth-of-type(3),
+      &:nth-of-type(4) {
+        margin-left: auto;
+      }
+
+      &:nth-of-type(1)::after {
+        background: url(../images/about/points_bg_01.jpg) center center / cover;
+        content: "";
+        height: 379px;
+        position: absolute;
+        right: -50px;
+        top: 32px;
+        width: 562px;
+        z-index: 2;
+      }
+
+      &:nth-of-type(2)::after {
+        background: url(../images/about/points_bg_02.jpg) center center / cover;
+        bottom: 0;
+        content: "";
+        height: 434px;
+        position: absolute;
+        right: -320px;
+        width: 722px;
+        z-index: 3;
+      }
+
+      &:nth-of-type(4)::after {
+        background: url(../images/about/points_bg_03.png) center center / cover;
+        bottom: 0;
+        content: "";
+        height: 680px;
+        left: -986px;
+        position: absolute;
+        width: 826px;
+      }
+    }
+
+    &__list-ttl-box {
+      margin-bottom: 40px;
+      position: relative;
+
+      &::before {
+        background: $accent-color;
+        border-radius: 50%;
+        content: "";
+        height: 131px;
+        left: -50px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 131px;
+        z-index: -1;
+      }
+    }
+
+    &__list-sub-ttl {
+      font-family: $inter;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 29px;
+      margin-bottom: 4px;
+    }
+
+    &__list-ttl {
+      background: $text-black-color;
+      color: $text-white-color;
+      display: inline-block;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 46px;
+      padding: 0 12px;
+
+      & span {
+        margin-left: -10px;
+      }
+    }
+
+    &__list-txt {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 46px;
+      width: 460px;
+    }
+  }
+
+  /* ----------------------------------------
+   * learning-content
+   * ---------------------------------------- */
+  .learning-content {
+    padding: 0 160px 0;
+
+    &__container {
+      background: $gray-color;
+      border-radius: 20px;
+      padding: 116px 160px 109px;
+      position: relative;
+      z-index: 2;
+
+      &::after {
+        background: url(../images/about/learning-content_bg.png) center center / cover;
+        content: "";
+        height: 550px;
+        position: absolute;
+        right: -160px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 906px;
+      }
+    }
+
+    &__ttl {
+      font-family: $inter;
+      font-size: 63px;
+      font-weight: 800;
+      line-height: 76px;
+    }
+
+    &__sub-ttl {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-bottom: 35px;
+    }
+
+    &__description {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 46px;
+      margin-bottom: 51px;
+      width: 675px;
+    }
+
+    &__special-container {
+      position: relative;
+      width: 530px;
+    }
+
+    &__special-ttl {
+      color: $main-color;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 46px;
+      margin-bottom: 6px;
+    }
+
+    &__special-txt {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 34px;
+    }
+
+    &__special-circle {
+      align-items: center;
+      background: $main-color;
+      border-radius: 50%;
+      bottom: -10px;
+      display: flex;
+      flex-direction: column;
+      height: 250px;
+      justify-content: center;
+      position: absolute;
+      right: -260px;
+      width: 250px;
+      z-index: 3;
+    }
+
+    &__special-circle-txt {
+      color: $text-white-color;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-bottom: 11px;
+      text-align: center;
+    }
+
+    &__special-circle-box {
+      display: flex;
+      gap: 8px;
+    }
+
+    &__special-circle-ja {
+      color: $text-white-color;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 66px;
+    }
+
+    &__special-circle-number {
+      color: $text-white-color;
+      font-family: $inter;
+      font-size: 63px;
+      font-weight: 700;
+      line-height: 53px;
+
+      & span {
+        color: $text-white-color;
+        font-family: $inter;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 53px;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  /* ----------------------------------------
+   * wss-learning
+   * ---------------------------------------- */
+  .wss-learning {
+    padding: 305px 320px 317px;
+    position: relative;
+
+    &::after {
+      background: $accent-color;
+      clip-path: polygon(100% 0, 0 50%, 100% 100%);
+      content: "";
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: calc(100% - 160px);
+      z-index: -1;
+    }
+
+    &__ttl {
+      font-family: $inter;
+      font-size: 63px;
+      font-weight: 800;
+      line-height: 76px;
+      text-align: center;
+    }
+
+    &__sub-ttl {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-bottom: 110px;
+      text-align: center;
+    }
+
+    &__ul {
+      display: flex;
+      flex-direction: column;
+      gap: 120px;
+      margin-bottom: 93px;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      list-style-type: none;
+
+      &:nth-of-type(1) {
+        padding-left: 160px;
+      }
+
+      &:nth-of-type(2) {
+        flex-direction: row-reverse;
+        padding-right: 160px;
+      }
+    }
+
+    &__box {
+      display: flex;
+      flex-direction: column;
+      width: 480px;
+    }
+
+    &__list-ttl {
+      background: $text-black-color;
+      color: $text-white-color;
+      font-family: $inter;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 29px;
+      padding: 2px 10px;
+      width: fit-content;
+    }
+
+    &__list-sub-ttl {
+      background: $text-black-color;
+      color: $text-white-color;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-bottom: 33px;
+      padding: 2px 10px;
+      width: fit-content;
+    }
+
+    &__list-txt {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 46px;
+    }
+
+    &__pic {
+      height: 300px;
+      width: 578px;
+    }
+
+    &__img {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    &__software-container {
+      padding: 0 160px;
+    }
+
+    &__software-ttl {
+      font-family: $inter;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 36px;
+      text-align: center;
+    }
+
+    &__software-sub-ttl {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    &__software-ul {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__software-list {
+      list-style-type: none;
+      position: relative;
+    }
+
+    &__software-pic {
+      height: 90px;
+      width: 90px;
+    }
+
+    &__software-img {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    &__software-name {
+      bottom: -24px;
+      font-family: $inter;
+      font-size: 15px;
+      font-weight: 700;
+      left: 50%;
+      line-height: 18px;
+      position: absolute;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+  }
+
+  /* ----------------------------------------
+   * curriculum-features
+   * ---------------------------------------- */
+  .curriculum-features {
+    padding: 0 320px 288px;
+
+    &__ttl {
+      font-family: $inter;
+      font-size: 63px;
+      font-weight: 800;
+      line-height: 76px;
+      text-align: center;
+    }
+
+    &__sub-ttl {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-bottom: 49px;
+      text-align: center;
+    }
+
+    &__description {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 46px;
+      margin-bottom: 73px;
+      text-align: center;
+    }
+
+    &__ul {
+      display: flex;
+      flex-direction: column;
+      gap: 101px;
+    }
+
+    &__list {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+
+      &:nth-of-type(2n) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      width: 500px;
+    }
+
+    &__info-ttl-box {
+      align-items: center;
+      display: flex;
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+
+    &__info-number {
+      color: $main-color;
+      font-family: $inter;
+      font-size: 120px;
+      font-weight: 700;
+      line-height: 120px;
+      opacity: .5;
+    }
+
+    &__info-ttl {
+      font-size: 27px;
+      font-weight: 700;
+      line-height: 43px;
+    }
+
+    &__info-txt {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 36px;
+    }
+
+    &__pic {
+      height: 424px;
+      width: 720px;
+    }
+
+    &__img {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  /* ----------------------------------------
+   * curriculum
+   * ---------------------------------------- */
+  .curriculum {
+    padding: 0 160px 227px;
+
+    &__ttl {
+      font-family: $inter;
+      font-size: 63px;
+      font-weight: 800;
+      line-height: 76px;
+      text-align: center;
+    }
+
+    &__sub-ttl {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-bottom: 72px;
+      text-align: center;
+    }
+
+    &__study-basic,
+    &__study-applied,
+    &__study-production {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      padding-left: 160px;
+      position: relative;
+
+      &::before {
+        border-radius: 20px 0 0 0;
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 160px;
+      }
+    }
+
+    &__study-section-ttl {
+      font-size: 24px;
+      font-weight: 700;
+      left: 80px;
+      letter-spacing: .5em;
+      line-height: 33px;
+      position: absolute;
+      top: 385px;
+      transform: translateX(-50%);
+      writing-mode: vertical-rl;
+
+      & span {
+        color: $text-white-color;
+        font-family: $inter;
+        font-size: 30px;
+        font-weight: 800;
+        letter-spacing: 0;
+        line-height: 36px;
+        margin-top: 20px;
+      }
+
+      &.study-production {
+        color: $text-white-color;
+
+        & span {
+          color: $accent-color;
+        }
+      }
+    }
+
+    &__study-basic::before {
+      background: $gray-color;
+    }
+
+    &__study-applied::before {
+      background: $accent-color;
+    }
+
+    &__study-production::before {
+      background: $text-black-color;
+    }
+
+    &__study-basic,
+    &__study-applied {
+      margin-bottom: 98px;
+    }
+
+    &__study-basic {
+      .curriculum__study-first::before {
+        background: $pale-gray-color;
+      }
+
+      .curriculum__study-second::before {
+        background: $pale-gray-color;
+      }
+    }
+
+    &__study-applied {
+      .curriculum__study-first::before {
+        background: $pale-yellow-color;
+      }
+
+      .curriculum__study-second::before {
+        background: $pale-yellow-color;
+      }
+    }
+
+    &__study-production {
+      .curriculum__study-first::before {
+        background: #535253;
+      }
+
+      .curriculum__study-second::before {
+        background: #535253;
+      }
+    }
+
+    &__study-first,
+    &__study-second {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      padding: 50px 0 50px 160px;
+      padding-left: 160px;
+      position: relative;
+
+      &::before {
+        content: "";
+        height: 100%;
+        left: 27px;
+        position: absolute;
+        top: 0;
+        width: 60px;
+      }
+    }
+
+    &__study-second {
+      flex-direction: row-reverse;
+    }
+
+    &__study-first-ttl,
+    &__study-second-ttl {
+      font-size: 15px;
+      font-weight: 700;
+      left: 55px;
+      letter-spacing: .5em;
+      line-height: 24px;
+      position: absolute;
+      text-orientation: upright;
+      top: 223px;
+      transform: translateX(-50%);
+      writing-mode: vertical-rl;
+
+      &.study-production {
+        color: $text-white-color;
+      }
+    }
+
+    &__study-box {
+      width: 550px;
+    }
+
+    &__study-ul {
+      display: flex;
+      flex-direction: column;
+      gap: 67px;
+    }
+
+    &__study-list {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    &__study-ttl {
+      font-size: 27px;
+      font-weight: 700;
+      line-height: 43px;
+    }
+
+    &__study-txt {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 36px;
+    }
+
+    &__study-pic {
+      height: 460px;
+      width: 646px;
+    }
+
+    &__study-img {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}

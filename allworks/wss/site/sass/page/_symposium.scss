@@ -1,0 +1,472 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#symposium {
+
+  /* ----------------------------------------
+   * fv
+   * ---------------------------------------- */
+  .fv {
+    height: 100vh;
+    padding-top: 215px;
+    position: relative;
+
+    &::after {
+      background: $accent-color;
+      bottom: 0;
+      box-sizing: border-box;
+      content: "";
+      height: calc(100% - 353px);
+      left: 0;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+    }
+
+    &__ttl-box {
+      margin: 0 auto;
+      position: relative;
+      width: 1280px;
+      z-index: 3;
+
+      &::after {
+        background: url(../images/symposium/fv_bg.jpg) center center / cover;
+        content: "";
+        height: 600px;
+        position: absolute;
+        right: -160px;
+        top: 26px;
+        width: 800px;
+        z-index: -1;
+      }
+    }
+
+    &__sub-ttl {
+      background: $text-black-color;
+      color: $accent-color;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-bottom: 30px;
+      padding: 7px 10px;
+      width: fit-content;
+    }
+
+    &__ttl {
+      font-family: $inter;
+      font-size: 90px;
+      font-weight: 800;
+      line-height: 109px;
+      margin-bottom: 54px;
+    }
+
+    &__description {
+      background: $text-white-color;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 26px;
+      padding: 10px 15px;
+      width: fit-content;
+    }
+
+    &__message-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &__message {
+      background: $text-black-color;
+      color: $pale-blue-color;
+      font-size: 36px;
+      font-weight: 700;
+      padding: 22px 24px;
+      width: fit-content;
+    }
+  }
+
+  /* ----------------------------------------
+   * member
+   * ---------------------------------------- */
+  .member {
+    background: $accent-color;
+    padding-bottom: 106px;
+
+    &__container {
+      margin: 0 auto;
+      padding-top: 190px;
+      position: relative;
+      width: 1280px;
+    }
+
+    &__ttl-box {
+      left: -38px;
+      position: absolute;
+      top: -100px;
+      z-index: 3;
+    }
+
+    &__ttl {
+      font-family: $inter;
+      font-size: 54px;
+      font-weight: 800;
+      line-height: 65px;
+    }
+
+    &__sub-ttl {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+
+    &__ul {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 48px;
+    }
+
+    &__list {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: 240px;
+
+      &:nth-of-type(2n) {
+        padding-top: 108px;
+      }
+    }
+
+    &__pic {
+      height: 510px;
+      position: relative;
+      width: 199px;
+      z-index: 2;
+
+      &::after {
+        background: $text-white-color;
+        border-radius: 50%;
+        bottom: 32px;
+        content: "";
+        height: 240px;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        width: 240px;
+        z-index: -1;
+      }
+    }
+
+    &__img {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    &__info {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 20px;
+    }
+
+    &__txt {
+      background: $text-white-color;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 22px;
+      margin-left: auto;
+      padding: 21px 30px;
+      width: fit-content;
+    }
+  }
+
+  /* ----------------------------------------
+   * session
+   * ---------------------------------------- */
+  .session {
+    overflow: hidden;
+    padding: 160px 0 0;
+
+    &__container {
+      margin: 0 auto;
+      width: 1280px;
+    }
+
+    &__link-ul {
+      column-gap: 320px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 160px;
+      row-gap: 160px;
+    }
+
+    &__link-list {
+      list-style-type: none;
+      width: calc(50% - 160px);
+
+      &:nth-of-type(2n + 1) {
+        .session__link::after {
+          background: $pale-yellow-color;
+        }
+
+        .session__link-heading {
+          color: $pale-yellow-color;
+        }
+      }
+
+      &:nth-of-type(2n) {
+        .session__link::after {
+          background: $pale-blue-color;
+        }
+
+        .session__link-heading {
+          color: $pale-blue-color;
+        }
+      }
+    }
+
+    &__link {
+      color: $text-black-color;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      position: relative;
+      text-decoration: none;
+
+      &::after {
+        border-radius: 50%;
+        bottom: 0;
+        content: "";
+        height: 80px;
+        position: absolute;
+        right: 0;
+        transform: translateY(calc(50% + 4px));
+        transition: .5s cubic-bezier(.455, .03, .515, .955);
+        width: 80px;
+        z-index: -1;
+      }
+
+      &:hover {
+        .session__link-txt::after {
+          width: 100%;
+        }
+
+        &::after {
+          transform: translateY(calc(50% + 44px));
+        }
+      }
+    }
+
+    &__link-heading {
+      font-family: $inter;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 22px;
+    }
+
+    &__link-txt {
+      color: $text-black-color;
+      font-size: 23px;
+      font-weight: 700;
+      line-height: 37px;
+      position: relative;
+
+      &::before {
+        background: $gray-color;
+        bottom: -4px;
+        content: "";
+        height: 2px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+
+      &::after {
+        background: $text-black-color;
+        bottom: -4px;
+        content: "";
+        height: 2px;
+        left: 0;
+        position: absolute;
+        transition: .5s cubic-bezier(.455, .03, .515, .955);
+        width: 18px;
+      }
+    }
+
+    &__ul {
+      counter-reset: listNum;
+      display: flex;
+      flex-direction: column;
+      gap: 182px;
+      margin-bottom: 160px;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      list-style-type: none;
+      padding-top: 300px;
+      position: relative;
+
+      &::after {
+        content: "";
+        height: 480px;
+        position: absolute;
+        top: 0;
+        width: 800px;
+      }
+
+      &:nth-of-type(2n + 1) {
+        .session__ttl {
+          &::before {
+            color: $pale-yellow-color;
+          }
+        }
+      }
+
+      &:nth-of-type(2n) {
+        .session__ttl {
+          margin-left: auto;
+          margin-right: 104px;
+
+          &::before {
+            color: $pale-blue-color;
+          }
+        }
+      }
+
+      &:nth-of-type(1)::after {
+        background: url(../images/symposium/session_bg_01.jpg) center center / cover;
+        right: -320px;
+      }
+
+      &:nth-of-type(2)::after {
+        background: url(../images/symposium/session_bg_02.jpg) center center / cover;
+        left: -320px;
+      }
+
+      &:nth-of-type(3)::after {
+        background: url(../images/symposium/session_bg_03.jpg) center center / cover;
+        right: -320px;
+      }
+
+      &:nth-of-type(4)::after {
+        background: url(../images/symposium/session_bg_04.jpg) center center / cover;
+        left: -320px;
+      }
+    }
+
+    &__ttl {
+      background: $text-black-color;
+      color: $text-white-color;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 46px;
+      margin-bottom: 318px;
+      padding: 4px 24px;
+      position: relative;
+      width: fit-content;
+
+      &::before,
+      &::after {
+        font-family: $inter;
+        font-size: 90px;
+        font-weight: 800;
+        left: 0;
+        line-height: 109px;
+        position: absolute;
+      }
+
+      &::before {
+        content: "SESSION";
+        top: -222px;
+      }
+
+      &::after {
+        color: $text-black-color;
+        content: "0" counter(listNum);
+        counter-increment: listNum;
+        top: -168px;
+      }
+    }
+
+    &__talk-ul {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    &__talk-list {
+      list-style-type: none;
+      padding: 0 160px;
+      position: relative;
+
+      &::before {
+        content: "";
+        height: 100px;
+        position: absolute;
+        top: 0;
+        width: 100px;
+      }
+
+      &:nth-of-type(2n) {
+        & p {
+          background: #f8fee2;
+          margin-left: auto;
+        }
+
+        &::before {
+          right: 0;
+        }
+      }
+
+      &:nth-of-type(2n + 1) {
+        & p {
+          background: #e7f3ff;
+          margin-right: auto;
+        }
+
+        &::before {
+          left: 0;
+        }
+      }
+
+      &.man-01::before {
+        background: url(../images/symposium/session_icon_man_01.png) center center / cover;
+      }
+
+      &.man-02::before {
+        background: url(../images/symposium/session_icon_man_02.png) center center / cover;
+      }
+
+      &.woman-01::before {
+        background: url(../images/symposium/session_icon_woman_01.png) center center / cover;
+      }
+
+      &.woman-02::before {
+        background: url(../images/symposium/session_icon_woman_02.png) center center / cover;
+      }
+
+      &.teacher::before {
+        background: url(../images/symposium/session_icon_teacher.png) center center / cover;
+      }
+    }
+
+    &__talk-txt {
+      border-radius: 20px;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 46px;
+      padding: 34px 75px;
+      width: 800px;
+    }
+
+    &__bg {
+      background: url(../images/symposium/session_bg_05.jpg) center center / cover;
+      height: 600px;
+      width: 100%;
+    }
+  }
+}

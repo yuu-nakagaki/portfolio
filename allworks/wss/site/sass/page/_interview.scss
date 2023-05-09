@@ -1,0 +1,454 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+
+
+#interview {
+  counter-reset: mycounter;
+
+  .fv {
+    &__container {
+      left: 232px;
+      position: absolute;
+      top: 168px;
+      z-index: 2;
+    }
+
+    &__sub-ttl {
+      background: $text-black-color;
+      color: $accent-color;
+      display: inline-block;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 29px;
+      margin: 0 0 11px 10px;
+      padding: 3px 13px 1px;
+    }
+
+    &__box {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__ttl {
+      font-family: $inter;
+      font-size: 90px;
+      font-weight: 800;
+      line-height: 109px;
+    }
+  }
+
+
+
+  .interview {
+    background: $gray-color;
+    margin-bottom: 120px;
+
+    &__container {
+      display: flex;
+      justify-content: center;
+      padding-top: 278px;
+
+      &::after {
+        border: 130px solid $main-color;
+        border-radius: 50%;
+        content: "";
+
+        // box-sizing: border-box;
+        display: block;
+        height: 800px;
+        left: -150px;
+        position: absolute;
+        top: -250px;
+        width: 800px;
+      }
+    }
+
+    &__box {
+      height: 800px;
+      width: 732px;
+    }
+
+    &__link {
+      color: #000;
+      display: block;
+      height: 100%;
+      text-decoration: none;
+      width: 100%;
+    }
+
+    &__pic {
+      background: #000;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+
+      :hover {
+        opacity: .6;
+        transform: scale(1.1);
+        transition-duration: .6s;
+      }
+    }
+
+    &__img {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      transition-duration: .3s;
+      width: 100%;
+    }
+
+    &__subbox {
+      bottom: 280px;
+      left: 93px;
+      position: relative;
+      z-index: 2;
+    }
+
+    &__ttl--01,
+    &__ttl--02 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    &__ttl--01 {
+      color: #fff;
+
+      & span {
+        background: #000;
+        display: block;
+        margin-bottom: 5px;
+        padding: 5px 10px;
+        width: fit-content;
+      }
+    }
+
+    &__ttl--02 {
+      color: #000;
+
+      & span {
+        background: #fff;
+        display: block;
+        margin-bottom: 5px;
+        padding: 5px 10px;
+        width: fit-content;
+      }
+    }
+
+    &__job--01,
+    &__job--02 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+
+    &__name--01,
+    &__name--02 {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    &__job--02 {
+      color: #fff;
+    }
+
+    &__name--02 {
+      color: #fff;
+    }
+  }
+
+  .prof {
+    &::before {
+      content: counter(mycounter, decimal-leading-zero);
+      counter-increment: mycounter;
+      font-family: $inter;
+      font-size: 90px;
+      font-weight: bold;
+      left: 315px;
+      position: relative;
+      top: 50px;
+    }
+
+    &:nth-of-type(4) .prof__container {
+      flex-direction: row-reverse;
+    }
+
+    &__container {
+      background: $gray-color;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 160px 154px;
+      padding: 108px 160px;
+    }
+
+    &__img {
+      display: block;
+    }
+
+    &__box {
+      &.is-active {
+        .prof__wrap::before {
+          animation: bg 2.6s cubic-bezier(.22, 1, .36, 1) forwards;
+          background: #000;
+          content: "";
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          transform-origin: left center;
+          width: 100%;
+        }
+      }
+    }
+
+    &__ttl {
+      margin-bottom: 72px;
+    }
+
+    &__wrap {
+      display: inline-block;
+      margin: 5px 0;
+      position: relative;
+    }
+
+    &__inn {
+      color: #fff;
+      display: inline-block;
+      font-size: 36px;
+      font-weight: bold;
+      padding: 10px 20px;
+
+      // margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    &__txt {
+      display: block;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+  }
+
+  @keyframes bg {
+    0% {
+      opacity: 0;
+      transform: scaleX(0) translateX(-5%);
+    }
+
+    30% {
+      transform: scaleX(1) translateX(0);
+    }
+
+    100% {
+      transform: scaleX(1) translateX(0);
+    }
+
+    30%,
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .story {
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    justify-content: space-between;
+    margin: 0 160px 300px;
+
+    &__container--01,
+    &__container--02 {
+      display: flex;
+      flex-direction: column;
+      gap: 173px;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    &__container--01 {
+      &:nth-of-type(1):before {
+        background-color: $accent-color;
+        content: "";
+        height: 100%;
+        left: 216.5px;
+        position: absolute;
+        top: 0;
+        width: 100px;
+      }
+
+      &:nth-of-type(2):before {
+        background-color: $accent-color;
+        content: "";
+        height: 100%;
+        position: absolute;
+        right: 216.5px;
+        top: 0;
+        width: 100px;
+      }
+    }
+
+    &__container--02 {
+      &:nth-of-type(1):before {
+        background-color: $main-color;
+        content: "";
+        height: 100%;
+        left: 216.5px;
+        position: absolute;
+        top: 0;
+        width: 100px;
+      }
+
+      &:nth-of-type(2):before {
+        background-color: $main-color;
+        content: "";
+        height: 100%;
+        position: absolute;
+        right: 216.5px;
+        top: 0;
+        width: 100px;
+      }
+    }
+
+    &__box--01 {
+      background: $gray-color;
+      position: relative;
+      width: 925px;
+    }
+
+    &__txt-box--03 {
+      line-height: 2.5;
+      margin: 0 auto;
+      padding: 100px 0 100px;
+      width: 605px;
+    }
+
+    &__txt-box--01 {
+      line-height: 2.5;
+      margin: 0 auto;
+      padding: 150px 0 100px;
+      width: 605px;
+    }
+
+    &__ttl {
+      color: #fff;
+      font-size: 36px;
+      font-weight: 700;
+      margin: 0 auto;
+      padding: 72px 0 0;
+      width: fit-content;
+
+      & span {
+        background: #000;
+        display: block;
+        padding: 20px;
+        width: fit-content;
+      }
+    }
+
+    &__circle {
+      align-items: center;
+      background: #000;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      height: 200px;
+      justify-content: center;
+      left: 166.5px;
+      position: absolute;
+      top: -100px;
+      width: 200px;
+      z-index: 3;
+    }
+
+    &__circle-en {
+      color: #fff;
+      font-family: $inter;
+      font-size: 32px;
+    }
+
+    &__circle-txt {
+      color: #fff;
+      font-family: $inter;
+      font-size: 50px;
+      text-align: center;
+
+      & span {
+        display: block;
+        font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+        font-size: 18px;
+        padding-top: 18px;
+      }
+    }
+
+    &__box--02,
+    &__box--03 {
+      background: $gray-color;
+      position: relative;
+      width: 533px;
+    }
+
+    &__box--02 {
+      &:first-child:before {
+        background-color: $accent-color;
+        content: "";
+        height: 200px;
+        position: absolute;
+        right: 216.5px;
+        top: -200px;
+        width: 100px;
+        z-index: -1;
+      }
+
+      &:nth-of-type(5):after {
+        background-color: $accent-color;
+        content: "";
+        height: 100px;
+        left: -600px;
+        position: absolute;
+        top: 231px;
+        width: 1000px;
+        z-index: -1;
+      }
+    }
+
+    &__box--03 {
+      &:first-child:before {
+        background-color: $main-color;
+        content: "";
+        height: 200px;
+        position: absolute;
+        right: 216.5px;
+        top: -200px;
+        width: 100px;
+        z-index: -1;
+      }
+
+      &:nth-of-type(5):after {
+        background-color: $main-color;
+        content: "";
+        height: 100px;
+        left: -600px;
+        position: absolute;
+        top: 231px;
+        width: 1000px;
+        z-index: -1;
+      }
+    }
+
+    &__txt-box--02 {
+      line-height: 2.5;
+      margin: 0 auto;
+      padding: 150px 0 100px;
+      width: 400px;
+    }
+
+    &__txt-ttl {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+  }
+}

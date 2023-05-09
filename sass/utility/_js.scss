@@ -5,8 +5,6 @@
 
 .changeWhite {
     color: $white;
-    background: #f00;
-    transition: all 0.1s;
 }
 
 .is-hide {
@@ -44,13 +42,3 @@
         padding-top: 80px;
     }
 }
-
-
-
-// .menu-open {
-//     height: 100%;
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     overflow: hidden;
-// }

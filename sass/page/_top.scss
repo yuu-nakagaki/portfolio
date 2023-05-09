@@ -96,7 +96,7 @@
         @include pc {
             padding: 200px 160px;
         }
-        
+
         @include macpc {
             padding: 200px 320px;
         }
@@ -184,7 +184,7 @@
                 margin-bottom: 0;
                 font-size: 28px;
             }
-            
+
             @include macpc {
                 font-size: 34px;
             }
@@ -192,6 +192,11 @@
 
         &__txt {
             margin-bottom: 40px;
+            color: transparent;
+            background: linear-gradient(90deg, $black, $black, transparent, transparent);
+            background-position: 100% 0%;
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
 
             &:last-child {
                 margin-bottom: 0;
@@ -340,7 +345,7 @@
 
         &__scroll-item {
             position: relative;
-            margin-bottom: 55%;
+            margin-bottom: 60%;            
 
             @include tab {
                 margin-bottom: 50%;
@@ -358,7 +363,7 @@
         }
 
         &__scroll-item:last-child {
-            margin-bottom: 120px;
+            margin-bottom: 160px;
 
             @include tab {
                 margin-bottom: 180px;
@@ -388,7 +393,7 @@
 
             @include pc-large {
                 filter: saturate(0%);
-                
+
                 &:hover {
                     filter: saturate(100%);
                 }
@@ -400,9 +405,13 @@
             width: 100%;
             padding-left: 20px;
             position: absolute;
-            top: 70%;
+            top: 60%;
             left: 0;
             border-left: 1px solid $white;
+
+            @include sp-large {
+                top: 70%;
+            }
 
             @include tab {
                 padding-left: 40px;
@@ -849,11 +858,12 @@
 
     .message {
         height: 100vh;
-        background: $gray;
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
 
         &__txt {
             font-family: $roboto;
@@ -876,8 +886,9 @@
 
         }
 
-        &__ttl {
+        &__sub {
             font-size: 20px;
+            text-align: center;
 
             @include tab {
                 font-size: 30px;
@@ -886,6 +897,20 @@
             @include pc {
                 font-size: 34px;
             }
+        }
+
+        &__bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            width: 10%;
+            height: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $gray;
         }
     }
 
