@@ -1,0 +1,186 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+.footer {
+    padding: 188px 480px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    background: $point-color;
+
+    &__leftbox {
+        position: relative;
+    }
+
+    &__ttl {
+        font-size: 19px;
+        margin-bottom: 27px;
+    }
+
+    &__sub {
+        margin-bottom: 8px;
+    }
+
+    &__description {
+        @include textStyle;
+        margin-bottom: 21px;
+        letter-spacing: 0.1em;
+    }
+
+
+
+    &__ul {
+        margin-bottom: 40px;
+    }
+
+    &__list {
+        list-style-type: none;
+        margin-bottom: 21px;
+    }
+
+
+
+    &__logo {
+        width: 80px;
+    }
+
+    &__insta {
+        position: absolute;
+        bottom: 14px;
+        right: 0;
+    }
+
+    &__link--01 {
+        display: block;
+        padding: 20px;
+        writing-mode: vertical-rl;
+        white-space: pre;
+        text-decoration: none;
+        color: $btn-color;
+        transition: 0.3s;
+
+        &:hover {
+            color: $pale-color;
+        }
+
+        &::after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 100px;
+            width: 20px;
+            height: 20px;
+            background: url(../../images/insta-brown.png) center center / cover;
+            transition: 0.3s;
+        }
+
+        &:hover::after {
+            background: url(../../images/insta-white.png) center center / cover;
+        }
+
+    }
+
+    &__rightbox {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -60%;
+            height: 100%;
+            width: 1px;
+            background: $btn-color;
+        }
+    }
+
+    &__link--02 {
+        display: inline-block;
+        text-decoration: none;
+        color: $text-color;
+        position: relative;
+        transition: 0.3s;
+
+        &:hover {
+            color: $btn-color;
+        }
+
+        &::after {
+            position: absolute;
+            top: 6px;
+            right: -20px;
+            content: "";
+            width: 0.5em;
+            height: 0.5em;
+            border-top: 1px solid $btn-color;
+            border-right: 1px solid $btn-color;
+            transform: rotate(45deg);
+        }
+    }
+
+    &__link--03 {
+        text-decoration: none;
+        font-size: 15px;
+        color: $text-color;
+        transition: 0.3s;
+
+        &:hover {
+            color: $btn-color;
+        }
+    }
+
+
+    &__totopbtn {
+        position: absolute;
+        right: 108px;
+        bottom: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    &__totoplink {
+        display: block;
+        width: 52px;
+        height: 52px;
+        transition: 0.3s;
+
+        & div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid $btn-color;
+
+            & span {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                margin-top: 10px;
+                border-top: 1px solid $btn-color;
+                border-right: 1px solid $btn-color;
+                transform: rotate(-45deg);
+                transition: 0.3s;
+            }
+        }
+
+        &:hover {
+            background: $btn-color;
+            & span {
+                border-top: 1px solid #fff;
+                border-right: 1px solid #fff;
+            }
+        }
+
+    }
+
+}

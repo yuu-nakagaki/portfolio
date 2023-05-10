@@ -1,0 +1,647 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#top {
+    .mv {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        height: 100vh;
+        background: url(../images/mv.jpg) center center / cover;
+
+        &__ttl,
+        &__txt {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+
+        &__ttl {
+            padding-top: 299px;
+            font-size: 33px;
+            letter-spacing: 0.18em;
+            line-height: 1.96;
+            margin-left: 47px;
+        }
+
+        &__txt {
+            padding-top: 303px;
+            font-family: $EN;
+            letter-spacing: 0.1em;
+
+            & span {
+                padding-top: 8px;
+            }
+        }
+
+    }
+
+    .insta {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 12%;
+        right: 86px;
+
+        &__link {
+            display: block;
+            padding: 20px;
+            writing-mode: vertical-rl;
+            white-space: pre;
+            text-decoration: none;
+            color: #fff;
+            transition: 0.3s;
+
+            &:hover {
+                color: $btn-color;
+            }
+
+            &::after {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                top: 100px;
+                width: 20px;
+                height: 20px;
+                background: url(../../images/insta-white.png) center center / cover;
+                transition: 0.3s;
+            }
+
+            &:hover::after {
+                background: url(../../images/insta-brown.png) center center / cover;
+            }
+
+        }
+
+    }
+
+    .scroll {
+        position: absolute;
+        left: 50%;
+        bottom: 15%;
+        writing-mode: vertical-rl;
+
+        & span {
+            position: absolute;
+            color: #fff;
+
+            &::after {
+                content: '';
+                position: absolute;
+                display: block;
+                bottom: 0;
+                margin-top: 70px;
+                left: 50%;
+                width: 1px;
+                height: 76px;
+                background: #fff;
+                animation: pathmove 1.4s ease-in-out infinite;
+                opacity: 0;
+            }
+
+        }
+    }
+
+    .reserve {
+        position: fixed;
+        z-index: 2;
+        bottom: 77px;
+        left: 60.5px;
+
+        &__txt {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            letter-spacing: 0.6em;
+            font-size: 20px;
+
+            & span {
+                font-family: $EN;
+                font-size: 16px;
+                letter-spacing: 0.2em;
+                margin-bottom: 10px;
+                padding-top: 14px;
+            }
+        }
+
+        &__link {
+            display: block;
+            padding: 30px 20px;
+            border: 1px solid #fff;
+            border-right: 2px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+
+            &:hover {
+                background: $text-color;
+                color: #fff;
+            }
+        }
+    }
+
+    .about {
+        padding-top: 228px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        position: relative;
+
+        &__ttl {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            @include titleStyle;
+            margin-right: 160px;
+
+            &::before {
+                content: 'About Musubi';
+                display: block;
+                font-size: 16px;
+                font-family: $EN;
+                padding-top: 8px;
+                padding-left: 13px;
+            }
+        }
+
+        &__box {
+            display: block;
+            background: url(../images/img01.jpg) center center / cover;
+            width: 1600px;
+            height: 1138px;
+            margin-bottom: 190px;
+            padding-right: 160px;
+        }
+
+        &__sub {
+            font-size: 23px;
+            color: #fff;
+            margin-bottom: 66px;
+            letter-spacing: 0.2em;
+            line-height: 2.4;
+            padding-top: 137px;
+            padding-left: 50%;
+        }
+
+        &__txt {
+            color: #fff;
+            line-height: 2.25;
+            padding-left: 50%;
+        }
+
+        &__bgcolor {
+            position: absolute;
+            top: -228px;
+            right: 0;
+            z-index: -1;
+            width: 960px;
+            height: 1146px;
+            background: $pale-color;
+        }
+    }
+
+    .menu {
+        background: $point-color;
+
+        &__ttl {
+            padding-top: 200px;
+            margin-bottom: 131.5px;
+            text-align: center;
+            @include titleStyle;
+
+            &::before {
+                content: 'Menu';
+                display: block;
+                font-size: 16px;
+                font-family: $EN;
+                margin-bottom: 8px;
+            }
+        }
+
+        &__container--01 {
+            width: 1600px;
+            margin: 0 0 0 auto;
+            display: flex;
+            align-items: center;
+        }
+
+        &__container--02 {
+            width: 1600px;
+            margin: 0 0 auto 0;
+            padding: 92px 0;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+
+        &__box--01 {
+            letter-spacing: 0.2em;
+            width: calc(480px + 12%);
+            overflow: hidden;
+            padding-right: 12%;
+        }
+
+        &__box--02 {
+            @extend .menu__box--01;
+            padding-left: 12%;
+        }
+
+        &__txtbox--01 {
+            position: relative;
+            margin-bottom: 40px;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 40px;
+                left: 0;
+                width: 200%;
+                height: 1px;
+                display: block;
+                background: $text-color;
+                margin-top: 20.5px;
+                margin-bottom: 26.5px;
+            }
+        }
+
+        &__txtbox--02 {
+            position: relative;
+            margin-bottom: 40px;
+            width: calc(480px + 12%);
+            &::after {
+                content: '';
+                position: absolute;
+                top: 40px;
+                right: 0;
+                width: 200%;
+                height: 1px;
+                display: block;
+                background: $text-color;
+                margin-top: 20.5px;
+                margin-bottom: 26.5px;
+            }
+        }
+
+        &__name {
+            font-size: 21px;
+            margin-bottom: 7px;
+        }
+
+        &__pic {
+            width: 960px;
+            height: 640px;
+        }
+
+        &__img {
+            @include img;
+        }
+
+        &__txt {
+            @include textStyle;
+            width: 480px;
+        }
+
+        &__btn {
+            font-size: 21px;
+            margin-top: 110px;
+            padding-bottom: 205px;
+        }
+
+        &__link {
+            display: block;
+            padding: 20px;
+            width: 200px;
+            margin-left: 320px;
+            text-decoration: none;
+            text-align: center;
+            color: $text-color;
+            position: relative;
+            transition: 0.3s;
+
+            &:hover {
+                color: $btn-color;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 8px;
+                left: -10px;
+                width: 45px;
+                height: 45px;
+                display: block;
+                background: $btn-color;
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                position: absolute;
+                top: 25px;
+                left: 5px;
+                content: "";
+                width: 0.5em;
+                height: 0.5em;
+                border-top: 1px solid #fff;
+                border-right: 1px solid #fff;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+
+    .ideal {
+        position: relative;
+        margin-bottom: 188px;
+
+        &__ttl {
+            @include titleStyle(#fff);
+            position: absolute;
+            top: 500px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            &::before {
+                content: 'Our Concept';
+                display: block;
+                font-size: 16px;
+                font-family: $EN;
+                margin-bottom: 8px;
+            }
+        }
+
+        &__bg {
+            width: 100%;
+            height: 100vh;
+            background: url(../images/img05.jpg) center center / cover;
+        }
+
+        &__box--01 {
+            position: absolute;
+            top: 800px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        &__pic--01 {
+            width: 640px;
+            height: 760px;
+        }
+
+        &__img {
+            @include img;
+        }
+
+        &__txtbox {
+            margin-left: 228px;
+        }
+
+        &__sub {
+            font-size: 23px;
+            line-height: 2.4;
+            letter-spacing: 0.2em;
+            margin-bottom: 66px;
+        }
+
+        &__txt {
+            width: 600px;
+            line-height: 2.25;
+        }
+
+        &__box--02 {
+            display: flex;
+            margin-top: 800px;
+            margin-bottom: 188px;
+        }
+
+        &__pic--02 {
+            width: 1053px;
+            height: 540px;
+        }
+
+        &__box--03 {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-bottom: 188px;
+        }
+    }
+
+
+    .access {
+        padding: 188px 0;
+        background: $point-color;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        position: relative;
+
+        &__ttl {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            @include titleStyle;
+            margin-right: 160px;
+
+            &::before {
+                content: 'Shop Info';
+                display: block;
+                font-size: 16px;
+                font-family: $EN;
+                padding-top: 8px;
+                padding-left: 13px;
+            }
+        }
+
+        &__container {
+            width: 550px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &__txt {
+            @include textStyle;
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 1px;
+                display: block;
+                background: $text-color;
+                margin-top: 50.5px;
+                margin-bottom: 79.5px;
+            }
+        }
+
+        &__sub {
+            margin-bottom: 14px;
+        }
+
+        &__description {
+            @include textStyle;
+            margin-bottom: 51px;
+        }
+
+        &__linkbox {
+            display: flex;
+            gap: 42.5px;
+            align-items: center;
+        }
+
+        &__insta {
+            width: 40px;
+            height: 40px;
+        }
+
+        &__img {
+            @include img;
+        }
+
+        &__link--01 {
+            display: block;
+            text-decoration: none;
+            color: $text-color;
+        }
+
+
+        &__link--02 {
+            @extend .access__link--01;
+            position: relative;
+            transition: 0.3s;
+
+            &::after {
+                position: absolute;
+                top: 6px;
+                right: -20px;
+                content: "";
+                width: 0.5em;
+                height: 0.5em;
+                border-top: 1px solid $btn-color;
+                border-right: 1px solid $btn-color;
+                transform: rotate(45deg);
+            }
+
+            &:hover {
+                color: $btn-color;
+            }
+        }
+
+        &__btnbox {
+            display: flex;
+            gap: 20px;
+        }
+
+        &__btn--01,
+        &__btn--02 {
+            font-size: 21px;
+        }
+
+        &__reserve {
+            display: block;
+            width: 266px;
+            padding: 19.5px 0;
+            background: $btn-color;
+            border-radius: 999px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            transition: 0.3s;
+
+            &:hover {
+                background: #fff;
+                color: $btn-color;
+            }
+        }
+
+        &__inquiry {
+            @extend .access__reserve;
+            background: #fff;
+            color: $text-color;
+
+            &:hover {
+                background: $text-color;
+                color: #fff;
+            }
+        }
+
+    }
+
+    iframe {
+        margin-left: 160px;
+    }
+}
+
+.instagram {
+    padding-top: 188px;
+    margin-bottom: 188px;
+
+    &__ttl {
+        text-align: center;
+        margin-bottom: 51.5px;
+        @include titleStyle;
+
+        &::before {
+            content: 'Instagram';
+            display: block;
+            font-size: 16px;
+            font-family: $EN;
+            margin-bottom: 8px;
+        }
+    }
+
+    &__box {
+        margin: 0 auto;
+        margin-bottom: 51.5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 1280px;
+    }
+
+    &__btn {
+        text-align: center;
+    }
+
+    &__link--01 {
+        display: block;
+        padding: 20px;
+        color: $text-color;
+        text-decoration: none;
+        position: relative;
+    }
+
+    &__link--02 {
+        display: inline-block;
+        padding: 20px;
+        color: $text-color;
+        text-decoration: none;
+        position: relative;
+        transition: 0.3s;
+
+        &:hover {
+            color: $btn-color;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: -48px;
+            width: 45px;
+            height: 45px;
+            display: block;
+            background: $btn-color;
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            position: absolute;
+            top: 25px;
+            left: -32px;
+            content: "";
+            width: 0.5em;
+            height: 0.5em;
+            border-top: 1px solid #fff;
+            border-right: 1px solid #fff;
+            transform: rotate(45deg);
+        }
+    }
+}

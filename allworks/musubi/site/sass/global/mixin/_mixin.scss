@@ -1,0 +1,31 @@
+// settingフォルダの変数を読み込みます
+
+@use "../setting" as *;
+
+// タイトル基本
+@mixin titleStyle($color:$text-color) {
+    letter-spacing: 0.1em;
+    font-size: 46px;
+    font-weight: 400;
+    color: $color;
+}
+
+// テキスト基本
+@mixin textStyle {
+    line-height: 2.25;
+}
+
+// img画像設定
+@mixin img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+// display: flex;を利用した上下左右中央寄せ一式
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
