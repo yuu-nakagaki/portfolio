@@ -401,6 +401,40 @@
     }
 }
 
+#musubi {
+    .mv {
+
+        &__bg {
+            background: url(../images/musubi/img01-sp.jpg) center center / cover;
+
+            @include tab {
+                background: url(../images/musubi/img01-tab.jpg) center center / cover;
+            }
+
+            @include pc {
+                background: url(../images/musubi/img01-pc.jpg) center center / cover;
+            }
+        }
+    }
+}
+
+#azito {
+    .mv {
+
+        &__bg {
+            background: url(../images/cafeazito/img01-sp.jpg) center center / cover;
+
+            @include tab {
+                background: url(../images/cafeazito/img01-tab.jpg) center center / cover;
+            }
+
+            @include pc {
+                background: url(../images/cafeazito/img01-pc.jpg) center center / cover;
+            }
+        }
+    }
+}
+
 #wss {
     .mv {
 
@@ -413,6 +447,40 @@
 
             @include pc {
                 background: url(../images/wss/img01-pc.jpg) center center / cover;
+            }
+        }
+    }
+}
+
+#littleriddle {
+    .mv {
+
+        &__bg {
+            background: url(../images/littleriddle/img01-sp.jpg) center center / cover;
+
+            @include tab {
+                background: url(../images/littleriddle/img01-tab.jpg) center center / cover;
+            }
+
+            @include pc {
+                background: url(../images/littleriddle/img01-pc.jpg) center center / cover;
+            }
+        }
+    }
+}
+
+#laura {
+    .mv {
+
+        &__bg {
+            background: url(../images/laura/img01-sp.jpg) center center / cover;
+
+            @include tab {
+                background: url(../images/laura/img01-tab.jpg) center center / cover;
+            }
+
+            @include pc {
+                background: url(../images/laura/img01-pc.jpg) center center / cover;
             }
         }
     }
