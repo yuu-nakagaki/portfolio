@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Little Riddleブランド公式サイト</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet" media="all">
+</head>
+
+<body id="top">
+  <div class="wrapper">
+
+    <header id="header" class="header">
+      <h1 class="header__ttl">
+        <a href="#" class="header__link"><img src="images/logo.svg" alt="ブランドロゴ" id="header__logo"
+            class="header__logo"></a>
+      </h1>
+
+      <!-- バーガーボタン -->
+      <div id="btn" class="btn">
+        <span id="btn__top" class="btn__top"></span>
+        <span id="btn__middle" class="btn__middle"></span>
+        <span id="btn__bottom" class="btn__bottom"></span>
+      </div>
+
+      <!-- スライドメニュー -->
+      <nav id="gnav" class="gnav">
+        <div class="gnav__point">
+          <img src="images/logo.svg" alt="ブランドロゴ" class="gnav__logo">
+        </div>
+        <div class="gnav__box">
+          <p class="gnav__ttl">メニュー</p>
+          <ul class="gnav__nav">
+            <li class="gnav__list"><a href="#message" class="gnav__link">メッセージ</a></li>
+            <li class="gnav__list"><a href="#item" class="gnav__link">アイテム</a></li>
+            <li class="gnav__list"><a href="#coodination" class="gnav__link">コーディネート</a></li>
+            <li class="gnav__list"><a href="#reading" class="gnav__link">よみもの</a></li>
+            <li class="gnav__list"><a href="#store" class="gnav__link">お店案内</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- 左側メニュー -->
+    <nav id="sidenav" class="sidenav">
+      <ul class="sidenav__nav">
+        <li class="sidenav__item">
+          <a href="#message" class="sidenav__link"><span>01</span></a>
+        </li>
+        <li class="sidenav__item">
+          <a href="#item" class="sidenav__link"><span>02</span></a>
+        </li>
+        <li class="sidenav__item">
+          <a href="#coodination" class="sidenav__link"><span>03</span></a>
+        </li>
+        <li class="sidenav__item">
+          <a href="#reading" class="sidenav__link"><span>04</span></a>
+        </li>
+        <li class="sidenav__item">
+          <a href="#store" class="sidenav__link"><span>05</span></a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="main">
+      <div id="mv" class="mv">
+        <!-- スワイパー本体 -->
+        <div class="swiper swiper-mv">
+          <!-- スワイパーラッパー -->
+          <div class="swiper-wrapper swiper-mv__wrapper">
+            <!-- スライド -->
+            <div class="swiper-slide swiper-mv__slide01"></div>
+            <div class="swiper-slide swiper-mv__slide02"></div>
+            <div class="swiper-slide swiper-mv__slide03"></div>
+            <div class="swiper-slide swiper-mv__slide04"></div>
+            <div class="swiper-slide swiper-mv__slide05"></div>
+          </div>
+
+          <!-- ページネーション（任意）※必要な時だけ -->
+          <div class="swiper-pagination swiper-mv__pagination"></div>
+
+          <!-- ナビゲーションボタン（任意） -->
+          <div class="swiper-button-prev swiper-mv__prev"></div>
+          <div class="swiper-button-next swiper-mv__next"></div>
+        </div>
+      </div>
+
+      <section id="message" class="message scroll-point">
+        <h2 class="message__ttl">メッセージ</h2>
+        <p class="message__sub">一緒に、好きをみつけよう。</p>
+        <p class="message__txt">私たちは、お子様たちがじぶんの「好き」を見つけていくまでの時間を<br>
+          親御さんと一緒に見守るような子ども服ブランドでありたいと思っています。<br>
+          <br>
+          「どんな服が着たい？」<br>
+          「どの色が好き？」<br>
+          「これ、きっとあなたに似合うよ」<br>
+          <br>
+          お子様が、いつか自分で好きな服を選ぶようになるその日まで、<br>
+          ぜひ親子で一緒にお話しながら、服選びのひとときを楽しんでください。
+        </p>
+      </section>
+
+      <section id="item" class="item scroll-point">
+        <h2 class="item__ttl">アイテム</h2>
+        <!-- スワイパー本体 -->
+        <div class="swiper swiper-item">
+          <!-- スワイパーラッパー -->
+          <div class="swiper-wrapper swiper-item__wrapper">
+            <!-- スライド -->
+            <div class="swiper-slide swiper-item__slide">
+              <img src="images/tmb01.jpg" alt="紫シャツサムネ" class="swiper-item__img" data-modal="#modal__container01">
+            </div>
+            <div class="swiper-slide swiper-item__slide">
+              <img src="images/tmb02.jpg" alt="ニットサムネ" class="swiper-item__img" data-modal="#modal__container02">
+            </div>
+            <div class="swiper-slide swiper-item__slide">
+              <img src="images/tmb03.jpg" alt="薄手Tシャツサムネ" class="swiper-item__img" data-modal="#modal__container03">
+            </div>
+            <div class="swiper-slide swiper-item__slide">
+              <img src="images/tmb04.jpg" alt="ニット2サムネ" class="swiper-item__img" data-modal="#modal__container04">
+            </div>
+            <div class="swiper-slide swiper-item__slide">
+              <img src="images/tmb05.jpg" alt="色シャツサムネ" class="swiper-item__img" data-modal="#modal__container05">
+            </div>
+          </div>
+          <!-- ナビゲーションボタン（任意） -->
+          <div class="swiper-button-prev swiper-item__prev"></div>
+          <div class="swiper-button-next swiper-item__next"></div>
+        </div>
+        <!-- モーダル部分 -->
+        <div class="modal">
+          <div id="modal__container01" class="modal__container01">
+            <div class="modal__wrap">
+              <p class="modal__pic"><img src="images/img01.jpg" alt="紫シャツ" class="modal__img"></p>
+              <div class="modal__box">
+                <p class="modal__sub">カラーシャツ</p>
+                <p class="modal__price">3,980（税込）</p>
+                <p class="modal__size">サイズ 120・130・140・150・160cm</p>
+                <p class="modal__color">カラー：ブラック・レッド・ブルー・グリーン・パープル</p>
+                <p class="modal__more">
+                  <a href="https://webstudysapporo.com/" target="_blank" class="modal__link">オンラインストア</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="modal__container02" class="modal__container02">
+            <div class="modal__wrap">
+              <p class="modal__pic"><img src="images/img02.jpg" alt="ニット" class="modal__img"></p>
+              <div class="modal__box">
+                <p class="modal__sub">厚手ニット</p>
+                <p class="modal__price">4,980（税込）</p>
+                <p class="modal__size">サイズ 140・150・160cm</p>
+                <p class="modal__color">カラー：カラー：ホワイト・キナリ・グレー・クリーム</p>
+                <p class="modal__more">
+                  <a href="https://webstudysapporo.com/" target="_blank" class="modal__link">オンラインストア</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="modal__container03" class="modal__container03">
+            <div class="modal__wrap">
+              <p class="modal__pic"><img src="images/img03.jpg" alt="薄手Tシャツ" class="modal__img"></p>
+              <div class="modal__box">
+                <p class="modal__sub">カラーTシャツ</p>
+                <p class="modal__price">1,980（税込）</p>
+                <p class="modal__size">サイズ 120・130・140・150・160cm</p>
+                <p class="modal__color">カラー：ブラック・ホワイト・レッド・ブルー・イエロー</p>
+                <p class="modal__more">
+                  <a href="https://webstudysapporo.com/" target="_blank" class="modal__link">オンラインストア</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="modal__container04" class="modal__container04">
+            <div class="modal__wrap">
+              <p class="modal__pic"><img src="images/img04.jpg" alt="紫シャツ" class="modal__img"></p>
+              <div class="modal__box">
+                <p class="modal__sub">長袖ニット</p>
+                <p class="modal__price">4,980（税込）</p>
+                <p class="modal__size">サイズ 140・150・160cm</p>
+                <p class="modal__color">カラー：カラー：ホワイト・ラベンダー・グレー</p>
+                <p class="modal__more">
+                  <a href="https://webstudysapporo.com/" target="_blank" class="modal__link">オンラインストア</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="modal__container05" class="modal__container05">
+            <div class="modal__wrap">
+              <p class="modal__pic"><img src="images/img05.jpg" alt="紫シャツ" class="modal__img"></p>
+              <div class="modal__box">
+                <p class="modal__sub">カラーシャツ</p>
+                <p class="modal__price">3,980（税込）</p>
+                <p class="modal__size">サイズ 130・140・150・160cm</p>
+                <p class="modal__color">カラー：ホワイト・ピンク・グリーン・グレー</p>
+                <p class="modal__more">
+                  <a href="https://webstudysapporo.com/" target="_blank" class="modal__link">オンラインストア</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="item__btn"><a href="#" class="item__link">アイテム一覧へ</a></p>
+        <div class="item__container">
+          <p class="item__txt">2023年春夏の新作コレクション、販売開始しました。お出かけに、新生活の始まりに、新しい装いはいかが？</p>
+          <div class="item__container--02">
+            <div class="item__box--01"></div>
+            <div class="item__box--02"></div>
+            <div class="item__box--03"></div>
+            <div class="item__box--04"></div>
+          </div>
+        </div>
+      </section>
+      <section id="coodination" class="coodination scroll-point">
+        <h2 class="coodination__ttl">コーディネート</h2>
+        <div class="coodination__container">
+          <div class="coodination__box--01">
+            <div class="coodination__pic--01"></div>
+            <div class="coodination__pic--02"></div>
+          </div>
+          <div class="coodination__box--02">
+            <div class="coodination__subbox--01">
+              <div class="coodination__pic--03"></div>
+              <div class="coodination__pic--04"></div>
+            </div>
+            <div class="coodination__subbox--02">
+              <div class="coodination__pic--05"></div>
+              <div class="coodination__pic--06"></div>
+            </div>
+          </div>
+          <div class="coodination__box--03">
+            <div class="coodination__pic--07"></div>
+            <div class="coodination__pic--08"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reading" class="reading scroll-point">
+        <div class="reading__wrap">
+          <h2 class="reading__ttl">よみもの</h2>
+          <p class="reading__sub--01">服選びの参考にどうぞ！</p>
+          <div class="reading__box">
+            <div class="reading__itembox">
+              <p class="reading__pic"><img src="images/img18.jpg" alt="花" class="reading__img"></p>
+              <p class="reading__txt--01">服を選ぶとき、何を基準にしたらいいんだろう。そう思ったことはありませんか？<br>
+                デザインや流行ももちろん大事なポイントですが、まずは第一印象でパッと目を引く、色に着目してみてはいかがでしょう？<br>
+                <br>
+                好きな色がすでにある人は、その色がどんな意味を持っているのか。<br>
+                好きな色がまだ分からない人は、なりたいイメージに近いのはどの色か。<br>
+                <br>
+                色のことを知って、ぜひ日々のコーディネートの中に取り入れてみてください！
+              </p>
+              <div class="reading__accordionbox">
+                <p class="reading__sub--03">赤のカラーイメージ：「アクティブ」「情熱的」「達成感」「自信」「生命力」「闘争心」</p>
+                <p class="reading__txt--02">赤は「進出色」といって、とび出してより近くに感じられる色であり、とても目を引きます。<br>
+                  自分を鼓舞するのに効果的なことから、スポーツのユニフォームに採用されることも多くあります。<br>
+                  エネルギッシュで外交的な印象を与えるのにぴったり。
+                </p>
+                <p class="reading__sub--03">青のカラーイメージ：「平和」「誠実」「涼しい」「集中」「清潔」</p>
+                <p class="reading__txt--02">明るい青はフレッシュで若さをイメージさせ、濃い青は落ち着きを感じさせます。<br>
+                  白と合わせるとより清潔感や爽やかさを強調できます。<br>
+                  都会的で知的な印象を与えたいときに！
+                </p>
+                <p class="reading__sub--03">黄色のカラーイメージ：「明朗」「躍動」「快活さ」「軽さ」</p>
+                <p class="reading__txt--02">黄色は、明るく社交的な印象を与える服です。<br>
+                  そのため、相手に親しみやすい、親近感があるといったイメージを抱かせやすく、<br>
+                  初対面でもすぐに人と仲良くなりたい場合にぴったりです。
+                </p>
+                <p class="reading__sub--03">緑のカラーイメージ：「調和」「さわやか」「平穏」</p>
+                <p class="reading__txt--02">目に優しい色である緑、は相手に安心感を与える色です。<br>
+                  自然体でナチュラルな印象を持っているため、相手に対して緊張感を与えることもありません。<br>
+                  濃淡や明暗などのバリエーションがつけやすいという特徴もあり、ファッションに取り入れるには最適です。
+                </p>
+                <p class="reading__sub--03">ピンクのカラーイメージ：「やさしさ」「愛」「恋」「かわいらしさ」「感謝」</p>
+                <p class="reading__txt--02">ピンクは、鮮やかさで印象が大きく変わります。<br>
+                  ビビッドな色合いは健康的な印象を与え、淡いピンクは柔和で人の心を穏やかにします。<br>
+                  花の甘い香りにピンクをイメージする人が多く、幸福感を与えることもできます。
+                </p>
+                <p class="reading__sub--03">オレンジのカラーイメージ：「朗らか」「カジュアル」「あたたかい」</p>
+                <p class="reading__txt--02">近年の調査で、色の中で最も暖かいと感じられる色はオレンジ色という結果が出ています。<br>
+                  親しみやすく活力も感じさせるビタミンカラーで、遠くからでも目立つ色です。<br>
+                  赤色より柔らかい印象があるので、社交的な場にもぴったり。
+                </p>
+                <p class="reading__sub--03">紫のカラーイメージ：「上品」「高級感」「厳粛」「神秘」</p>
+                <p class="reading__txt--02">昔、紫の染料は貴重であったため、その名残で高貴、高級というイメージを与えることができます。<br>
+                  身につけていると、ミステリアスで個性的な印象を演出できるため、他の人と差を付けたいというときにぴったり。
+                </p>
+              </div>
+            </div>
+            <p id="reading__btn" class="reading__btn">
+              <span id="accordion-open" class="reading__more">くわしく見る</span>
+              <span id="accordion-hide" class="reading__more accordion-hide">とじる</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="store" class="store scroll-point">
+        <div class="reading__wrap">
+          <h2 class="store__ttl">お店案内</h2>
+          <div class="store__container">
+            <div class="store__box--01">
+              <div class="store__topbox">
+                <div class="store__textbox">
+                  <p class="store__sub--01"><span>Little Riddle</span>本店</p>
+                  <p class="store__address">千葉県我孫子市新木村下805-1</p>
+                  <dl class="store__list--01">
+                    <dt>営業時間</dt>
+                    <dd>10：00～20：00</dd>
+                    <dt>休業日</dt>
+                    <dd>水曜定休（祝日営業）</dd>
+                    <dt>電話番号</dt>
+                    <dd>043-000-0000</dd>
+                  </dl>
+                </div>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2036.6909535455447!2d140.0108746924226!3d35.87241064876618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1678257631099!5m2!1sja!2sjp"
+                  style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <div class="store__bottombox">
+                <a href="#" target="_blank" class="store__link--01">
+                  <div class="store__point">
+                    <img src="images/logo.svg" alt="ブランドロゴ" class="store__logo">
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="store__box--02">
+              <p class="store__sub--02">店舗案内</p>
+              <dl class="store__list--02">
+                <dt class="store__area">北海道・東北エリア</dt>
+                <dd class="store__prefecture">
+                  <a href="#" target="_blank" class="store__link--02">札幌店</a>
+                </dd>
+                <dd class="store__prefecture">
+                  <a href="#" target="_blank" class="store__link--02">仙台店</a>
+                </dd>
+                <dt class="store__area">関東エリア</dt>
+                <dd class="store__prefecture">
+                  <a href="#" target="_blank" class="store__link--02">渋谷店</a>
+                </dd>
+                <dd class="store__prefecture">
+                  <a href="#" target="_blank" class="store__link--02">高田馬場店</a>
+                </dd>
+                <dd class="store__prefecture">
+                  <a href="#" target="_blank" class="store__link--02">大井町店</a>
+                </dd>
+                <dd class="store__prefecture">
+                  <a href="#" target="_blank" class="store__link--02">横浜店</a>
+                </dd>
+                <dd class="store__prefecture">
+                  <a href="#" target="_blank" class="store__link--02">さいたま店</a>
+                </dd>
+                <dd class="store__prefecture">
+                  <a href="#" target="_blank" class="store__link--02">新浦安店</a>
+                </dd>
+                <dd class="store__prefecture">
+                  <a href="#" target="_blank" class="store__link--02">水戸店</a>
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <p class="store__txt">お近くに店舗がないとき、直接お店に行くのが難しいときは、ぜひオンラインストアをご利用ください。</p>
+        </div>
+      </section>
+
+    </main>
+    <footer class="footer">
+      <p class="footer__logobox"><img src="images/logo.svg" alt="ブランドロゴ" class="footer__logo"></p>
+      <nav class="fnav">
+        <ul class="fnav__nav">
+          <li class="fnav__list"><a href="#" target="_blank" class="fnav__link">プライバシーポリシー</a></li>
+          <li class="fnav__list"><a href="#" target="_blank" class="fnav__link">ご利用条件</a></li>
+          <li class="fnav__list"><a href="#" target="_blank" class="fnav__link">よくある質問</a></li>
+          <li class="fnav__list"><a href="#" target="_blank" class="fnav__link">お問い合わせ</a></li>
+          <li class="fnav__list"><a href="#" target="_blank" class="fnav__link">会社情報</a></li>
+        </ul>
+      </nav>
+      <p class="footer__copy"><small class="footer__small">copyright&copy;Little Riddle All Rights Reserved.</small></p>
+    </footer>
+  </div>
+
+  <!-- swiper本体 -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- jQuery本体 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="js/swiper.js"></script>
+  <script src="js/function.js"></script>
+</body>
+
+</html>

@@ -381,6 +381,30 @@
                 }
             }
         }
+
+        &__bannerbox {
+            margin: 0 auto;
+            width: 336px;
+        }
+
+        &__banner--01 {
+            width: 100%;
+        }
+        
+        &__banner--02 {
+            display: none;
+
+            @include tab {
+                display: block;
+                margin: 0 auto;
+                max-width: 672px;
+            }
+        }
+
+        &__expansion {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
     }
 }
 
@@ -481,6 +505,41 @@
 
             @include pc {
                 background: url(../images/laura/img01-pc.jpg) center center / cover;
+            }
+        }
+    }
+}
+
+
+#banner_lloyds {
+    .mv {
+
+        &__bg {
+            background: url(../images/banner_lloyds/img01-sp.jpg) center center / cover;
+
+            @include tab {
+                background: url(../images/banner_lloyds/img01-tab.jpg) center center / cover;
+            }
+
+            @include pc {
+                background: url(../images/banner_lloyds/img01-pc.jpg) center center / cover;
+            }
+        }
+    }
+}
+
+#banner_lemon {
+    .mv {
+
+        &__bg {
+            background: url(../images/banner_lemon/img01-sp.jpg) center center / cover;
+
+            @include tab {
+                background: url(../images/banner_lemon/img01-tab.jpg) center center / cover;
+            }
+
+            @include pc {
+                background: url(../images/banner_lemon/img01-pc.jpg) center center / cover;
             }
         }
     }

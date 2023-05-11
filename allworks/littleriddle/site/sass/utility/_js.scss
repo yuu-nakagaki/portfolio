@@ -1,0 +1,60 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+.resizeHeader {
+    width: 150px;
+    margin-left: 30px;
+}
+
+.rotateTop {
+    transform: rotate(45deg);
+}
+
+.hideMiddle {
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.rotateBottom {
+    transform: rotate(-45deg);
+}
+
+.translateNav {
+    transform: translateY(0);
+}
+
+.changeColor--01 {
+    background: #fff;
+}
+
+.changeColor--02 {
+    background: $orange-color;
+}
+
+.appearMenu {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.current {
+    padding: 5px;
+    border-radius: 50%;
+    background: $orange-color;
+    color: #fff;
+}
+
+.accordion-hide {
+    opacity: 0;
+    position: absolute;
+}
+
+.accordion-open {
+    transition: 0.5s;
+    opacity: 1;
+}
+
+#reading__btn.is-minus::after {
+    display: none;
+}
