@@ -278,21 +278,20 @@
                 margin-bottom: 80px;
                 font-size: 18px;
             }
-        }
-
-        &__btn {
-            margin-bottom: 60px;
-            background: $white;
-            text-align: center;
-            position: relative;
-
-            @include tab {
-                margin-bottom: 80px;
-            }
 
             @include pc-large {
                 margin-bottom: 0;
             }
+        }
+
+        &__btn {
+            background: $white;
+            text-align: center;
+            position: relative;
+
+            // @include pc-large {
+            //     margin-bottom: 0;
+            // }
 
             & span {
                 display: inline-block;
@@ -398,7 +397,6 @@
                     filter: saturate(100%);
                 }
             }
-
         }
 
         &__scroll-txtbox {
@@ -480,7 +478,21 @@
                 font-weight: 500;
                 line-height: 1.5;
             }
+        }
 
+        &__scroll-tail {
+            padding-top: 60px;
+
+            @include tab {
+                padding-top: 0;
+            }
+
+            @include pc-large {
+                width: 520px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
         }
 
     }
@@ -589,7 +601,6 @@
             @include tab {
                 margin-bottom: 10px;
             }
-
         }
 
         &__ttl-jp {
@@ -597,9 +608,11 @@
         }
 
         &__txt {
-            @extend .works__txt;
-            position: relative;
+            margin-bottom: 60px;
             padding-bottom: 60px;
+            position: relative;
+            font-size: 14px;
+            line-height: 2;
             border-bottom: 1px solid $white;
 
             @include pc {
@@ -608,6 +621,7 @@
         }
 
         &__skillbox {
+
             @include pc {
                 display: flex;
                 justify-content: space-between;
@@ -615,13 +629,17 @@
         }
 
         &__filter {
-            width: 90%;
+            width: 85%;
             padding-bottom: 60px;
             margin: 0 auto;
             font-family: $roboto;
             text-align: right;
             display: flex;
             justify-content: space-between;
+
+            @include tab {
+                width: 100%;
+            }
 
             @include pc {
                 margin: 0;
@@ -679,11 +697,11 @@
                     transform-origin: left center;
                 }
             }
-
         }
 
         &__category {
-            width: 100%;
+            width: 85%;
+            margin: 0 auto;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
@@ -691,11 +709,13 @@
             gap: 12%;
 
             @include tab {
+                width: 100%;
                 gap: 8%;
             }
 
             @include pc {
                 width: 60%;
+                margin: 0 0 0 auto;
             }
 
             & li {
@@ -706,12 +726,16 @@
                 font-size: 12px;
                 text-align: center;
 
+                &.two-lines {
+                    padding-top: 14px;
+                }
+
                 @include tab {
                     margin-bottom: 8%;
                 }
 
                 @include pc {
-                    margin-bottom: 2%;
+                    margin-bottom: 0;
                 }
             }
 
@@ -730,13 +754,17 @@
         }
 
         &__name {
-            margin-top: 4px;
+            margin-top: 12px;
+            line-height: 1.1;
+
+            @include tab {
+                margin-top: 14px;
+            }
         }
 
         &__img {
             @include img;
         }
-
     }
 
     .profile {
@@ -761,7 +789,6 @@
         &__ttl-jp {
             @include ttl-jpstyle;
             margin-bottom: 80px;
-
         }
 
         &__wrap {
@@ -1041,9 +1068,7 @@
                         border-bottom: 4px solid $black;
                     }
                 }
-
             }
-
         }
 
         &__label {
