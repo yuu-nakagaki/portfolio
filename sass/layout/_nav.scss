@@ -66,6 +66,10 @@
         display: flex;
     }
 
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
     &::before {
         content: "";
         position: absolute;
