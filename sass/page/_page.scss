@@ -397,9 +397,10 @@
             display: none;
 
             @include tab {
-                display: block;
                 margin: 0 auto;
+                padding: 0 40px;
                 max-width: 672px;
+                display: block;
             }
         }
 

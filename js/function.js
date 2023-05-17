@@ -1,8 +1,8 @@
 
-//ヘッダー文字色をセクションによって変える
+//ヘッダー文字色をセクションによって変える（トップ）
 
 window.addEventListener('load', function () {
-    
+
     const header = document.querySelector('#header__ttlbox');
     const worksSection = document.querySelector('#works');
     const looptxtSection = document.querySelector('#looptxt');
@@ -17,6 +17,7 @@ window.addEventListener('load', function () {
     const profilePosition = profileSection.getBoundingClientRect().top + window.pageYOffset;
     const contactPosition = contactSection.getBoundingClientRect().top + window.pageYOffset;
     const footerPosition = footerSection.getBoundingClientRect().top + window.pageYOffset;
+
 
     // スクロールされたら実行されるコールバック関数
     const handleScroll = () => {
@@ -43,6 +44,29 @@ window.addEventListener('load', function () {
 
 });
 
+//ヘッダー文字色をセクションによって変える（下層：個別作品紹介）
+window.addEventListener('load', function () {
+    const header = document.querySelector('#header__ttlbox');
+    const captionSection = document.querySelector('#caption');
+    const descriptionSection = document.querySelector('#description');
+
+    const captionPosition = captionSection.getBoundingClientRect().top + window.pageYOffset;
+    const descriptionPosition = descriptionSection.getBoundingClientRect().top + window.pageYOffset;
+
+    // スクロールされたら実行されるコールバック関数
+    const handleScroll = () => {
+        const scrollPosition = window.pageYOffset;
+        if (scrollPosition >= captionPosition && scrollPosition < descriptionPosition) {
+            header.classList.add('changeWhite');
+        } else {
+            header.classList.remove('changeWhite');
+        }
+    };
+    // スクロールされたら handleScroll を実行するように設定する
+    window.addEventListener('scroll', handleScroll);
+});
+
+
 //スクロールでヘッダータイトルが消える
 let beforePosition = 0;
 let winScrollTop = 0;
@@ -64,6 +88,7 @@ window.addEventListener('scroll', function () {
 const hamBtn = document.querySelector('#btn');
 const gnav = document.querySelector('#gnav');
 const gnavNav = document.querySelector('#gnav__nav')
+// const gnavLink = document.querySelectorAll('.gnav__link')
 
 const btnTop = document.querySelector('#btn__top');
 const btnMiddle = document.querySelector('#btn__middle');
@@ -80,13 +105,16 @@ hamBtn.addEventListener('click', function () {
     gnavNav.classList.toggle('gnav__nav-active');
 });
 
-gnav.addEventListener('click', function () {
+gnavLink.addEventListener('click', function () {
     btnTop.classList.remove('rotate-top');
     btnMiddle.classList.remove('hide-middle');
     btnBottom.classList.remove('rotate-bottom');
     gnav.classList.remove('gnav-active');
     gnavNav.classList.remove('gnav__nav-active');
     window.scrollTo(0, scrollPos);
+
+
+
 });
 
 //FVぼかしエフェクト
