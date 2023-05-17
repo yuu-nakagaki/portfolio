@@ -103,12 +103,8 @@
 
         &__scrollarrow {
             position: absolute;
-            top: -160px;
+            top: -35%;
             left: 50%;
-
-            @include tab {
-                top: -20%;
-            }
 
             @include pc {
                 top: -30%;

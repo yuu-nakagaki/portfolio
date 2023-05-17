@@ -121,6 +121,7 @@
 
         &__ttl {
             @include ttlstyle($white);
+            font-family: $JP;
             margin-bottom: 16px;
             position: relative;
 
@@ -140,7 +141,6 @@
             @include pc {
                 font-size: 36px;
             }
-
         }
 
         &__category {
@@ -360,11 +360,13 @@
         &__dl {
 
             dt {
+                color: $gray;
                 font-size: 18px;
-                margin-bottom: 30px;
+                margin-bottom: 16px;
 
                 @include tab {
                     font-size: 20px;
+                    margin-bottom: 20px;
                 }
             }
 
