@@ -1,0 +1,221 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+.gnav {
+    font-size: 16px;
+    font-family: $EN;
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__list:last-child {
+        font-family: $JP;
+        background: $blue;
+        margin-left: 32px;
+        transition: 0.3s;
+
+        &:hover {
+            background: $pale-blue;
+        }
+
+        & a {
+            padding: 20px 50px;
+            color: $white;
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: 20px 32px;
+        color: $blue;
+        text-decoration: none;
+        transition: 0.3s;
+
+        &:hover {
+            color: $pale-blue;
+        }
+    }
+}
+
+.btn {
+    width: 52px;
+    height: 52px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 80px;
+    z-index: 999;
+    cursor: pointer;
+
+    &__top,
+    &__middle,
+    &__bottom {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: $blue;
+        transition: 0.3s;
+    }
+
+    &__top {
+        transform: translateY(-8px);
+    }
+
+    &__bottom {
+        transform: translateY(8px);
+    }
+
+    &__txt {
+        font-size: 14px;
+        letter-spacing: 0.2em;
+        padding-top: 40px;
+        text-align: center;
+    }
+}
+
+
+.pagenav {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: url(../images/mv02.jpg) center center / cover;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transition: 0.4s;
+
+    &__wrap {
+        padding-top: 100px;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+    }
+
+    &__txt {
+        font-size: 40px;
+        color: $white;
+        font-family: $EN;
+        letter-spacing: 0.1em;
+        padding-left: 12px;
+        margin-bottom: 54px;
+
+        &::after {
+            content: "";
+            margin-top: 10px;
+            display: block;
+            width: 480px;
+            height: 1px;
+            background: $white;
+        }
+    }
+
+    &__nav {
+        width: 480px;
+    }
+
+    &__list {
+        list-style-type: none;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        position: relative;
+
+        &:first-child {
+
+            & a {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 170px;
+                    transform: translateY(-50%);
+                    margin-left: 8px;
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    background: url(../../images/external-link-icon-w.png) center center / cover;
+                }
+            }
+        }
+
+    }
+
+    &__link {
+        display: inline-block;
+        padding: 10px 12px;
+        color: $white;
+        text-decoration: none;
+        transition: 0.4s;
+
+        &:hover {
+            color: $blue;
+        }
+    }
+}
+
+.fnav {
+    font-size: 16px;
+    margin-bottom: 70px;
+
+    &__list {
+
+        &:nth-of-type(8) {
+            padding-left: 16px;
+        }
+
+        &:nth-of-type(2),
+        &:nth-of-type(10) {
+
+            & a {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: -14px;
+                    transform: translateY(-50%);
+                    margin-left: 8px;
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    background: url(../../images/external-link-icon.png) center center / cover;
+                }
+            }
+        }
+
+    }
+
+    &__link--01,
+    &__link--02 {
+        display: inline-block;
+        padding: 14px;
+        color: $text-color;
+        text-decoration: none;
+        transition: 0.3s;
+
+        &:hover {
+            color: $blue;
+        }
+    }
+
+    &__link--02 {
+        &::before {
+            content: "/";
+            padding-right: 14px;
+        }
+    }
+}

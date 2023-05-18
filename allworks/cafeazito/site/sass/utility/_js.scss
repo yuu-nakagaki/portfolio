@@ -1,0 +1,24 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+.rotateTop {
+    transform: rotate(20deg);
+}
+
+.hideMiddle {
+    opacity: 0;
+}
+
+.rotateBottom {
+    transform: rotate(-20deg);
+}
+
+.menuOpen {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.changeColor {
+    background: $white;
+}

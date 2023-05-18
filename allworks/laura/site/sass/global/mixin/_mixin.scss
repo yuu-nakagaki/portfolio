@@ -1,0 +1,72 @@
+// settingフォルダの変数を読み込みます
+
+@use "../setting" as *;
+
+
+@mixin ttlstyle($mb: 30px) {
+    margin-bottom: $mb;
+    font-size: 34px;
+    font-family: $EN;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: $text-color;
+}
+
+@mixin txtstyle {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    line-height: 2.5;
+}
+
+
+//バーガーボタン
+@mixin btn($translate: 0) {
+    width: 100%;
+    height: 1px;
+    background: $text-color;
+    position: absolute;
+    transition: .5s;
+    transform: translateY($translate);
+}
+
+// display: flex;を利用した上下左右中央寄せ
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// img画像設定
+@mixin img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+// メディアクエリ
+
+@mixin sp-large($min-width: 500px) {
+    @media screen and (min-width: $min-width) {
+        @content;
+    }
+}
+
+@mixin tab($min-width: 768px) {
+    @media screen and (min-width: $min-width) {
+        @content;
+    }
+}
+
+@mixin pc($min-width: 1024px) {
+    @media screen and (min-width: $min-width) {
+        @content;
+    }
+}
+
+@mixin macpc($min-width: 1280px) {
+    @media screen and (min-width: $min-width) {
+      @content;
+    }
+  }

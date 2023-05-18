@@ -1,0 +1,499 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#top {
+    .mv {
+        padding-top: 120px;
+        background: url(../images/mv01.jpg) center center / cover;
+        height: 100vh;
+
+        &__txt {
+            padding: 50px 0 0 160px;
+            font-size: 21px;
+            color: $white;
+            letter-spacing: 0.1em;
+            line-height: 2.5;
+            writing-mode: vertical-rl;
+        }
+    }
+
+    .about {
+        padding-top: 160px;
+        margin-bottom: 160px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__box {
+            width: 720px;
+            height: 760px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &__ttl {
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+        }
+
+        &__sub {
+            margin-bottom: 60px;
+            color: $pale-blue;
+            font-size: 48px;
+            font-family: $EN;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+        }
+
+        &__txt {
+            line-height: 2;
+            margin-bottom: 60px;
+        }
+
+        &__pic {
+            width: 640px;
+            height: 760px;
+            margin-left: 240px;
+        }
+
+        &__img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &__btn {
+            width: 300px;
+            border: 1px solid $blue;
+            transition: 0.4s;
+
+            &:hover {
+                background: $blue;
+            }
+
+            &:last-child {
+                background: $blue;
+
+                &:hover {
+                    background: $white;
+                }
+
+                & a {
+                    color: $white;
+
+                    &:hover {
+                        color: $blue;
+                    }
+                }
+            }
+        }
+
+        &__link {
+            display: inline-block;
+            width: 100%;
+            text-decoration: none;
+            text-align: center;
+            padding: 17px 0;
+            color: $blue;
+            transition: 0.4s;
+
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+
+    .news {
+        padding: 160px 320px 160px 160px;
+        background: $pale-blue;
+        display: flex;
+        justify-content: space-between;
+
+        &__ttl {
+            @extend .about__ttl;
+        }
+
+        &__sub {
+            @extend .about__sub;
+            color: $white;
+        }
+
+        &__middlebox {
+            width: 700px;
+        }
+
+        &__date {
+            margin-bottom: 24px;
+            font-size: 16px;
+            font-family: $EN;
+        }
+
+        &__txt {
+            line-height: 2;
+        }
+
+        &__btn {
+            width: 300px;
+            border: 1px solid $blue;
+            align-self: flex-end;
+            background: $white;
+            transition: 0.4s;
+
+            &:hover {
+                background: $blue;
+            }
+        }
+
+        &__link {
+            display: inline-block;
+            width: 100%;
+            text-decoration: none;
+            text-align: center;
+            padding: 17px 0;
+            color: $blue;
+            transition: 0.4s;
+
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+
+    .menu {
+        padding-top: 160px;
+        margin: 0 320px 160px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__pic {
+            width: 1000px;
+            height: 800px;
+        }
+
+        &__img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &__container {
+            height: 800px;
+            margin-left: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__ttlbox {
+            text-align: center;
+        }
+
+        &__ttl {
+            @extend .about__ttl;
+        }
+
+        &__sub {
+            @extend .about__sub;
+        }
+
+        &__category {
+            margin-bottom: 40px;
+        }
+
+        &__subttl {
+            margin-bottom: 24px;
+            font-size: 16px;
+        }
+
+        &__subbox {
+            display: flex;
+            justify-content: space-between;
+
+            & dt {
+                margin-bottom: 10px;
+            }
+        }
+
+        &__btn {
+            width: 300px;
+            border: 1px solid $blue;
+            transition: 0.4s;
+
+            &:hover {
+                background: $blue;
+            }
+        }
+
+        &__link {
+            display: inline-block;
+            width: 100%;
+            text-decoration: none;
+            text-align: center;
+            padding: 17px 0;
+            color: $blue;
+            transition: 0.4s;
+
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+
+    .relaxation {
+        padding: 160px 0 160px 320px;
+        background: $pale-blue;
+        display: flex;
+        justify-content: space-between;
+
+        &__box {
+            width: 480px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &__ttl {
+            @extend .about__ttl;
+        }
+
+        &__sub {
+            @extend .about__sub;
+            color: $white;
+        }
+
+        &__txt {
+            line-height: 2;
+        }
+
+        &__btn {
+            width: 300px;
+            border: 1px solid $blue;
+            background: $white;
+            transition: 0.4s;
+
+            &:hover {
+                background: $blue;
+            }
+        }
+
+        &__link {
+            display: inline-block;
+            width: 100%;
+            text-decoration: none;
+            text-align: center;
+            padding: 17px 0;
+            color: $blue;
+            transition: 0.4s;
+
+            &:hover {
+                color: $white;
+            }
+        }
+
+        &__pic {
+            width: 860px;
+            height: 600px;
+        }
+
+        &__img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .rental {
+        width: 1280px;
+        padding-top: 160px;
+        margin: 0 auto 160px;
+        text-align: center;
+
+        &__ttl {
+            @extend .about__ttl;
+        }
+
+        &__sub {
+            @extend .about__sub;
+        }
+
+        &__txt {
+            line-height: 2;
+            margin-bottom: 80px;
+        }
+
+        &__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__pic {
+            width: 360px;
+            height: 300px;
+            margin-bottom: 40px;
+        }
+
+        &__img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &__category-en {
+            margin-bottom: 5px;
+            font-family: $EN;
+            font-size: 21px;
+        }
+
+        &__category {
+            margin-bottom: 45px;
+        }
+
+        &__btn {
+            width: 300px;
+            margin: 0 auto;
+            border: 1px solid $blue;
+            background: $white;
+            transition: 0.4s;
+
+            &:hover {
+                background: $blue;
+            }
+        }
+
+        &__link {
+            display: inline-block;
+            width: 100%;
+            text-decoration: none;
+            text-align: center;
+            padding: 17px 0;
+            color: $blue;
+            transition: 0.4s;
+
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+
+    .insta {
+        padding: 160px 0 160px;
+        background: $pale-blue;
+        text-align: center;
+        overflow: hidden;
+
+        &__ttl {
+            @extend .about__ttl;
+        }
+
+        &__sub {
+            @extend .about__sub;
+            color: $white;
+        }
+
+        &__link {
+            margin: 0 auto 80px;
+            padding: 20px;
+            display: inline-block;
+            text-underline-offset: 7px;
+            font-family: $EN;
+            letter-spacing: 0.1em;
+            transition: 0.4s;
+
+            &:hover {
+                color: $white;
+            }
+        }
+
+        &__box {
+            width: 400px;
+            height: 400px;
+        }
+
+        &__img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &__container {
+            width: 115%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            left: -140px;
+        }
+    }
+
+    .access {
+        padding-top: 160px;
+        margin: 0 160px 160px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__container {
+            width: 640px;
+            height: 800px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        &__ttl {
+            @extend .about__ttl;
+        }
+
+        &__sub {
+            @extend .about__sub;
+        }
+
+        &__subttl {
+            margin-bottom: 16px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        &__subtxt {
+            margin-bottom: 40px;
+        }
+
+        &__txt {
+            line-height: 2;
+        }
+
+        &__btn {
+            position: absolute;
+            bottom: 0;
+            left: -16px;
+        }
+
+        &__link {
+            padding: 20px;
+            display: inline-block;
+            text-underline-offset: 7px;
+            font-family: $EN;
+            letter-spacing: 0.1em;
+            transition: 0.4s;
+            color: $blue;
+
+            &:hover {
+                color: $pale-blue;
+            }
+        }
+    }
+
+}

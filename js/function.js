@@ -1,6 +1,5 @@
 
-//ヘッダー文字色をセクションによって変える（トップ）
-
+//ヘッダー文字色をセクション毎に変更
 window.addEventListener('load', function () {
 
     const header = document.querySelector('#header__ttlbox');
@@ -18,12 +17,8 @@ window.addEventListener('load', function () {
     const contactPosition = contactSection.getBoundingClientRect().top + window.pageYOffset;
     const footerPosition = footerSection.getBoundingClientRect().top + window.pageYOffset;
 
-
-    // スクロールされたら実行されるコールバック関数
     const handleScroll = () => {
-        // スクロール位置を取得
         const scrollPosition = window.pageYOffset;
-
         if (scrollPosition >= worksPosition && scrollPosition < looptxtPosition) {
             header.classList.add('changeWhite');
         } else if (scrollPosition >= looptxtPosition && scrollPosition < skillPosition) {
@@ -38,13 +33,10 @@ window.addEventListener('load', function () {
             header.classList.remove('changeWhite');
         }
     };
-
-    // スクロールされたら handleScroll を実行するように設定する
     window.addEventListener('scroll', handleScroll);
-
 });
 
-//ヘッダー文字色をセクションによって変える（下層：個別作品紹介）
+//ヘッダー文字色を変更（下層ページ）
 window.addEventListener('load', function () {
     const header = document.querySelector('#header__ttlbox');
     const captionSection = document.querySelector('#caption');
@@ -53,7 +45,6 @@ window.addEventListener('load', function () {
     const captionPosition = captionSection.getBoundingClientRect().top + window.pageYOffset;
     const descriptionPosition = descriptionSection.getBoundingClientRect().top + window.pageYOffset;
 
-    // スクロールされたら実行されるコールバック関数
     const handleScroll = () => {
         const scrollPosition = window.pageYOffset;
         if (scrollPosition >= captionPosition && scrollPosition < descriptionPosition) {
@@ -62,12 +53,9 @@ window.addEventListener('load', function () {
             header.classList.remove('changeWhite');
         }
     };
-    // スクロールされたら handleScroll を実行するように設定する
     window.addEventListener('scroll', handleScroll);
 });
 
-
-//スクロールでヘッダータイトルが消える
 let beforePosition = 0;
 let winScrollTop = 0;
 
@@ -84,7 +72,6 @@ window.addEventListener('scroll', function () {
 });
 
 //ハンバーガーメニュー
-
 const hamBtn = document.querySelector('#btn');
 const gnav = document.querySelector('#gnav');
 const gnavNav = document.querySelector('#gnav__nav');
@@ -118,7 +105,7 @@ gnavLinks.forEach((gnavLink) => {
 
 //FVぼかしエフェクト
 const text = document.querySelector('.mvcover');
-gsap.set(".mv__wrap", { autoAlpha: 1 }); //初期設定
+gsap.set(".mv__wrap", { autoAlpha: 1 });
 gsap.to(".mv__wrap", {
     autoAlpha: 0,
     textShadowBlur: 20,
@@ -128,7 +115,6 @@ gsap.to(".mv__wrap", {
         end: 'bottom 80%',
         opacity: 0,
         scrub: true,
-        // markers: true
     }
 });
 
@@ -143,7 +129,7 @@ gsap.utils.toArray('.mvcover__txt').forEach((target) => {
     })
 })
 
-//横スクロール（GSAP）
+//横スクロール
 const listWrapperEl = document.querySelector('#works__scroll-wrapper');
 const listEl = document.querySelector('#works__scroll-list');
 
@@ -205,8 +191,7 @@ function categoryFilter() {
     });
 }
 
-//message部、背景色がスクロールすると画面いっぱいまで広がってくる
-
+//message部演出
 gsap.to(".message__bg", 1, {
     ease: 'power2.easeOut',
     scale: 20,

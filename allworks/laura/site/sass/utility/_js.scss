@@ -1,0 +1,42 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+.rotate-top {
+    transform: rotate(45deg);
+}
+
+.hide-middle {
+    opacity: 0;
+}
+
+.rotate-bottom {
+    transform: rotate(-45deg);
+}
+
+.gnav-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.gnav__nav-active {
+    opacity: 1;
+}
+
+.fadeIn {
+    opacity: 0;
+}
+
+.showElement {
+    opacity: 1;
+}
+
+.blur {
+    animation-name: blurAnime;
+	animation-duration: 0.8s;
+	animation-fill-mode: forwards;
+}
+
+.blurTarget{
+    opacity: 0;
+}

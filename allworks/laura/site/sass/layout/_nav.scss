@@ -1,0 +1,275 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+.btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    z-index: 999;
+    cursor: pointer;
+
+    @include macpc {
+        width: 50px;
+        height: 50px;
+    }
+
+    &__top {
+        @include btn(-8px);
+
+        @include macpc {
+            @include btn(-10px);
+        }
+    }
+
+    &__middle {
+        @include btn;
+    }
+
+    &__bottom {
+        @include btn(8px);
+
+        @include macpc {
+            @include btn(10px);
+        }
+    }
+}
+
+.gnav {
+    width: 100%;
+    height: 100vh;
+    padding-top: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background: $bg-color;
+    font-family: $EN;
+    opacity: 0;
+    transition: 0.5s;
+    pointer-events: none;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @include tab {
+        display: flex;
+        justify-content: space-between;
+        padding: 80px 40px;
+    }
+
+    @include macpc {
+        padding: 120px;
+    }
+
+    &__pic {
+        display: none;
+        flex-shrink: 0;
+
+        @include tab {
+            display: block;
+            width: 45%;
+            height: 100%;
+        }
+    }
+
+    &__img {
+        @include img;
+    }
+
+    &__container {
+
+        @include tab {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+
+    &__nav {
+        margin-bottom: 40px;
+        font-size: 28px;
+        text-align: right;
+        padding: 5%;
+
+        @include macpc {
+            padding: 0;
+            font-size: 32px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+            font-size: 14px;
+            text-align: center;
+            letter-spacing: 0.1em;
+
+            @include macpc {
+                display: flex;
+            }
+        }
+    }
+
+    &__list {
+        list-style-type: none;
+        margin-bottom: 10px;
+    }
+
+    &__link {
+        display: block;
+        width: 200px;
+        margin: 0 0 0 auto;
+        padding: 12px 20px;
+        text-decoration: none;
+        color: $text-color;
+        transition: 0.4s;
+
+        & span {
+            font-size: 16px;
+        }
+
+        @include macpc {
+            width: 240px;
+        }
+
+        &:hover {
+            color: $gray-pale-color;
+        }
+    }
+
+    &__sns {
+        display: block;
+        width: 140px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: $text-color;
+        transition: 0.4s;
+
+        @include tab {
+            width: 180px;
+            margin: 0 0 0 auto;
+            font-size: 20px;
+            text-align: right;
+        }
+
+        @include macpc {
+            width: 200px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        &:hover {
+            color: $gray-pale-color;
+        }
+    }
+}
+
+
+.fnav {
+    font-family: $EN;
+
+    &__nav {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        right: -20px;
+        list-style-type: none;
+
+        @include tab {
+            display: block;
+        }
+
+        @include pc {
+            right: 30px;
+            margin-bottom: 10%;
+        }
+    }
+
+    &__list {
+        text-align: right;
+    }
+    
+    &__link {
+        display: block;
+        padding: 10px 20px;
+        color: $text-color;
+        text-decoration: none;
+        transition: 0.4s;
+
+        @include macpc {
+            padding: 12px 20px;
+            font-size: 32px;
+        }
+
+        & span {
+            font-size: 10px;
+
+            @include pc {
+                font-size: 16px;
+            }
+        }
+
+        &:hover {
+            color: $gray-pale-color;
+        }
+
+    }
+
+    &__nav--02 {
+        padding: 30px 40px;
+        list-style-type: none;
+        text-align: center;
+
+        @include tab {
+            padding: 60px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @include pc {
+            padding: 160px 0;
+        }
+    }
+
+    &__list--02 {
+        width: 200px;
+        margin: 0 auto 30px;
+        font-size: 14px;
+        letter-spacing: 0.1em;
+
+        @include tab {
+            margin-bottom: 0;
+        }
+
+        @include pc {
+            width: 300px;
+            font-size: 24px;
+        }
+    }
+    
+    &__link--02 {
+        display: block;
+        padding: 12px;
+        color: $text-color;
+        text-decoration: none;
+        transition: 0.4s;
+
+        @include tab {
+            padding: 12px 20px;
+        }
+
+        &:hover {
+            color: $gray-pale-color;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: $text-color;
+    background: $bg-color;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 400;
+}

@@ -1,7 +1,5 @@
 $(function(){
-// -----jQueryの記述----------------------------------------------------
 
-    // ハンバーガーメニューボタン
     $('#burgerBtn').on('click', function () {
         $('#burgerBtn__top').toggleClass('rotate-top');
         $('#burgerBtn__middle').toggleClass('hide-middle');
@@ -23,7 +21,6 @@ $(function(){
         }
     });
 
-    // ナビゲーション操作
     $('.gnav__link').on('click', function () {
         $('#burgerBtn__top').removeClass('rotate-top');
         $('#burgerBtn__middle').removeClass('hide-middle');
@@ -31,12 +28,10 @@ $(function(){
         $('#gnav').removeClass('gnav-active');
         $('#gnav__nav').removeClass('gnav__nav-active');
 
-        // スムーススクロール
         const target = $(this).attr('href');
         const targetPos = $(target).offset().top;
         $('html, body').animate({'scrollTop': targetPos}, 500);
     })
-
 
     $('.pagenav__link').on('click', function(){
         const target = $(this).attr('href');
@@ -52,13 +47,9 @@ $(function(){
         return false;
     });    
 
-
     $('#footer__totopbtn').on('click', function(){
         $('html, body').animate({scrollTop: 0}, 500);
     });
 
-
-    
-// -----jQueryの記述ここまで---------------------------------------------
 });
 
