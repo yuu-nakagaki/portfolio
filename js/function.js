@@ -87,8 +87,8 @@ window.addEventListener('scroll', function () {
 
 const hamBtn = document.querySelector('#btn');
 const gnav = document.querySelector('#gnav');
-const gnavNav = document.querySelector('#gnav__nav')
-// const gnavLink = document.querySelectorAll('.gnav__link')
+const gnavNav = document.querySelector('#gnav__nav');
+const gnavLinks = document.querySelectorAll('.gnav__link');
 
 const btnTop = document.querySelector('#btn__top');
 const btnMiddle = document.querySelector('#btn__middle');
@@ -105,16 +105,15 @@ hamBtn.addEventListener('click', function () {
     gnavNav.classList.toggle('gnav__nav-active');
 });
 
-gnavLink.addEventListener('click', function () {
-    btnTop.classList.remove('rotate-top');
-    btnMiddle.classList.remove('hide-middle');
-    btnBottom.classList.remove('rotate-bottom');
-    gnav.classList.remove('gnav-active');
-    gnavNav.classList.remove('gnav__nav-active');
-    window.scrollTo(0, scrollPos);
-
-
-
+gnavLinks.forEach((gnavLink) => {
+    gnavLink.addEventListener('click', function(){
+        btnTop.classList.remove('rotate-top');
+        btnMiddle.classList.remove('hide-middle');
+        btnBottom.classList.remove('rotate-bottom');
+        gnav.classList.remove('gnav-active');
+        gnavNav.classList.remove('gnav__nav-active');
+        window.scrollTo(0, scrollPos);
+    });
 });
 
 //FVぼかしエフェクト
