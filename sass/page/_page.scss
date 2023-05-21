@@ -513,6 +513,22 @@
     }
 }
 
+#lloyds {
+    .mv {
+
+        &__bg {
+            background: url(../images/lloyds/img01-sp.jpg) center center / cover;
+
+            @include tab {
+                background: url(../images/lloyds/img01-tab.jpg) center center / cover;
+            }
+
+            @include pc {
+                background: url(../images/lloyds/img01-pc.jpg) center center / cover;
+            }
+        }
+    }
+}
 
 #banner_lloyds {
     .mv {
