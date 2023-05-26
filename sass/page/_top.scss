@@ -284,10 +284,6 @@
             text-align: center;
             position: relative;
 
-            // @include pc-large {
-            //     margin-bottom: 0;
-            // }
-
             & span {
                 display: inline-block;
                 vertical-align: middle;
@@ -351,7 +347,6 @@
                 margin: auto;
                 width: 1000px;
                 height: 100%;
-                // flex-shrink: 0; //画像がつぶれてwidthが0になるのを防ぐ
                 font-size: 32px;
             }
         }
@@ -489,7 +484,6 @@
                 justify-content: center;
             }
         }
-
     }
 
     .looptxt {
