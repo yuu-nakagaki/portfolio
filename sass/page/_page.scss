@@ -563,3 +563,43 @@
         }
     }
 }
+
+#application_memopad {
+    .mv {
+
+        &__bg {
+            background: url(../images/application_memopad/img01-sp.jpg) center center / cover;
+
+            @include tab {
+                background: url(../images/application_memopad/img01-tab.jpg) center center / cover;
+            }
+
+            @include pc {
+                background: url(../images/application_memopad/img01-pc.jpg) center center / cover;
+            }
+        }
+    } 
+
+    .description {
+
+        &__picbox--02 {
+            @include pc {
+                width: 80%;
+            }
+        }
+
+        &__pic--02 {
+            width: 100%;
+
+            @include tab {
+                width: 62.5%; 
+            }
+            
+            @include pc {
+                width: 100%;
+            }
+        }
+
+
+    }
+}
