@@ -450,6 +450,26 @@
                 @include tab {
                     font-size: 24px;
                 }
+                
+                &.update{
+                    position: relative;
+                }
+            }
+
+            dt.update::after {
+                content: 'update';
+                position: absolute;
+                font-size: 12px;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                @include flex-center;
+                width: 60px;
+                height: 24px;
+                background: rgb(169, 8, 8);
+                text-align: center;
+                line-height: 24px;
+                border-radius: 12px;
 
             }
 
