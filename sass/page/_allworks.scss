@@ -123,9 +123,18 @@
                 font-size: 16px;
                 margin-bottom: 16px;
 
+                &.update {
+                    position: relative;
+                }
+
                 @include tab {
                     font-size: 20px;
                 }
+            }
+
+            dt.update::after {
+                @include update;
+                color: #fff;
             }
 
             dd {
