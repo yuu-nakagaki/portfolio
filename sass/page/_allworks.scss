@@ -26,6 +26,7 @@
         }
 
         &__container {
+            list-style-type: none;
 
             @include tab {
                 display: flex;
@@ -38,6 +39,12 @@
 
         &__box {
             margin-bottom: 60px;
+
+            // アニメーション用の初期状態（JSで制御されるもののみ）
+            &.animate-item {
+                opacity: 0;
+                transform: translateY(30px);
+            }
 
             &:last-child {
                 margin-bottom: 0;
