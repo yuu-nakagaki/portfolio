@@ -1,7 +1,16 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
+import { createHtmlPlugin } from 'vite-plugin-html'
 
 export default defineConfig({
+  plugins: [
+    createHtmlPlugin({
+      minify: true,
+      options: {
+        root: resolve(__dirname)
+      }
+    })
+  ],
   root: './',
   publicDir: false,
   build: {

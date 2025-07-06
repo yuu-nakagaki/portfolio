@@ -1,559 +1,901 @@
 <!DOCTYPE html>
 <html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="keywords"
+      content="フロントエンドエンジニア, Webデザイナー, Webディレクター, portfolio, ポートフォリオ, コーディング, ウェブ, 制作, デザイン"
+    />
+    <meta
+      name="description"
+      content="ポートフォリオサイトです。ご興味を持っていただけましたらお気軽にお声掛けください。"
+    />
+    <title>YUU NAKAGAKI PORTFOLIO SITE</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/style.css?20240701" rel="stylesheet" media="all" />
+    <link href="./sass/style.scss" rel="stylesheet" media="all" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="keywords" content="フロントエンドエンジニア, Webデザイナー, Webディレクター, portfolio, ポートフォリオ, コーディング, ウェブ, 制作, デザイン">
-  <meta name="description" content="ポートフォリオサイトです。ご興味を持っていただけましたらお気軽にお声掛けください。">
-  <meta name="robots" content="noindex, nofollow">
-  <title>YUU NAKAGAKI PORTFOLIO SITE</title>
-  <link rel="icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Roboto:wght@400;500;700&display=swap"
-    rel="stylesheet">
-  <link href="css/style.css?20240701" rel="stylesheet" media="all">
-  <link href="./sass/style.scss" rel="stylesheet" media="all">
-</head>
+  <body id="top">
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__wrap">
+          <a href="#" class="header__link">
+            <div id="header__ttlbox" class="header__ttlbox">
+              <p class="header__pic">
+                <img class="header__img" src="images/top/u.png" alt="Uロゴ" />
+              </p>
+              <h1 class="header__ttl">NAKAGAKI</h1>
+              <p class="header__txt">PORTFOLIO SITE</p>
+            </div>
+          </a>
+        </div>
+      </header>
 
-<body id="top">
-  <div class="wrapper">
-    <header class="header">
-      <div class="header__wrap">
-        <a href="#" class="header__link">
-          <div id="header__ttlbox" class="header__ttlbox">
-            <p class="header__pic"><img class="header__img" src="images/top/u.png" alt="Uロゴ"></p>
-            <h1 class="header__ttl">NAKAGAKI</h1>
-            <p class="header__txt">PORTFOLIO SITE</p>
+      <main class="main">
+        <div id="btn" class="btn">
+          <span id="btn__top" class="btn__top"></span>
+          <span id="btn__middle" class="btn__middle"></span>
+          <span id="btn__bottom" class="btn__bottom"></span>
+        </div>
+        <nav id="gnav" class="gnav">
+          <div class="gnav__ttlbox">
+            <p class="gnav__pic">
+              <img class="gnav__img" src="images/top/u.png" alt="Uロゴ" />
+            </p>
+            <p class="gnav__ttl">NAKAGAKI</p>
           </div>
-        </a>
-      </div>
-    </header>
-
-    <main class="main">
-      <div id="btn" class="btn">
-        <span id="btn__top" class="btn__top"></span>
-        <span id="btn__middle" class="btn__middle"></span>
-        <span id="btn__bottom" class="btn__bottom"></span>
-      </div>
-      <nav id="gnav" class="gnav">
-        <div class="gnav__ttlbox">
-          <p class="gnav__pic"><img class="gnav__img" src="images/top/u.png" alt="Uロゴ"></p>
-          <p class="gnav__ttl">NAKAGAKI</p>
-        </div>
-        <ul id="gnav__nav" class="gnav__nav">
-          <li class="gnav__list--01"><a href="#" class="gnav__link">TOP<br><span>トップ</span></a></li>
-          <li class="gnav__list--01"><a href="#works" class="gnav__link">WORKS<br><span>制作実績</span></a></li>
-          <li class="gnav__list--02"><a href="allworks/index.html" class="gnav__link">ALL WORKS<br></a></li>
-          <li class="gnav__list--01"><a href="#skill" class="gnav__link">SKILL<br><span>スキル・使用ソフト一覧</span></a></li>
-          <li class="gnav__list--01"><a href="#profile" class="gnav__link">PROFILE<br><span>プロフィール</span></a></li>
-          <li class="gnav__list--01"><a href="#contact" class="gnav__link">CONTACT<br><span>ご連絡先</span></a></li>
-        </ul>
-      </nav>
-      <div class="mv">
-        <div class="mv__wrap">
-          <p class="mv__ttl">I <span>think</span></p>
-          <p class="mv__ttl">therefore</p>
-          <p class="mv__ttl">I am.</p>
-          <p class="mv__txt">考えるからこそ、私です。</p>
-        </div>
-      </div>
-
-      <div class="mvcover">
-        <div class="mvcover__scrollarrow"><span></span></div>
-        <div class="mvcover__txtbox">
-          <p class="mvcover__txt">
-            未知の問題に相対した時、<br>
-            あるいは新しく何かを生み出そうとする時、<br>
-            必ず自分の頭で考える。
-          </p>
-          <p class="mvcover__txt">
-            どこに違和感を感じ、何を理解しておらず、<br>
-            どうすれば打開できるか、<br>
-            ひとつずつ着実に、順序を追って考えてみる。
-          </p>
-          <p class="mvcover__txt">
-            もし考えても考えても答えが出ないときは、<br>
-            いったん寝かせてみたら、<br>
-            ふとした時にいい案が浮かぶことも。
-          </p>
-          <p class="mvcover__txt">
-            そういうことを繰り返しながら、<br>
-            絶えず成長し続ける。<br>
-            考えることが、私の武器です。
-          </p>
-        </div>
-      </div>
-
-      <section id="works" class="works">
-        <div id="works__scroll-wrapper" class="works__scroll-wrapper">
-          <ul id="works__scroll-list" class="works__scroll-list">
-            <li class="works__scroll-head">
-              <div>
-                <h2 class="works__ttl">WORKS</h2>
-                <p class="works__ttl-jp">制作実績</p>
-                <p class="works__txt">サイトに訪ねてくる人が、何を求めているのか。<br>
-                  サイトを作りたい企業や人が、何を伝えたいのか。<br>
-                  関係者の視点をそれぞれ意識し、考え抜いた上で、<br>
-                  作品を設計することを心がけています。</p>
-              </div>
+          <ul id="gnav__nav" class="gnav__nav">
+            <li class="gnav__list--01">
+              <a href="#" class="gnav__link">TOP<br /><span>トップ</span></a>
             </li>
-            <li class="works__scroll-item">
-              <p class="works__scroll-pic">
-                <a href="allworks/laura/index.html" class="works__scroll-link">
-                  <picture>
-                    <source media="(min-width: 1360px)" srcset="images/top/img06-pc.jpg">
-                    <source media="(min-width: 768px)" srcset="images/top/img06-tab.jpg">
-                    <img src="images/top/img06-sp.jpg" alt="岩肌に乗った指輪" class="works__scroll-img">
-                  </picture>
-                </a>
-              </p>
-              <div class="works__scroll-txtbox">
-                <p class="works__scroll-num"></p>
-                <dl class="works__scroll-dl">
-                  <dt>Laura</dt>
-                  <dd>ブランドサイト</dd>
-                  <dd>国内ジュエリーブランドのウェブサイト制作</dd>
-                </dl>
-              </div>
+            <li class="gnav__list--01">
+              <a href="#works" class="gnav__link"
+                >WORKS<br /><span>制作実績</span></a
+              >
             </li>
-            <li class="works__scroll-item">
-              <p class="works__scroll-pic">
-                <a href="allworks/armor/index.html" class="works__scroll-link">
-                  <picture>
-                    <source media="(min-width: 1360px)" srcset="images/top/img01-pc.jpg">
-                    <source media="(min-width: 768px)" srcset="images/top/img01-tab.jpg">
-                    <img src="images/top/img01-sp.jpg" alt="ネイルカラーを施したモデル男性" class="works__scroll-img">
-                  </picture>
-                </a>
-              </p>
-              <div class="works__scroll-txtbox">
-                <p class="works__scroll-num"></p>
-                <dl class="works__scroll-dl">
-                  <dt>mens nail ARMOR</dt>
-                  <dd>プロダクトサイト</dd>
-                  <dd>男性向けネイル用品を取り扱うショップのウェブサイト制作</dd>
-                </dl>
-              </div>
+            <li class="gnav__list--02">
+              <a href="allworks/index.html" class="gnav__link"
+                >ALL WORKS<br
+              /></a>
             </li>
-            <li class="works__scroll-item">
-              <p class="works__scroll-pic">
-                <a href="allworks/musubi/index.html" class="works__scroll-link">
-                  <picture>
-                    <source media="(min-width: 1360px)" srcset="images/top/img02-pc.jpg">
-                    <source media="(min-width: 768px)" srcset="images/top/img02-tab.jpg">
-                    <img src="images/top/img02-sp.jpg" alt="おにぎりを握る手" class="works__scroll-img">
-                  </picture>
-                </a>
-              </p>
-              <div class="works__scroll-txtbox">
-                <p class="works__scroll-num"></p>
-                <dl class="works__scroll-dl">
-                  <dt>ごはんや　むすび</dt>
-                  <dd>コーポレートサイト</dd>
-                  <dd>老舗飲食店リニューアルオープンに伴うウェブサイト制作</dd>
-                </dl>
-              </div>
+            <li class="gnav__list--01">
+              <a href="#skill" class="gnav__link"
+                >SKILL<br /><span>スキル・使用ソフト一覧</span></a
+              >
             </li>
-            <li class="works__scroll-item">
-              <p class="works__scroll-pic">
-                <a href="allworks/cafeazito/index.html" class="works__scroll-link">
-                  <picture>
-                    <source media="(min-width: 1360px)" srcset="images/top/img03-pc.jpg">
-                    <source media="(min-width: 768px)" srcset="images/top/img03-tab.jpg">
-                    <img src="images/top/img03-sp.jpg" alt="アヒージョ" class="works__scroll-img">
-                  </picture>
-                </a>
-              </p>
-              <div class="works__scroll-txtbox">
-                <p class="works__scroll-num"></p>
-                <dl class="works__scroll-dl">
-                  <dt>cafe azito</dt>
-                  <dd>コーポレートサイト</dd>
-                  <dd>カフェのウェブサイトリニューアル</dd>
-                </dl>
-              </div>
+            <li class="gnav__list--01">
+              <a href="#profile" class="gnav__link"
+                >PROFILE<br /><span>プロフィール</span></a
+              >
             </li>
-            <li class="works__scroll-item">
-              <p class="works__scroll-pic">
-                <a href="allworks/wss/index.html" class="works__scroll-link">
-                  <picture>
-                    <source media="(min-width: 1360px)" srcset="images/top/img04-pc.jpg">
-                    <source media="(min-width: 768px)" srcset="images/top/img04-tab.jpg">
-                    <img src="images/top/img04-sp.jpg" alt="前方を見る男女" class="works__scroll-img">
-                  </picture>
-                </a>
-              </p>
-              <div class="works__scroll-txtbox">
-                <p class="works__scroll-num"></p>
-                <dl class="works__scroll-dl">
-                  <dt>WSS（ウェブスタディサッポロ）</dt>
-                  <dd>コーポレートサイト</dd>
-                  <dd>職業訓練校のウェブサイトリニューアル</dd>
-                </dl>
-              </div>
-            </li>
-            <li class="works__scroll-item">
-              <p class="works__scroll-pic">
-                <a href="allworks/littleriddle/index.html" class="works__scroll-link">
-                  <picture>
-                    <source media="(min-width: 1360px)" srcset="images/top/img05-pc.jpg">
-                    <source media="(min-width: 768px)" srcset="images/top/img05-tab.jpg">
-                    <img src="images/top/img05-sp.jpg" alt="頬に手を当てる少女モデル" class="works__scroll-img">
-                  </picture>
-                </a>
-              </p>
-              <div class="works__scroll-txtbox">
-                <p class="works__scroll-num"></p>
-                <dl class="works__scroll-dl">
-                  <dt>Little Riddle</dt>
-                  <dd>ブランドサイト</dd>
-                  <dd>複数店舗を展開する子ども服ブランドのウェブサイト制作</dd>
-                </dl>
-              </div>
-            </li>
-            <li class="works__scroll-item">
-              <p class="works__scroll-pic">
-                <a href="allworks/banner_lloyds/index.html" class="works__scroll-link">
-                  <picture>
-                    <source media="(min-width: 1360px)" srcset="images/top/img08-pc.jpg">
-                    <source media="(min-width: 768px)" srcset="images/top/img08-tab.jpg">
-                    <img src="images/top/img08-sp.jpg" alt="ロイズコーヒーロゴ" class="works__scroll-img">
-                  </picture>
-                </a>
-              </p>
-              <div class="works__scroll-txtbox">
-                <p class="works__scroll-num"></p>
-                <dl class="works__scroll-dl">
-                  <dt>ロイズコーヒー</dt>
-                  <dd>バナー広告</dd>
-                  <dd>コーヒー豆オンライン販売開始を知らせるバナー広告制作</dd>
-                </dl>
-              </div>
-            </li>
-            <li class="works__scroll-item">
-              <p class="works__scroll-pic">
-                <a href="allworks/banner_lemon/index.html" class="works__scroll-link">
-                  <picture>
-                    <source media="(min-width: 1360px)" srcset="images/top/img09-pc.jpg">
-                    <source media="(min-width: 768px)" srcset="images/top/img09-tab.jpg">
-                    <img src="images/top/img09-sp.jpg" alt="瀬戸田エコレモンロールロゴ" class="works__scroll-img">
-                  </picture>
-                </a>
-              </p>
-              <div class="works__scroll-txtbox">
-                <p class="works__scroll-num"></p>
-                <dl class="works__scroll-dl">
-                  <dt>瀬戸田エコレモンロール</dt>
-                  <dd>バナー広告</dd>
-                  <dd>デパート等で販売されるロールケーキのバナー広告制作</dd>
-                </dl>
-              </div>
-            </li>
-            <li class="works__scroll-item">
-              <p class="works__scroll-pic">
-                <a href="allworks/application_memopad/index.html" class="works__scroll-link">
-                  <picture>
-                    <source media="(min-width: 1360px)" srcset="images/top/img17-pc.jpg">
-                    <source media="(min-width: 768px)" srcset="images/top/img17-tab.jpg">
-                    <img src="images/top/img17-sp.jpg" alt="スマホを持つ手" class="works__scroll-img">
-                  </picture>
-                </a>
-              </p>
-              <div class="works__scroll-txtbox">
-                <p class="works__scroll-num"></p>
-                <dl class="works__scroll-dl">
-                  <dt>メモアプリ『PETAMO』</dt>
-                  <dd>Webアプリケーション</dd>
-                  <dd>メモを保存・編集・削除する機能を持つシンプルなメモアプリ製作</dd>
-                </dl>
-              </div>
-            </li>
-            <li class="works__scroll-tail">
-              <p class="works__btn"><a href="allworks/index.html" class="works__link">VIEW ALL WORKS<span></span></a>
-              </p>
-            </li>
+            <li class="gnav__list--01">
+              <a href="#contact" class="gnav__link"
+                >CONTACT<br /><span>ご連絡先</span></a
+              >
             </li>
           </ul>
-        </div>
-      </section>
-
-      <div id="looptxt" class="looptxt">
-        <div class="looptxt__wrap">
-          <div class="looptxt__marquee">
-            <div class="looptxt__marquee-inner">
-              WRITING CRYSTALLIZES THOUGHT<span class="looptxt__marquee-img01"></span>
-              AND THOUGHT PRODUCES ACTION.<span class="looptxt__marquee-img01"></span>
-            </div>
-            <div class="looptxt__marquee-inner" aria-hidden="true">
-              WRITING CRYSTALLIZES THOUGHT<span class="looptxt__marquee-img01"></span>
-              AND THOUGHT PRODUCES ACTION.<span class="looptxt__marquee-img01"></span>
-            </div>
-          </div>
-          <div class="looptxt__marquee">
-            <div class="looptxt__marquee-inner">
-              <span class="looptxt__marquee-graycolor">温故知新</span><span class="looptxt__marquee-img02"></span>LEARNING
-              NEW FROM THE PAST.<span class="looptxt__marquee-img03"></span>
-              <span class="looptxt__marquee-graycolor">温故知新</span><span class="looptxt__marquee-img02"></span>LEARNING
-              NEW FROM THE PAST.<span class="looptxt__marquee-img03"></span>
-            </div>
-            <div class="looptxt__marquee-inner" aria-hidden="true">
-              <span class="looptxt__marquee-graycolor">温故知新</span><span class="looptxt__marquee-img02"></span>LEARNING
-              NEW FROM THE PAST.<span class="looptxt__marquee-img03"></span>
-              <span class="looptxt__marquee-graycolor">温故知新</span><span class="looptxt__marquee-img02"></span>LEARNING
-              NEW FROM THE PAST.<span class="looptxt__marquee-img03"></span>
-            </div>
-          </div>
-          <div class="looptxt__marquee">
-            <div class="looptxt__marquee-inner">
-              <span class="looptxt__marquee-graycolor">知は力なり。</span>
-              <span class="looptxt__marquee-img04"></span>KNOULEDGE IS POWER.<span
-                class="looptxt__marquee-img05"></span>
-              <span class="looptxt__marquee-graycolor">知は力なり。</span>
-              <span class="looptxt__marquee-img04"></span>KNOULEDGE IS POWER.<span
-                class="looptxt__marquee-img05"></span>
-            </div>
-            <div class="looptxt__marquee-inner" aria-hidden="true">
-              <span class="looptxt__marquee-graycolor">知は力なり。</span>
-              <span class="looptxt__marquee-img04"></span>KNOULEDGE IS POWER.<span
-                class="looptxt__marquee-img05"></span>
-              <span class="looptxt__marquee-graycolor">知は力なり。</span>
-              <span class="looptxt__marquee-img04"></span>KNOULEDGE IS POWER.<span
-                class="looptxt__marquee-img05"></span>
-            </div>
-          </div>
-          <div class="looptxt__marquee">
-            <div class="looptxt__marquee-inner">
-              IT IS ALWAYS DARKEST<span class="looptxt__marquee-img06"></span>BEFORE THE DAWN.<span
-                class="looptxt__marquee-img06"></span>
-              <span class="looptxt__marquee-graycolor">夜明け前が一番暗い。</span><span class="looptxt__marquee-img06"></span>
-            </div>
-            <div class="looptxt__marquee-inner" aria-hidden="true">
-              IT IS ALWAYS DARKEST<span class="looptxt__marquee-img06"></span>BEFORE THE DAWN.<span
-                class="looptxt__marquee-img06"></span>
-              <span class="looptxt__marquee-graycolor">夜明け前が一番暗い。</span><span class="looptxt__marquee-img06"></span>
-            </div>
-          </div>
-          <div class="looptxt__marquee">
-            <div class="looptxt__marquee-inner">
-              TAKE TIME TO DELIBERATE, BUT WHEN THE TIME FOR ACTION COMES,<span class="looptxt__marquee-img07"></span>
-              STOP THINKING AND GO IN.<span class="looptxt__marquee-img07"></span>
-            </div>
-            <div class="looptxt__marquee-inner" aria-hidden="true">
-              TAKE TIME TO DELIBERATE, BUT WHEN THE TIME FOR ACTION COMES,<span class="looptxt__marquee-img07"></span>
-              STOP THINKING AND GO IN.<span class="looptxt__marquee-img07"></span>
-            </div>
+        </nav>
+        <div class="mv">
+          <div class="mv__wrap">
+            <p class="mv__ttl">I <span>think</span></p>
+            <p class="mv__ttl">therefore</p>
+            <p class="mv__ttl">I am.</p>
+            <p class="mv__txt">考えるからこそ、私です。</p>
           </div>
         </div>
-      </div>
 
-      <section id="skill" class="skill">
-        <div class="skill__box">
-          <div class="skill__ttlbox">
-            <h2 class="skill__ttl">SKILL</h2>
-            <p class="skill__ttl-jp">スキル・使用ソフト一覧</p>
-          </div>
-          <p class="skill__txt">新しい知識や技術を積極的に取り入れ、自分にできることの範囲を広げていくことに達成感を感じます。インプットとアウトプットを繰り返し、着実に技術を積み上げていきたいと思っています。
-          </p>
-        </div>
-        <div class="skill__skillbox">
-          <ul class="skill__filter">
-            <li data-filter="coding" class="is-active">CODING</li>
-            <li data-filter="design">DESIGN</li>
-            <li data-filter="others">OTHERS</li>
-            <li data-filter="all">ALL</li>
-          </ul>
-
-          <ul class="skill__category">
-            <li data-category="coding" class="is-show">
-              <img src="images/top/skill/icon-html.png" alt="HTML(LS)アイコン" class="skill__img">
-              <p class="skill__name">HTML(LS)</p>
-            </li>
-            <li data-category="coding" class="is-show">
-              <img src="images/top/skill/icon-css.png" alt="css3アイコン" class="skill__img">
-              <p class="skill__name">CSS3</p>
-            </li>
-            <li data-category="coding" class="is-show">
-              <img src="images/top/skill/icon-sass.png" alt="Sassアイコン" class="skill__img">
-              <p class="skill__name">Sass</p>
-            </li>
-            <li data-category="coding" class="is-show">
-              <img src="images/top/skill/icon-javascript.png" alt="JavaScriptアイコン" class="skill__img">
-              <p class="skill__name">JavaScript</p>
-            </li>
-            <li data-category="coding" class="is-show">
-              <img src="images/top/skill/icon-gsap.png" alt="GSAPアイコン" class="skill__img">
-              <p class="skill__name">GSAP</p>
-            </li>
-            <li data-category="coding" class="is-show">
-              <img src="images/top/skill/icon-vuejs.png" alt="Vueアイコン" class="skill__img">
-              <p class="skill__name">Vue.js</p>
-            </li>
-            <li data-category="coding" class="is-show">
-              <img src="images/top/skill/icon-react.png" alt="Reactアイコン" class="skill__img">
-              <p class="skill__name">React</p>
-            </li>
-            <li data-category="coding">
-              <img src="images/top/skill/icon-wordpress.png" alt="Word Pressアイコン" class="skill__img">
-              <p class="skill__name">Word Press</p>
-            </li>
-            <li data-category="coding">
-              <img src="images/top/skill/icon-nunjucks.png" alt="Nunjucksアイコン" class="skill__img">
-              <p class="skill__name">Nunjucks</p>
-            </li>
-            <li data-category="coding">
-              <img src="images/top/skill/icon-tailwind.png" alt="Tailwindアイコン" class="skill__img">
-              <p class="skill__name">Tailwind</p>
-            </li>
-            <li data-category="coding">
-              <img src="images/top/skill/icon-docker.png" alt="Dockerアイコン" class="skill__img">
-              <p class="skill__name">Docker</p>
-            </li>
-            <li data-category="coding" class="is-show">
-              <img src="images/top/skill/icon-vscode.png" alt="VSCodeアイコン" class="skill__img">
-              <p class="skill__name">VS Code</p>
-            </li>
-            <li data-category="design">
-              <img src="images/top/skill/icon-photoshop.png" alt="Photoshopアイコン" class="skill__img">
-              <p class="skill__name">Photoshop</p>
-            </li>
-            <li data-category="design">
-              <img src="images/top/skill/icon-xd.png" alt="Adobe XDアイコン" class="skill__img">
-              <p class="skill__name">Adobe XD</p>
-            </li>
-            <li data-category="design">
-              <img src="images/top/skill/icon-figma.png" alt="figmaアイコン" class="skill__img">
-              <p class="skill__name">figma</p>
-            </li>
-            <li data-category="design" class="two-lines">
-              <img src="images/top/skill/icon-clipstudio.png" alt="CLIP STUDIOアイコン" class="skill__img">
-              <p class="skill__name">CLIP STUDIO</p>
-            </li>
-            <li data-category="others">
-              <img src="images/top/skill/icon-github.png" alt="GitHubアイコン" class="skill__img">
-              <p class="skill__name">GitHub</p>
-            </li>
-            <li data-category="others">
-              <img src="images/top/skill/icon-quip.png" alt="Quipアイコン" class="skill__img">
-              <p class="skill__name">Quip</p>
-            </li>
-            <li data-category="others">
-              <img src="images/top/skill/icon-notion.png" alt="Notionアイコン" class="skill__img">
-              <p class="skill__name">Notion</p>
-            </li>
-            <li data-category="others">
-              <img src="images/top/skill/icon-chatwork.png" alt="Chatworkアイコン" class="skill__img">
-              <p class="skill__name">Chatwork</p>
-            </li>
-            <li data-category="others">
-              <img src="images/top/skill/icon-word.png" alt="Wordアイコン" class="skill__img">
-              <p class="skill__name">Word</p>
-            </li>
-            <li data-category="others">
-              <img src="images/top/skill/icon-excel.png" alt="Excelアイコン" class="skill__img">
-              <p class="skill__name">Excel</p>
-            </li>
-            <li data-category="others">
-              <img src="images/top/skill/icon-powerpoint.png" alt="PowerPointアイコン" class="skill__img">
-              <p class="skill__name">PowerPoint</p>
-            </li>
-            <li data-category="others">
-              <img src="images/top/skill/icon-slack.png" alt="Slackアイコン" class="skill__img">
-              <p class="skill__name">Slack</p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="profile" class="profile">
-        <h2 class="profile__ttl">PROFILE</h2>
-        <p class="profile__ttl-jp">プロフィール</p>
-        <div class="profile__wrap">
-          <div class="profile__txtbox">
-            <p class="profile__name">YUU NAKAGAKI</p>
-            <p class="profile__name-jp">中垣　悠</p>
-            <p class="profile__txt">北海道生まれ島根県育ち。<br>
-              Web制作会社にてフロントエンドエンジニアとして勤務。
-              ちょっとした違和感に気が付きやすいので、間違い探しが得意です。<br>
-              趣味は文房具、ゲーム、映画鑑賞、ボクササイズ、漫画を描くこと、美術館へ行くこと。
+        <div class="mvcover">
+          <div class="mvcover__scrollarrow"><span></span></div>
+          <div class="mvcover__txtbox">
+            <p class="mvcover__txt">
+              未知の問題に相対した時、<br />
+              あるいは新しく何かを生み出そうとする時、<br />
+              必ず自分の頭で考える。
+            </p>
+            <p class="mvcover__txt">
+              どこに違和感を感じ、何を理解しておらず、<br />
+              どうすれば打開できるか、<br />
+              ひとつずつ着実に、順序を追って考えてみる。
+            </p>
+            <p class="mvcover__txt">
+              もし考えても考えても答えが出ないときは、<br />
+              いったん寝かせてみたら、<br />
+              ふとした時にいい案が浮かぶことも。
+            </p>
+            <p class="mvcover__txt">
+              そういうことを繰り返しながら、<br />
+              絶えず成長し続ける。<br />
+              考えることが、私の武器です。
             </p>
           </div>
-          <picture class="profile__pic">
-            <source media="(min-width: 1024px)" srcset="images/top/photo01-pc.jpg">
-            <source media="(min-width: 768px)" srcset="images/top/photo01-sp.jpg">
-            <img src="images/top/photo01-sp.jpg" alt="ポートレート写真" class="profile__img">
-          </picture>
         </div>
-      </section>
 
-      <div id="message" class="message">
-        <div class="txtbox">
-          <p class="message__txt">To live is to <span>think</span>.</p>
-          <p class="message__sub">考えることは、人生の宿題。</p>
+        <section id="works" class="works">
+          <div id="works__scroll-wrapper" class="works__scroll-wrapper">
+            <ul id="works__scroll-list" class="works__scroll-list">
+              <li class="works__scroll-head">
+                <div>
+                  <h2 class="works__ttl">WORKS</h2>
+                  <p class="works__ttl-jp">制作実績</p>
+                  <p class="works__txt">
+                    サイトに訪ねてくる人が、何を求めているのか。<br />
+                    サイトを作りたい企業や人が、何を伝えたいのか。<br />
+                    関係者の視点をそれぞれ意識し、考え抜いた上で、<br />
+                    作品を設計することを心がけています。
+                  </p>
+                </div>
+              </li>
+              <li class="works__scroll-item">
+                <p class="works__scroll-pic">
+                  <a
+                    href="allworks/laura/index.html"
+                    class="works__scroll-link"
+                  >
+                    <picture>
+                      <source
+                        media="(min-width: 1360px)"
+                        srcset="images/top/img06-pc.jpg"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="images/top/img06-tab.jpg"
+                      />
+                      <img
+                        src="images/top/img06-sp.jpg"
+                        alt="岩肌に乗った指輪"
+                        class="works__scroll-img"
+                      />
+                    </picture>
+                  </a>
+                </p>
+                <div class="works__scroll-txtbox">
+                  <p class="works__scroll-num"></p>
+                  <dl class="works__scroll-dl">
+                    <dt>Laura</dt>
+                    <dd>ブランドサイト</dd>
+                    <dd>国内ジュエリーブランドのウェブサイト制作</dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="works__scroll-item">
+                <p class="works__scroll-pic">
+                  <a
+                    href="allworks/armor/index.html"
+                    class="works__scroll-link"
+                  >
+                    <picture>
+                      <source
+                        media="(min-width: 1360px)"
+                        srcset="images/top/img01-pc.jpg"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="images/top/img01-tab.jpg"
+                      />
+                      <img
+                        src="images/top/img01-sp.jpg"
+                        alt="ネイルカラーを施したモデル男性"
+                        class="works__scroll-img"
+                      />
+                    </picture>
+                  </a>
+                </p>
+                <div class="works__scroll-txtbox">
+                  <p class="works__scroll-num"></p>
+                  <dl class="works__scroll-dl">
+                    <dt>mens nail ARMOR</dt>
+                    <dd>プロダクトサイト</dd>
+                    <dd>
+                      男性向けネイル用品を取り扱うショップのウェブサイト制作
+                    </dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="works__scroll-item">
+                <p class="works__scroll-pic">
+                  <a
+                    href="allworks/musubi/index.html"
+                    class="works__scroll-link"
+                  >
+                    <picture>
+                      <source
+                        media="(min-width: 1360px)"
+                        srcset="images/top/img02-pc.jpg"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="images/top/img02-tab.jpg"
+                      />
+                      <img
+                        src="images/top/img02-sp.jpg"
+                        alt="おにぎりを握る手"
+                        class="works__scroll-img"
+                      />
+                    </picture>
+                  </a>
+                </p>
+                <div class="works__scroll-txtbox">
+                  <p class="works__scroll-num"></p>
+                  <dl class="works__scroll-dl">
+                    <dt>ごはんや　むすび</dt>
+                    <dd>コーポレートサイト</dd>
+                    <dd>
+                      老舗飲食店リニューアルオープンに伴うウェブサイト制作
+                    </dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="works__scroll-item">
+                <p class="works__scroll-pic">
+                  <a
+                    href="allworks/cafeazito/index.html"
+                    class="works__scroll-link"
+                  >
+                    <picture>
+                      <source
+                        media="(min-width: 1360px)"
+                        srcset="images/top/img03-pc.jpg"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="images/top/img03-tab.jpg"
+                      />
+                      <img
+                        src="images/top/img03-sp.jpg"
+                        alt="アヒージョ"
+                        class="works__scroll-img"
+                      />
+                    </picture>
+                  </a>
+                </p>
+                <div class="works__scroll-txtbox">
+                  <p class="works__scroll-num"></p>
+                  <dl class="works__scroll-dl">
+                    <dt>cafe azito</dt>
+                    <dd>コーポレートサイト</dd>
+                    <dd>カフェのウェブサイトリニューアル</dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="works__scroll-item">
+                <p class="works__scroll-pic">
+                  <a href="allworks/wss/index.html" class="works__scroll-link">
+                    <picture>
+                      <source
+                        media="(min-width: 1360px)"
+                        srcset="images/top/img04-pc.jpg"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="images/top/img04-tab.jpg"
+                      />
+                      <img
+                        src="images/top/img04-sp.jpg"
+                        alt="前方を見る男女"
+                        class="works__scroll-img"
+                      />
+                    </picture>
+                  </a>
+                </p>
+                <div class="works__scroll-txtbox">
+                  <p class="works__scroll-num"></p>
+                  <dl class="works__scroll-dl">
+                    <dt>WSS（ウェブスタディサッポロ）</dt>
+                    <dd>コーポレートサイト</dd>
+                    <dd>職業訓練校のウェブサイトリニューアル</dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="works__scroll-item">
+                <p class="works__scroll-pic">
+                  <a
+                    href="allworks/littleriddle/index.html"
+                    class="works__scroll-link"
+                  >
+                    <picture>
+                      <source
+                        media="(min-width: 1360px)"
+                        srcset="images/top/img05-pc.jpg"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="images/top/img05-tab.jpg"
+                      />
+                      <img
+                        src="images/top/img05-sp.jpg"
+                        alt="頬に手を当てる少女モデル"
+                        class="works__scroll-img"
+                      />
+                    </picture>
+                  </a>
+                </p>
+                <div class="works__scroll-txtbox">
+                  <p class="works__scroll-num"></p>
+                  <dl class="works__scroll-dl">
+                    <dt>Little Riddle</dt>
+                    <dd>ブランドサイト</dd>
+                    <dd>
+                      複数店舗を展開する子ども服ブランドのウェブサイト制作
+                    </dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="works__scroll-item">
+                <p class="works__scroll-pic">
+                  <a
+                    href="allworks/banner_lloyds/index.html"
+                    class="works__scroll-link"
+                  >
+                    <picture>
+                      <source
+                        media="(min-width: 1360px)"
+                        srcset="images/top/img08-pc.jpg"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="images/top/img08-tab.jpg"
+                      />
+                      <img
+                        src="images/top/img08-sp.jpg"
+                        alt="ロイズコーヒーロゴ"
+                        class="works__scroll-img"
+                      />
+                    </picture>
+                  </a>
+                </p>
+                <div class="works__scroll-txtbox">
+                  <p class="works__scroll-num"></p>
+                  <dl class="works__scroll-dl">
+                    <dt>ロイズコーヒー</dt>
+                    <dd>バナー広告</dd>
+                    <dd>
+                      コーヒー豆オンライン販売開始を知らせるバナー広告制作
+                    </dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="works__scroll-item">
+                <p class="works__scroll-pic">
+                  <a
+                    href="allworks/banner_lemon/index.html"
+                    class="works__scroll-link"
+                  >
+                    <picture>
+                      <source
+                        media="(min-width: 1360px)"
+                        srcset="images/top/img09-pc.jpg"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="images/top/img09-tab.jpg"
+                      />
+                      <img
+                        src="images/top/img09-sp.jpg"
+                        alt="瀬戸田エコレモンロールロゴ"
+                        class="works__scroll-img"
+                      />
+                    </picture>
+                  </a>
+                </p>
+                <div class="works__scroll-txtbox">
+                  <p class="works__scroll-num"></p>
+                  <dl class="works__scroll-dl">
+                    <dt>瀬戸田エコレモンロール</dt>
+                    <dd>バナー広告</dd>
+                    <dd>デパート等で販売されるロールケーキのバナー広告制作</dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="works__scroll-item">
+                <p class="works__scroll-pic">
+                  <a
+                    href="allworks/application_memopad/index.html"
+                    class="works__scroll-link"
+                  >
+                    <picture>
+                      <source
+                        media="(min-width: 1360px)"
+                        srcset="images/top/img17-pc.jpg"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="images/top/img17-tab.jpg"
+                      />
+                      <img
+                        src="images/top/img17-sp.jpg"
+                        alt="スマホを持つ手"
+                        class="works__scroll-img"
+                      />
+                    </picture>
+                  </a>
+                </p>
+                <div class="works__scroll-txtbox">
+                  <p class="works__scroll-num"></p>
+                  <dl class="works__scroll-dl">
+                    <dt>メモアプリ『PETAMO』</dt>
+                    <dd>Webアプリケーション</dd>
+                    <dd>
+                      メモを保存・編集・削除する機能を持つシンプルなメモアプリ製作
+                    </dd>
+                  </dl>
+                </div>
+              </li>
+              <li class="works__scroll-tail">
+                <p class="works__btn">
+                  <a href="allworks/index.html" class="works__link"
+                    >VIEW ALL WORKS<span></span
+                  ></a>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <div id="looptxt" class="looptxt">
+          <div class="looptxt__wrap">
+            <div class="looptxt__marquee">
+              <div class="looptxt__marquee-inner">
+                WRITING CRYSTALLIZES THOUGHT<span
+                  class="looptxt__marquee-img01"
+                ></span>
+                AND THOUGHT PRODUCES ACTION.<span
+                  class="looptxt__marquee-img01"
+                ></span>
+              </div>
+              <div class="looptxt__marquee-inner" aria-hidden="true">
+                WRITING CRYSTALLIZES THOUGHT<span
+                  class="looptxt__marquee-img01"
+                ></span>
+                AND THOUGHT PRODUCES ACTION.<span
+                  class="looptxt__marquee-img01"
+                ></span>
+              </div>
+            </div>
+            <div class="looptxt__marquee">
+              <div class="looptxt__marquee-inner">
+                <span class="looptxt__marquee-graycolor">温故知新</span
+                ><span class="looptxt__marquee-img02"></span>LEARNING NEW FROM
+                THE PAST.<span class="looptxt__marquee-img03"></span>
+                <span class="looptxt__marquee-graycolor">温故知新</span
+                ><span class="looptxt__marquee-img02"></span>LEARNING NEW FROM
+                THE PAST.<span class="looptxt__marquee-img03"></span>
+              </div>
+              <div class="looptxt__marquee-inner" aria-hidden="true">
+                <span class="looptxt__marquee-graycolor">温故知新</span
+                ><span class="looptxt__marquee-img02"></span>LEARNING NEW FROM
+                THE PAST.<span class="looptxt__marquee-img03"></span>
+                <span class="looptxt__marquee-graycolor">温故知新</span
+                ><span class="looptxt__marquee-img02"></span>LEARNING NEW FROM
+                THE PAST.<span class="looptxt__marquee-img03"></span>
+              </div>
+            </div>
+            <div class="looptxt__marquee">
+              <div class="looptxt__marquee-inner">
+                <span class="looptxt__marquee-graycolor">知は力なり。</span>
+                <span class="looptxt__marquee-img04"></span>KNOULEDGE IS
+                POWER.<span class="looptxt__marquee-img05"></span>
+                <span class="looptxt__marquee-graycolor">知は力なり。</span>
+                <span class="looptxt__marquee-img04"></span>KNOULEDGE IS
+                POWER.<span class="looptxt__marquee-img05"></span>
+              </div>
+              <div class="looptxt__marquee-inner" aria-hidden="true">
+                <span class="looptxt__marquee-graycolor">知は力なり。</span>
+                <span class="looptxt__marquee-img04"></span>KNOULEDGE IS
+                POWER.<span class="looptxt__marquee-img05"></span>
+                <span class="looptxt__marquee-graycolor">知は力なり。</span>
+                <span class="looptxt__marquee-img04"></span>KNOULEDGE IS
+                POWER.<span class="looptxt__marquee-img05"></span>
+              </div>
+            </div>
+            <div class="looptxt__marquee">
+              <div class="looptxt__marquee-inner">
+                IT IS ALWAYS DARKEST<span class="looptxt__marquee-img06"></span
+                >BEFORE THE DAWN.<span class="looptxt__marquee-img06"></span>
+                <span class="looptxt__marquee-graycolor"
+                  >夜明け前が一番暗い。</span
+                ><span class="looptxt__marquee-img06"></span>
+              </div>
+              <div class="looptxt__marquee-inner" aria-hidden="true">
+                IT IS ALWAYS DARKEST<span class="looptxt__marquee-img06"></span
+                >BEFORE THE DAWN.<span class="looptxt__marquee-img06"></span>
+                <span class="looptxt__marquee-graycolor"
+                  >夜明け前が一番暗い。</span
+                ><span class="looptxt__marquee-img06"></span>
+              </div>
+            </div>
+            <div class="looptxt__marquee">
+              <div class="looptxt__marquee-inner">
+                TAKE TIME TO DELIBERATE, BUT WHEN THE TIME FOR ACTION
+                COMES,<span class="looptxt__marquee-img07"></span> STOP THINKING
+                AND GO IN.<span class="looptxt__marquee-img07"></span>
+              </div>
+              <div class="looptxt__marquee-inner" aria-hidden="true">
+                TAKE TIME TO DELIBERATE, BUT WHEN THE TIME FOR ACTION
+                COMES,<span class="looptxt__marquee-img07"></span> STOP THINKING
+                AND GO IN.<span class="looptxt__marquee-img07"></span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="message__bg"></div>
-      </div>
 
-      <section id="contact" class="contact">
-        <div class="contact__ttlbox">
-          <h2 class="contact__ttl">CONTACT</h2>
-          <p class="contact__ttl-jp">ご連絡先</p>
-          <p class="contact__txt">もし興味をお持ちいただけましたら、<br>
-            詳しくお話をする機会をいただけますと幸いです。</p>
+        <section id="skill" class="skill">
+          <div class="skill__box">
+            <div class="skill__ttlbox">
+              <h2 class="skill__ttl">SKILL</h2>
+              <p class="skill__ttl-jp">スキル・使用ソフト一覧</p>
+            </div>
+            <p class="skill__txt">
+              新しい知識や技術を積極的に取り入れ、自分にできることの範囲を広げていくことに達成感を感じます。インプットとアウトプットを繰り返し、着実に技術を積み上げていきたいと思っています。
+            </p>
+          </div>
+          <div class="skill__skillbox">
+            <ul class="skill__filter">
+              <li data-filter="coding" class="is-active">CODING</li>
+              <li data-filter="design">DESIGN</li>
+              <li data-filter="others">OTHERS</li>
+              <li data-filter="all">ALL</li>
+            </ul>
+
+            <ul class="skill__category">
+              <li data-category="coding" class="is-show">
+                <img
+                  src="images/top/skill/icon-html.png"
+                  alt="HTML(LS)アイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">HTML(LS)</p>
+              </li>
+              <li data-category="coding" class="is-show">
+                <img
+                  src="images/top/skill/icon-css.png"
+                  alt="css3アイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">CSS3</p>
+              </li>
+              <li data-category="coding" class="is-show">
+                <img
+                  src="images/top/skill/icon-sass.png"
+                  alt="Sassアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">Sass</p>
+              </li>
+              <li data-category="coding" class="is-show">
+                <img
+                  src="images/top/skill/icon-javascript.png"
+                  alt="JavaScriptアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">JavaScript</p>
+              </li>
+              <li data-category="coding" class="is-show">
+                <img
+                  src="images/top/skill/icon-gsap.png"
+                  alt="GSAPアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">GSAP</p>
+              </li>
+              <li data-category="coding" class="is-show">
+                <img
+                  src="images/top/skill/icon-vuejs.png"
+                  alt="Vueアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">Vue.js</p>
+              </li>
+              <li data-category="coding" class="is-show">
+                <img
+                  src="images/top/skill/icon-react.png"
+                  alt="Reactアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">React</p>
+              </li>
+              <li data-category="coding">
+                <img
+                  src="images/top/skill/icon-wordpress.png"
+                  alt="Word Pressアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">Word Press</p>
+              </li>
+              <li data-category="coding">
+                <img
+                  src="images/top/skill/icon-nunjucks.png"
+                  alt="Nunjucksアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">Nunjucks</p>
+              </li>
+              <li data-category="coding">
+                <img
+                  src="images/top/skill/icon-tailwind.png"
+                  alt="Tailwindアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">Tailwind</p>
+              </li>
+              <li data-category="coding">
+                <img
+                  src="images/top/skill/icon-docker.png"
+                  alt="Dockerアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">Docker</p>
+              </li>
+              <li data-category="coding" class="is-show">
+                <img
+                  src="images/top/skill/icon-vscode.png"
+                  alt="VSCodeアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">VS Code</p>
+              </li>
+              <li data-category="design">
+                <img
+                  src="images/top/skill/icon-photoshop.png"
+                  alt="Photoshopアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">Photoshop</p>
+              </li>
+              <li data-category="design">
+                <img
+                  src="images/top/skill/icon-xd.png"
+                  alt="Adobe XDアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">Adobe XD</p>
+              </li>
+              <li data-category="design">
+                <img
+                  src="images/top/skill/icon-figma.png"
+                  alt="figmaアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">figma</p>
+              </li>
+              <li data-category="design" class="two-lines">
+                <img
+                  src="images/top/skill/icon-clipstudio.png"
+                  alt="CLIP STUDIOアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">CLIP STUDIO</p>
+              </li>
+              <li data-category="others">
+                <img
+                  src="images/top/skill/icon-github.png"
+                  alt="GitHubアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">GitHub</p>
+              </li>
+              <li data-category="others">
+                <img
+                  src="images/top/skill/icon-quip.png"
+                  alt="Quipアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">Quip</p>
+              </li>
+              <li data-category="others">
+                <img
+                  src="images/top/skill/icon-notion.png"
+                  alt="Notionアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">Notion</p>
+              </li>
+              <li data-category="others">
+                <img
+                  src="images/top/skill/icon-chatwork.png"
+                  alt="Chatworkアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">Chatwork</p>
+              </li>
+              <li data-category="others">
+                <img
+                  src="images/top/skill/icon-word.png"
+                  alt="Wordアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">Word</p>
+              </li>
+              <li data-category="others">
+                <img
+                  src="images/top/skill/icon-excel.png"
+                  alt="Excelアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">Excel</p>
+              </li>
+              <li data-category="others">
+                <img
+                  src="images/top/skill/icon-powerpoint.png"
+                  alt="PowerPointアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">PowerPoint</p>
+              </li>
+              <li data-category="others">
+                <img
+                  src="images/top/skill/icon-slack.png"
+                  alt="Slackアイコン"
+                  class="skill__img"
+                />
+                <p class="skill__name">Slack</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="profile" class="profile">
+          <h2 class="profile__ttl">PROFILE</h2>
+          <p class="profile__ttl-jp">プロフィール</p>
+          <div class="profile__wrap">
+            <div class="profile__txtbox">
+              <p class="profile__name">YUU NAKAGAKI</p>
+              <p class="profile__name-jp">中垣　悠</p>
+              <p class="profile__txt">
+                北海道生まれ島根県育ち。<br />
+                Web制作会社にてフロントエンドエンジニアとして勤務。
+                ちょっとした違和感に気が付きやすいので、間違い探しが得意です。<br />
+                趣味は文房具、ゲーム、映画鑑賞、ボクササイズ、漫画を描くこと、美術館へ行くこと。
+              </p>
+            </div>
+            <picture class="profile__pic">
+              <source
+                media="(min-width: 1024px)"
+                srcset="images/top/photo01-pc.jpg"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="images/top/photo01-sp.jpg"
+              />
+              <img
+                src="images/top/photo01-sp.jpg"
+                alt="ポートレート写真"
+                class="profile__img"
+              />
+            </picture>
+          </div>
+        </section>
+
+        <div id="message" class="message">
+          <div class="txtbox">
+            <p class="message__txt">To live is to <span>think</span>.</p>
+            <p class="message__sub">考えることは、人生の宿題。</p>
+          </div>
+          <div class="message__bg"></div>
         </div>
-        <form id="form" class="form"
-          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeplp5Ikx9aG5j58SO6_zXZQvQjjSRFMIZI0jZZvNNS0m87rA/formResponse"
-          method="post" target="hidden_iframe" onsubmit="submitted=true;">
-          <div class="form__box">
-            <label for="name" class="form__label">お名前*<span>YOUR NAME</span></label>
-            <input id="name" type="text" name="entry.507663051" class="form__input" required placeholder="（例）山田　太郎">
-          </div>
-          <div class="form__box">
-            <label for="companyname" class="form__label">会社名<span>COMPANY NAME</span></label>
-            <input id="companyname" type="text" name="entry.87080264" class="form__input" placeholder="（例）株式会社　〇〇〇">
-          </div>
-          <div class="form__box">
-            <label for="telephone" class="form__label">電話番号<span>PHONE NUMBER</span></label>
-            <input id="telephone" type="text" name="entry.437468617" class="form__input" placeholder="（例）000-0000-0000">
-          </div>
-          <div class="form__box">
-            <label for="email" class="form__label">メールアドレス*<span>E-MAIL ADDRESS</span></label>
-            <input id="email" type="email" name="entry.1651768824" class="form__input" required
-              placeholder="（例）xxxxx@example.jp">
-          </div>
-          <div class="form__box">
-            <label for="message" class="form__label">メッセージ*<span>MESSAGE</span></label>
-            <textarea name="entry.647726636" class="form__message" id="message" required
-              placeholder="メッセージを入力してください。"></textarea>
-          </div>
-          <div class="form__box">
-            <label class="form__label">送信</label>
-            <input type="submit" class="form__submit" value="SEND"><span></span>
-          </div>
-        </form>
-      </section>
-    </main>
 
-    <footer id="footer" class="footer">
-      <a href="#" class="footer__pagetop">
-        <div class="footer__arrow"><span></span></div>
-      </a>
-      <p class="footer__copy"><small class="footer__small">&copy;YUU NAKAGAKI</small></p>
-    </footer>
+        <section id="contact" class="contact">
+          <div class="contact__ttlbox">
+            <h2 class="contact__ttl">CONTACT</h2>
+            <p class="contact__ttl-jp">ご連絡先</p>
+            <p class="contact__txt">
+              もし興味をお持ちいただけましたら、<br />
+              詳しくお話をする機会をいただけますと幸いです。
+            </p>
+          </div>
+          <form
+            id="form"
+            class="form"
+            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeplp5Ikx9aG5j58SO6_zXZQvQjjSRFMIZI0jZZvNNS0m87rA/formResponse"
+            method="post"
+            target="hidden_iframe"
+            onsubmit="submitted=true;"
+          >
+            <div class="form__box">
+              <label for="name" class="form__label"
+                >お名前*<span>YOUR NAME</span></label
+              >
+              <input
+                id="name"
+                type="text"
+                name="entry.507663051"
+                class="form__input"
+                required
+                placeholder="（例）山田　太郎"
+              />
+            </div>
+            <div class="form__box">
+              <label for="companyname" class="form__label"
+                >会社名<span>COMPANY NAME</span></label
+              >
+              <input
+                id="companyname"
+                type="text"
+                name="entry.87080264"
+                class="form__input"
+                placeholder="（例）株式会社　〇〇〇"
+              />
+            </div>
+            <div class="form__box">
+              <label for="telephone" class="form__label"
+                >電話番号<span>PHONE NUMBER</span></label
+              >
+              <input
+                id="telephone"
+                type="text"
+                name="entry.437468617"
+                class="form__input"
+                placeholder="（例）000-0000-0000"
+              />
+            </div>
+            <div class="form__box">
+              <label for="email" class="form__label"
+                >メールアドレス*<span>E-MAIL ADDRESS</span></label
+              >
+              <input
+                id="email"
+                type="email"
+                name="entry.1651768824"
+                class="form__input"
+                required
+                placeholder="（例）xxxxx@example.jp"
+              />
+            </div>
+            <div class="form__box">
+              <label for="message" class="form__label"
+                >メッセージ*<span>MESSAGE</span></label
+              >
+              <textarea
+                name="entry.647726636"
+                class="form__message"
+                id="message"
+                required
+                placeholder="メッセージを入力してください。"
+              ></textarea>
+            </div>
+            <div class="form__box">
+              <label class="form__label">送信</label>
+              <input
+                type="submit"
+                class="form__submit"
+                value="SEND"
+              /><span></span>
+            </div>
+          </form>
+        </section>
+      </main>
 
-  </div>
+      <footer id="footer" class="footer">
+        <a href="#" class="footer__pagetop">
+          <div class="footer__arrow"><span></span></div>
+        </a>
+        <p class="footer__copy">
+          <small class="footer__small">&copy;YUU NAKAGAKI</small>
+        </p>
+      </footer>
+    </div>
 
-
-  <script>var submitted = false;</script>
-  <iframe id="hidden_iframe" name="hidden_iframe" style="display:none;"
-    onload="if(submitted)  {window.location='thanks.html';}"></iframe>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
-  <script src="js/function.js?20230518"></script>
-</body>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+    <script>
+      var submitted = false;
+    </script>
+    <iframe
+      id="hidden_iframe"
+      name="hidden_iframe"
+      style="display: none"
+      onload="if(submitted)  {window.location='thanks.html';}"
+    ></iframe>
+    <script src="js/function.js?20230518"></script>
+  </body>
 </html>
