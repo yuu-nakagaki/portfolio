@@ -230,6 +230,7 @@
 
         &__scroll-list {
             list-style-type: none;
+            counter-reset: works-counter; // カウンターを初期化
 
             @include pc-large {
                 height: calc(80%);
@@ -335,7 +336,8 @@
 
         &__scroll-item {
             position: relative;
-            margin-bottom: 60%;            
+            margin-bottom: 60%;
+            counter-increment: works-counter; // 各アイテムでカウンターをインクリメント            
 
             @include tab {
                 margin-bottom: 50%;
@@ -419,6 +421,21 @@
             font-size: 40px;
             font-family: $roboto;
             margin-bottom: 40px;
+            position: relative;
+
+            &::before {
+                content: counter(works-counter, decimal-leading-zero);
+                display: inline-block;
+                position: static;
+                color: inherit;
+                font-size: inherit;
+                font-family: inherit;
+                line-height: inherit;
+                text-decoration: none;
+                border: none;
+                background: none;
+                box-shadow: none;
+            }
 
             @include tab {
                 font-size: 80px;
@@ -426,9 +443,7 @@
             }
 
             @include pc-large {
-                position: relative;
-
-                &::before {
+                &::after {
                     content: "";
                     display: block;
                     width: 100px;
@@ -436,7 +451,7 @@
                     background: $white;
                     position: absolute;
                     top: 50%;
-                    left: -40%;
+                    left: -140px;
                 }
             }
         }

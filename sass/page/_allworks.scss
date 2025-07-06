@@ -27,6 +27,7 @@
 
         &__container {
             list-style-type: none;
+            counter-reset: catalog-counter; // カウンターを初期化
 
             @include tab {
                 display: flex;
@@ -39,6 +40,7 @@
 
         &__box {
             margin-bottom: 60px;
+            counter-increment: catalog-counter; // 各アイテムでカウンターをインクリメント
 
             // アニメーション用の初期状態（JSで制御されるもののみ）
             &.animate-item {
@@ -112,7 +114,22 @@
             margin-bottom: 20px;
             position: relative;
 
-            &:before {
+            // カウンターの値を表示（01, 02, 03...形式）
+            &::before {
+                content: counter(catalog-counter, decimal-leading-zero);
+                display: inline-block;
+                position: static;
+                color: inherit;
+                font-size: inherit;
+                font-family: inherit;
+                line-height: inherit;
+                text-decoration: none;
+                border: none;
+                background: none;
+                box-shadow: none;
+            }
+
+            &::after {
                 content: "";
                 position: absolute;
                 top: 50%;
@@ -121,6 +138,7 @@
                 width: 24px;
                 height: 2px;
                 background: $black;
+                z-index: -1; // 数字の後ろに配置
             }
         }
 
