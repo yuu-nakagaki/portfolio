@@ -12,7 +12,6 @@
 ### 技術スタック
 - **ビルドツール**: Vite
 - **CSS前処理**: Sass/SCSS  
-- **HTMLテンプレート**: 独自インクルードシステム（Node.js）
 - **JavaScript**: Vanilla JavaScript + GSAP
 - **アニメーション**: GSAP + ScrollTrigger
 - **フォーム送信**: Google Forms
@@ -53,29 +52,7 @@ portfolio/
 │   ├── armor/             # 各プロジェクトフォルダ
 │   ├── musubi/
 │   └── ...
-├── includes/              # 共通HTMLパーツ（HTMLインクルードシステム）
-│   ├── head/             # HEADタグ内の共通要素
-│   │   ├── meta-base.html    # 基本メタタグ
-│   │   ├── meta-top.html     # トップページ用メタタグ
-│   │   ├── meta-page.html    # サブページ用メタタグ
-│   │   ├── meta-thanks.html  # thanksページ用メタタグ
-│   │   ├── fonts.html        # Google Fonts
-│   │   ├── css-top.html      # トップページ用CSS
-│   │   ├── css-page.html     # サブページ用CSS
-│   │   └── css-thanks.html   # thanksページ用CSS
-│   ├── header/           # ヘッダー関連
-│   │   ├── header-top.html   # トップページ用ヘッダー
-│   │   ├── header-page.html  # サブページ用ヘッダー
-│   │   ├── nav-top.html      # トップページ用ナビゲーション
-│   │   └── nav-page.html     # サブページ用ナビゲーション
-│   ├── footer/           # フッター関連
-│   │   ├── footer-top.html   # トップページ用フッター
-│   │   └── footer-simple.html # シンプルフッター
-│   └── scripts/          # スクリプト関連
-│       ├── gsap-common.html  # GSAP読み込み
-│       ├── js-top.html       # トップページ用JS
-│       ├── js-page.html      # サブページ用JS
-│       └── js-thanks.html    # thanksページ用JS
+├── includes/              # 共通HTMLパーツ（参考用・使用されていません）
 ├── sass/                  # Sassファイル
 │   ├── style.scss         # メインSassファイル
 │   ├── foundation/        # 基礎設定
@@ -84,12 +61,12 @@ portfolio/
 │   ├── page/             # ページ固有のスタイル
 │   └── utility/          # ユーティリティ
 ├── scripts/              # ビルドスクリプト
-│   ├── build-html.js         # HTMLインクルード処理
-│   └── restore-html.js       # ファイル復元処理
+│   └── fix-dist-structure.js # dist構造修正・ファイル参照更新
 ├── css/                   # コンパイル済みCSS (既存)
 ├── images/               # 画像ファイル
 ├── js/                   # JavaScript
-│   └── function.js       # メインJavaScript
+│   ├── function.js       # メインJavaScript
+│   └── style-loader.js   # SCSS読み込み用（開発時のみ）
 ├── vite.config.js        # Vite設定ファイル
 ├── package.json          # npm設定
 └── .gitignore            # Git除外設定
@@ -97,16 +74,23 @@ portfolio/
 
 ## 開発ワークフロー
 
+### ビルドシステム
+- **開発時**: Viteが`sass/style.scss`を自動コンパイル・HMR対応
+- **本番時**: `sass/style.scss` → `scss-[hash].css`で最適化
+- **JavaScript**: `js/function.js` → `main.js`に統一
+- **画像最適化**: `build-assets/`ディレクトリにハッシュ付きで配置
+
 ### Sass/SCSS
 - `sass/style.scss` がメインファイル
-- Viteが自動でコンパイル・HMR対応
-- 既存のCSSファイルも並行して使用可能
+- 開発時：`js/style-loader.js`経由でSCSSをインポート、HMR完全対応
+- 開発時：既存CSSファイル（`css/style.css`）は無効化してSCSSを優先
+- 本番時：SCSSコンパイル後、自動的にハッシュ付きCSSファイルへ参照更新
+- 全階層（トップ、allworks、下層ページ）でホットリロード対応
 
 ### ホットリロード
-- HTMLファイル変更時: 完全リロード（include処理後）
+- HTMLファイル変更時: 完全リロード
 - Sass/CSSファイル変更時: HMR（即座反映）
 - JavaScriptファイル変更時: HMR
-- includesファイル変更時: 開発サーバー再起動が必要
 
 ### 制作実績追加手順
 1. `allworks/` 内に新しいプロジェクトフォルダを作成
@@ -115,22 +99,23 @@ portfolio/
 
 ## デプロイ
 
-### 自動化されたデプロイ手順
-
-本プロジェクトでは、HTMLインクルード機能と従来のViteワークフローを組み合わせた自動化されたビルドプロセスを採用しています。
-
-#### 1. 本番ビルドの実行
+### 本番ビルドの実行
 ```bash
 npm run build
 ```
 
 **内部で自動実行される処理:**
-1. `npm run build:html` → includeファイルを展開して`.temp-html/`ディレクトリに処理済みHTMLを生成
-2. Vite設定を一時的に更新（処理済みHTMLファイルを参照するように変更）
-3. `vite build` → `dist/`フォルダに最適化されたファイルを出力
-4. `npm run restore` → 設定とファイルを自動的に元の状態に復元
+1. `vite build` → `dist/`フォルダに最適化されたファイルを出力
+   - JavaScriptファイル（`js/function.js`）→ `main.js`
+   - SCSSファイル（`sass/style.scss`）→ `scss-[hash].css`
+   - 画像ファイル → `build-assets/[name]-[hash].[ext]`
+2. `npm run fix-dist` → dist構造修正とファイル参照更新
+   - HTMLファイルを正しい位置に配置
+   - 各HTMLファイル内のJavaScript・SCSS参照をハッシュ付きファイル名に更新
+   - `images/`ディレクトリ、`css/`ディレクトリ、`favicon.ico`をコピー
+   - 各プロジェクトの`site/`ディレクトリを自動コピー（Reactアプリ等）
 
-#### 2. サーバーへのアップロード
+### サーバーへのアップロード
 ```bash
 # rsyncを使用する場合
 rsync -av dist/ username@server:/path/to/web/directory/
@@ -139,27 +124,6 @@ rsync -av dist/ username@server:/path/to/web/directory/
 # dist/フォルダの中身を全てサーバーのドキュメントルートにアップロード
 ```
 
-### 開発とデプロイの違い
-
-| 環境 | HTMLファイルの状態 | 用途 |
-|------|-------------------|------|
-| **開発時** | `<!-- @include ... -->` 記法 | 共通部分の管理・編集 |
-| **本番時** | 完全に展開されたHTML | サーバーでの高速表示 |
-
-### 手動操作が必要な場合
-
-#### HTMLファイルを元の状態に戻す
-```bash
-npm run restore
-```
-開発中に何らかの問題が発生した場合、include記法の状態に戻すことができます。
-
-#### 開発サーバーの起動
-```bash
-npm run dev
-```
-自動的にincludeファイルを処理してから開発サーバーを起動します。
-
 ## 開発機能
 
 ### レスポンシブ対応
@@ -167,88 +131,15 @@ npm run dev
 - モバイルファーストのアプローチ
 - 画像の最適化（WebP対応）
 
-## 共通パーツ管理
+## ファイル編集ガイド
 
-### HTMLインクルードシステム
+### HTMLファイルの編集
+- 各HTMLファイル（`index.html`、`allworks/index.html`等）を直接編集してください
+- 変更は即座に開発サーバーに反映されます
 
-`includes/` フォルダには共通HTMLパーツを格納し、Node.jsビルドスクリプトによる自動インクルード機能を実装しています。
-
-#### 構成
-- **head/**: メタタグ、CSS、フォント読み込み
-  - `meta-base.html` - 基本メタタグ
-  - `meta-top.html`, `meta-page.html`, `meta-thanks.html` - ページ別メタタグ
-  - `fonts.html` - Google Fonts読み込み
-  - `css-*.html` - ページ別CSS読み込み
-- **header/**: ヘッダーとナビゲーション
-  - `header-top.html`, `header-page.html` - ページ別ヘッダー
-  - `nav-top.html`, `nav-page.html` - ページ別ナビゲーション
-- **footer/**: フッター（シンプル・ナビゲーション付き）
-  - `footer-top.html`, `footer-simple.html` - 用途別フッター
-- **scripts/**: JavaScript読み込み
-  - `gsap-common.html` - GSAP関連スクリプト
-  - `js-*.html` - ページ別JavaScript読み込み
-
-#### インクルード記法
-HTMLファイル内で以下の記法を使用：
-```html
-<!-- @include includes/head/meta-base.html -->
-<!-- @include includes/header/header-top.html -->
-```
-
-#### メリット
-- **開発効率**: 共通部分の一元管理
-- **保守性**: ヘッダー変更時は1ファイルの編集で全ページに反映
-- **パフォーマンス**: 本番では完全に展開されたHTMLファイル
-
-### ファイル編集ガイド
-
-#### HTMLコンテンツの修正方法
-
-**⚠️ 重要**: 現在の開発環境では、編集前に以下の手順を実行してください：
-
-1. **復元コマンドを実行**
-   ```bash
-   npm run restore
-   ```
-   これで`index.html`等がinclude記法の状態に戻ります。
-
-2. **適切なファイルを編集**
-
-| 修正内容 | 編集するファイル | 例 |
-|---------|----------------|---|
-| **本文内容** | `index.html` | メインビジュアル、works、profile、contact等 |
-| **メタタグ** | `includes/head/meta-*.html` | title、description、keywords等 |
-| **ヘッダー** | `includes/header/header-*.html` | ロゴ、サイト名等 |
-| **ナビゲーション** | `includes/header/nav-*.html` | メニュー項目、リンク等 |
-| **フッター** | `includes/footer/footer-*.html` | コピーライト、リンク等 |
-| **JavaScript** | `includes/scripts/js-*.html` | スクリプト読み込み |
-| **CSS読み込み** | `includes/head/css-*.html` | スタイルシート参照 |
-
-3. **開発サーバーを起動**
-   ```bash
-   npm run dev
-   ```
-   自動的にincludeを展開してサーバーが起動されます。
-
-#### ページ別ファイル対応表
-
-**トップページ (`index.html`):**
-- メタタグ: `includes/head/meta-top.html`
-- ヘッダー: `includes/header/header-top.html`
-- ナビ: `includes/header/nav-top.html`
-- フッター: `includes/footer/footer-top.html`
-- スクリプト: `includes/scripts/js-top.html`
-
-**サブページ (`allworks/index.html`等):**
-- メタタグ: `includes/head/meta-page.html`
-- ヘッダー: `includes/header/header-page.html`
-- ナビ: `includes/header/nav-page.html`
-- フッター: `includes/footer/footer-simple.html`
-- スクリプト: `includes/scripts/js-page.html`
-
-**Thanksページ (`thanks.html`):**
-- メタタグ: `includes/head/meta-thanks.html`
-- スクリプト: `includes/scripts/js-thanks.html`
+### スタイルの編集
+- `sass/style.scss` およびその関連ファイルを編集
+- 開発時は自動的にコンパイル・ホットリロードされます
 
 ## 移行履歴
 
@@ -257,9 +148,23 @@ HTMLファイル内で以下の記法を使用：
 - **現在**: Viteによる高速ビルド・開発環境
 - **メリット**: より高速なHMR、モダンなビルドプロセス、npm管理
 
-### HTMLインクルードシステム導入
-- includesディレクトリ構造を整備
-- Node.jsビルドスクリプトによるHTMLインクルード機能を実装
-- `<!-- @include ... -->` 記法による共通パーツ管理
-- 開発・本番環境の自動切り替えシステム構築
-- Viteとの統合による最適化されたビルドプロセス
+### 本番ビルド最適化システム導入
+- **dist構造修正スクリプト**: `scripts/fix-dist-structure.js`
+  - HTMLファイルの正しい配置
+  - JavaScript・SCSS参照の自動更新（ハッシュ付きファイル名に対応）
+  - 既存アセット（images/、css/、favicon.ico）の自動コピー
+- **ファイル名最適化**:
+  - JavaScript: `js/function.js` → `main.js` （シンプルな命名）
+  - SCSS: `sass/style.scss` → `scss-[hash].css` （キャッシュバスティング対応）
+  - 画像: `build-assets/[name]-[hash].[ext]` （ハッシュ付きでキャッシュ最適化）
+- **自動参照更新**: 全HTMLファイルでハッシュ付きファイル名への参照を自動更新
+
+### SCSS開発環境最適化
+- **開発時専用SCSSローダー**: `js/style-loader.js`
+  - JavaScript経由でSCSSをインポートしてVite HMR対応
+  - 既存CSSファイルを無効化してSCSSを優先表示
+  - 全階層（トップ、allworks、下層ページ）で完全なホットリロード対応
+
+### 2024年末 - シンプル化
+- HTMLインクルードシステムを削除してシンプルな構成に変更
+- 直接HTMLファイルを編集する方式に戻し、管理を簡素化

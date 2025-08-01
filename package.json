@@ -6,12 +6,10 @@
   "description": "YUU NAKAGAKI Portfolio Site",
   "author": "YUU NAKAGAKI",
   "scripts": {
-    "dev": "npm run dev:html && vite",
-    "dev:html": "node scripts/build-html.js --dev",
-    "build": "npm run build:html && vite build && npm run restore",
-    "build:html": "node scripts/build-html.js",
-    "preview": "vite preview",
-    "restore": "node scripts/restore-html.js"
+    "dev": "vite",
+    "build": "vite build && npm run fix-dist",
+    "fix-dist": "node scripts/fix-dist-structure.js",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "sass": "^1.69.0",

@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/allworks/armor/site/static/css/main.10d4095e.css",
+    "main.js": "/allworks/armor/site/static/js/main.4911fa94.js",
+    "static/js/453.b06c4215.chunk.js": "/allworks/armor/site/static/js/453.b06c4215.chunk.js",
+    "static/media/img12.jpg": "/allworks/armor/site/static/media/img12.e8a756d733101a04be53.jpg",
+    "static/media/mv.jpg": "/allworks/armor/site/static/media/mv.108f6cb48f45e6c7d8cc.jpg",
+    "index.html": "/allworks/armor/site/index.html",
+    "main.10d4095e.css.map": "/allworks/armor/site/static/css/main.10d4095e.css.map",
+    "main.4911fa94.js.map": "/allworks/armor/site/static/js/main.4911fa94.js.map",
+    "453.b06c4215.chunk.js.map": "/allworks/armor/site/static/js/453.b06c4215.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.10d4095e.css",
+    "static/js/main.4911fa94.js"
+  ]
+}

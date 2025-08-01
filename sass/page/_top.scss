@@ -233,12 +233,12 @@
             counter-reset: works-counter; // カウンターを初期化
 
             @include pc-large {
-                height: calc(80%);
+                height: 100vh;
                 position: absolute;
-                top: 50%;
+                top: 0;
                 left: 0;
-                transform: translateY(-50%);
                 display: flex;
+                align-items: center;
             }
         }
 

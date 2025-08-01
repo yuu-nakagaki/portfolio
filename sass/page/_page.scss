@@ -319,6 +319,7 @@
             display: block;
             margin: 0 auto 40px;
             width: 100%;
+            box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
 
             @include tab {
                 width: 62.5%;
@@ -601,5 +602,21 @@
         }
 
 
+    }
+}
+
+#inukai {
+    .mv {
+        &__bg {
+            background: url(../images/inukai/img01-sp.jpg) center center / cover;
+
+            @include tab {
+                background: url(../images/inukai/img01-tab.jpg) center center / cover;
+            }
+
+            @include pc {
+                background: url(../images/inukai/img01-pc.jpg) center center / cover;
+            }
+        }
     }
 }
