@@ -35,6 +35,7 @@ export default defineConfig(({ command }) => {
           banner_lemon: resolve(__dirname, 'allworks/banner_lemon/index.html'),
           application_memopad: resolve(__dirname, 'allworks/application_memopad/index.html'),
           inukai: resolve(__dirname, 'allworks/inukai/index.html'),
+          silcia: resolve(__dirname, 'allworks/silcia/index.html'),
           js: resolve(__dirname, 'js/function.js'),
           scss: resolve(__dirname, 'sass/style.scss')
         },
