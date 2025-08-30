@@ -2610,6 +2610,20 @@ body {
   }
 }
 
+#silcia .mv__bg {
+  background: url(../images/silcia/img01-sp.jpg) center center/cover;
+}
+@media screen and (min-width: 768px) {
+  #silcia .mv__bg {
+    background: url(../images/silcia/img01-tab.jpg) center center/cover;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #silcia .mv__bg {
+    background: url(../images/silcia/img01-pc.jpg) center center/cover;
+  }
+}
+
 #lloyds .mv__bg {
   background: url(../images/lloyds/img01-sp.jpg) center center/cover;
 }
