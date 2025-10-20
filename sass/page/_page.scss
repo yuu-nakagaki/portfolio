@@ -514,6 +514,23 @@
     }
 }
 
+#silcia {
+    .mv {
+
+        &__bg {
+            background: url(../images/silcia/img01-sp.jpg) center center / cover;
+
+            @include tab {
+                background: url(../images/silcia/img01-tab.jpg) center center / cover;
+            }
+
+            @include pc {
+                background: url(../images/silcia/img01-pc.jpg) center center / cover;
+            }
+        }
+    }
+}
+
 #lloyds {
     .mv {
 

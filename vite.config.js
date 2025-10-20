@@ -37,7 +37,7 @@ export default defineConfig(({ command }) => {
           inukai: resolve(__dirname, 'allworks/inukai/index.html'),
           silcia: resolve(__dirname, 'allworks/silcia/index.html'),
           js: resolve(__dirname, 'js/function.js'),
-          scss: resolve(__dirname, 'sass/style.scss')
+          scss: resolve(__dirname, 'js/scss-entry.js')
         },
         output: {
           entryFileNames: (chunkInfo) => {
@@ -52,7 +52,11 @@ export default defineConfig(({ command }) => {
             if (/\.(jpe?g|png|gif|svg)$/i.test(assetInfo.name)) {
               return 'build-assets/[name]-[hash].[ext]';
             }
-            // その他のアセット（CSS等）
+            // CSSファイルはハッシュなしでstyle.cssに統一
+            if (/\.css$/i.test(assetInfo.name)) {
+              return 'style.css';
+            }
+            // その他のアセット
             return '[name]-[hash].[ext]';
           }
         }

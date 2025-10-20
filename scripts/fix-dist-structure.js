@@ -8,8 +8,6 @@ const projectRoot = path.resolve(__dirname, '..');
 const distDir = path.resolve(projectRoot, 'dist');
 const tempHtmlDir = path.resolve(distDir, '.temp-html');
 
-console.log('dist構造修正開始...');
-
 // .temp-htmlディレクトリが存在する場合のみ処理
 if (fs.existsSync(tempHtmlDir)) {
   // HTMLファイルを正しい場所に移動
@@ -20,12 +18,12 @@ if (fs.existsSync(tempHtmlDir)) {
   // ルートのHTMLファイルを移動
   if (fs.existsSync(indexHtml)) {
     fs.copyFileSync(indexHtml, path.resolve(distDir, 'index.html'));
-    console.log('index.htmlを移動しました');
+    // console.log('index.htmlを移動しました');
   }
   
   if (fs.existsSync(thanksHtml)) {
     fs.copyFileSync(thanksHtml, path.resolve(distDir, 'thanks.html'));
-    console.log('thanks.htmlを移動しました');
+    // console.log('thanks.htmlを移動しました');
   }
   
   // allworksディレクトリを移動
@@ -39,12 +37,12 @@ if (fs.existsSync(tempHtmlDir)) {
     
     // 新しいallworksディレクトリをコピー
     copyDir(allworksDir, distAllworksDir);
-    console.log('allworksディレクトリを移動しました');
+    // console.log('allworksディレクトリを移動しました');
   }
   
   // .temp-htmlディレクトリを削除
   fs.rmSync(tempHtmlDir, { recursive: true });
-  console.log('.temp-htmlディレクトリを削除しました');
+  // console.log('.temp-htmlディレクトリを削除しました');
   
   // HTMLファイル内のJavaScript参照を修正
   fixJavaScriptReferences();
@@ -85,14 +83,14 @@ function copyDir(src, dest) {
 }
 
 function fixJavaScriptReferences() {
-  console.log('JavaScript参照を修正中...');
+  // console.log('JavaScript参照を修正中...');
   
   // main.jsファイルを使用
   const jsFileName = 'main.js';
   const jsFilePath = path.resolve(distDir, jsFileName);
   
   if (!fs.existsSync(jsFilePath)) {
-    console.log('main.jsファイルが見つかりません');
+    // console.log('main.jsファイルが見つかりません');
     return;
   }
   
@@ -107,7 +105,7 @@ function fixJavaScriptReferences() {
       `<script src="main.js"></script>`
     );
     fs.writeFileSync(indexHtmlPath, content);
-    console.log('index.htmlのJavaScript参照を修正しました');
+    // console.log('index.htmlのJavaScript参照を修正しました');
   }
   
   // thanks.htmlを修正
@@ -119,7 +117,7 @@ function fixJavaScriptReferences() {
       `<script src="../main.js"></script>`
     );
     fs.writeFileSync(thanksHtmlPath, content);
-    console.log('thanks.htmlのJavaScript参照を修正しました');
+    // console.log('thanks.htmlのJavaScript参照を修正しました');
   }
   
   // allworksディレクトリ内のHTMLファイルを修正
@@ -150,7 +148,7 @@ function fixAllworksJavaScriptReferences(allworksDir, jsFileName) {
           `<script src="/main.js"></script>`
         );
         fs.writeFileSync(indexHtmlPath, content);
-        console.log(`${entry.name}/index.htmlのJavaScript参照を修正しました`);
+        // console.log(`${entry.name}/index.htmlのJavaScript参照を修正しました`);
       }
     } else if (entry.name === 'index.html') {
       // allworks直下のindex.htmlの場合
@@ -160,57 +158,62 @@ function fixAllworksJavaScriptReferences(allworksDir, jsFileName) {
         `<script src="../main.js"></script>`
       );
       fs.writeFileSync(entryPath, content);
-      console.log('allworks/index.htmlのJavaScript参照を修正しました');
+      // console.log('allworks/index.htmlのJavaScript参照を修正しました');
     }
   }
 }
 
 function fixScssReferences() {
-  console.log('SCSS参照を修正中...');
+  // console.log('SCSS参照を修正中...');
   
-  // scssファイル名を取得
-  const scssFiles = fs.readdirSync(distDir).filter(file => file.startsWith('scss-') && file.endsWith('.css'));
-  
-  if (scssFiles.length === 0) {
-    console.log('SCSSファイルが見つかりません');
-    return;
-  }
-  
-  const scssFileName = scssFiles[0];
-  console.log(`SCSSファイル: ${scssFileName}`);
+  // style.cssに統一
+  const cssFileName = 'style.css';
+  // console.log(`CSSファイル: ${cssFileName}`);
   
   // index.htmlのSCSS参照を修正
   const indexHtmlPath = path.resolve(distDir, 'index.html');
   if (fs.existsSync(indexHtmlPath)) {
     let content = fs.readFileSync(indexHtmlPath, 'utf8');
+    // 絶対パス /sass/style.scss を置換
     content = content.replace(
-      /<link href="\.\/sass\/style\.scss" rel="stylesheet" media="all">/g,
-      `<link href="${scssFileName}" rel="stylesheet" media="all">`
+      /<link href="\/sass\/style\.scss" rel="stylesheet" media="all">/g,
+      `<link href="${cssFileName}" rel="stylesheet" media="all">`
+    );
+    // data URIをexternal CSSファイル参照に置換
+    content = content.replace(
+      /<link href="data:application\/octet-stream;base64,[^"]*" rel="stylesheet" media="all">/g,
+      `<link href="${cssFileName}" rel="stylesheet" media="all">`
     );
     fs.writeFileSync(indexHtmlPath, content);
-    console.log('index.htmlのSCSS参照を修正しました');
+    // console.log('index.htmlのSCSS参照を修正しました');
   }
   
   // thanks.htmlのSCSS参照を修正
   const thanksHtmlPath = path.resolve(distDir, 'thanks.html');
   if (fs.existsSync(thanksHtmlPath)) {
     let content = fs.readFileSync(thanksHtmlPath, 'utf8');
+    // 絶対パス /sass/style.scss を置換
     content = content.replace(
-      /<link href="sass\/style\.scss" rel="stylesheet" media="all">/g,
-      `<link href="${scssFileName}" rel="stylesheet" media="all">`
+      /<link href="\/sass\/style\.scss" rel="stylesheet" media="all">/g,
+      `<link href="${cssFileName}" rel="stylesheet" media="all">`
+    );
+    // data URIも置換
+    content = content.replace(
+      /<link href="data:application\/octet-stream;base64,[^"]*" rel="stylesheet" media="all">/g,
+      `<link href="${cssFileName}" rel="stylesheet" media="all">`
     );
     fs.writeFileSync(thanksHtmlPath, content);
-    console.log('thanks.htmlのSCSS参照を修正しました');
+    // console.log('thanks.htmlのSCSS参照を修正しました');
   }
   
   // allworksディレクトリ内のHTMLファイルのSCSS参照を修正
   const allworksDir = path.resolve(distDir, 'allworks');
   if (fs.existsSync(allworksDir)) {
-    fixAllworksScssReferences(allworksDir, scssFileName);
+    fixAllworksScssReferences(allworksDir, cssFileName);
   }
 }
 
-function fixAllworksScssReferences(allworksDir, scssFileName) {
+function fixAllworksScssReferences(allworksDir, cssFileName) {
   const entries = fs.readdirSync(allworksDir, { withFileTypes: true });
   
   for (const entry of entries) {
@@ -221,27 +224,34 @@ function fixAllworksScssReferences(allworksDir, scssFileName) {
       const indexHtmlPath = path.join(entryPath, 'index.html');
       if (fs.existsSync(indexHtmlPath)) {
         let content = fs.readFileSync(indexHtmlPath, 'utf8');
+        // 絶対パス /sass/style.scss を相対パスに置換
         content = content.replace(
-          /<link href="\.\.\/sass\/style\.scss" rel="stylesheet" media="all">/g,
-          `<link href="../../${scssFileName}" rel="stylesheet" media="all">`
+          /<link href="\/sass\/style\.scss" rel="stylesheet" media="all">/g,
+          `<link href="../../${cssFileName}" rel="stylesheet" media="all">`
+        );
+        // data URIも置換
+        content = content.replace(
+          /<link href="data:application\/octet-stream;base64,[^"]*" rel="stylesheet" media="all">/g,
+          `<link href="../../${cssFileName}" rel="stylesheet" media="all">`
         );
         fs.writeFileSync(indexHtmlPath, content);
-        console.log(`${entry.name}/index.htmlのSCSS参照を修正しました`);
+        // console.log(`${entry.name}/index.htmlのCSS参照を修正しました`);
       }
     } else if (entry.name === 'index.html') {
       // allworks直下のindex.htmlの場合
       let content = fs.readFileSync(entryPath, 'utf8');
+      // 絶対パス /sass/style.scss を相対パスに置換
       content = content.replace(
-        /<link href="\.\.\/sass\/style\.scss" rel="stylesheet" media="all">/g,
-        `<link href="../${scssFileName}" rel="stylesheet" media="all">`
+        /<link href="\/sass\/style\.scss" rel="stylesheet" media="all">/g,
+        `<link href="../${cssFileName}" rel="stylesheet" media="all">`
       );
-      // ビルド後の最適化されたHTMLでのSCSS参照も修正
+      // data URIをexternal CSSファイル参照に置換
       content = content.replace(
-        /<link href="\/style-[^"]+\.scss" rel="stylesheet" media="all">/g,
-        `<link href="/${scssFileName}" rel="stylesheet" media="all">`
+        /<link href="data:application\/octet-stream;base64,[^"]*" rel="stylesheet" media="all">/g,
+        `<link href="../${cssFileName}" rel="stylesheet" media="all">`
       );
       fs.writeFileSync(entryPath, content);
-      console.log('allworks/index.htmlのSCSS参照を修正しました');
+      // console.log('allworks/index.htmlのCSS参照を修正しました');
     }
   }
 }
@@ -253,7 +263,7 @@ function copyImagesDirectory() {
   
   if (fs.existsSync(imagesDir)) {
     copyDir(imagesDir, distImagesDir);
-    console.log('imagesディレクトリをコピーしました');
+    // console.log('imagesディレクトリをコピーしました');
   } else {
     console.log('imagesディレクトリが存在しません');
   }
@@ -264,16 +274,7 @@ function copyImagesDirectory() {
   
   if (fs.existsSync(faviconSrc)) {
     fs.copyFileSync(faviconSrc, faviconDest);
-    console.log('favicon.icoをコピーしました');
-  }
-  
-  // css/ディレクトリもコピー
-  const cssDir = path.resolve(projectRoot, 'css');
-  const distCssDir = path.resolve(distDir, 'css');
-  
-  if (fs.existsSync(cssDir)) {
-    copyDir(cssDir, distCssDir);
-    console.log('cssディレクトリをコピーしました');
+    // console.log('favicon.icoをコピーしました');
   }
   
   // allworks内の各プロジェクトのsiteディレクトリをコピー
@@ -289,11 +290,9 @@ function copyImagesDirectory() {
         if (fs.existsSync(siteDir)) {
           const distSiteDir = path.resolve(distAllworksDir, project.name, 'site');
           copyDir(siteDir, distSiteDir);
-          console.log(`${project.name}/siteディレクトリをコピーしました`);
+          // console.log(`${project.name}/siteディレクトリをコピーしました`);
         }
       }
     }
   }
 }
-
-console.log('dist構造修正完了！');

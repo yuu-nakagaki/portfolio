@@ -739,6 +739,7 @@
                 font-size: 12px;
                 text-align: center;
                 max-width: 96px;
+                aspect-ratio: 1 / 1;
 
                 @include tab {
                     font-size: 14px;
