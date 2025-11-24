@@ -466,13 +466,19 @@
                     font-size: 24px;
                 }
                 
-                &.update{
+                &.update, 
+                &.with-ai {
                     position: relative;
+                    display: inline-block;
                 }
             }
 
             dt.update::after {
                 @include update;
+            }
+
+            dt.with-ai::after {
+                @include with-ai;
             }
 
             dt:first-child+dd {

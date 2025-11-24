@@ -99,3 +99,20 @@
   line-height: 24px;
   border-radius: 12px;
 }
+
+//AI使用マーク
+@mixin with-ai {
+  content: 'with AI';
+  position: absolute;
+  font-size: 12px;
+  top: 50%;
+  left: calc(100% + 1rem);
+  transform: translateY(-50%);
+  @include flex-center;
+  width: 60px;
+  height: 24px;
+  background: rgb(40, 8, 169);
+  text-align: center;
+  line-height: 24px;
+  border-radius: 12px;
+}
